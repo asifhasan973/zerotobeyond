@@ -22,3 +22,4 @@ export * from "./loadingEngine";
 
 export * from "./atlas";
 export * from "./physics/return-trajectory";
+export * from "./engineering";

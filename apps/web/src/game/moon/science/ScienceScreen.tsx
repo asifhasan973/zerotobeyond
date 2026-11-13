@@ -1,3 +1,4 @@
+import { SourceNotes } from "../core/learning/SourceNotes";
 import { useEffect, useMemo, useState } from "react";
 import { Check, FlaskConical, Radio, ScanLine } from "lucide-react";
 import type {
@@ -517,6 +518,7 @@ export function ScienceScreen({
             </p>
           </>
         )}
+        <SourceNotes ids={geo ? ["rocks", "xray"] : ["viper", "water"]} />
       </MoonStage>
       {notes ? (
         <GameInfo

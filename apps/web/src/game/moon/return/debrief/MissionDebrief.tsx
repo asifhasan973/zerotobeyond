@@ -1,3 +1,4 @@
+import { MissionReferences } from "../../core/learning/SourceNotes";
 import { lazy, Suspense } from "react";
 import { isEngineFrozen } from "@exo/ui";
 import { sound } from "@exo/audio";
@@ -289,6 +290,7 @@ export function MissionDebrief({
             Export log
           </button>
         </details>
+        <MissionReferences />
       </div>
       <footer className="moon-report-footer">
         <button

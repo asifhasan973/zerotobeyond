@@ -1,4 +1,4 @@
-import { SourcesButton } from "@/game/moon/core/learning/MissionSources";
+import { TutorButton } from "@/shared/tutor/SpaceTutor";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { Expand, Home, Pause, Play, Volume2, VolumeX } from "lucide-react";
@@ -147,7 +147,7 @@ export function MobileGameProvider({
       {children}
       {mode ? (
         <aside className="mobile-game-tools" aria-label="Quick game controls">
-          <SourcesButton />
+          <TutorButton />
           <StorySaveBadge />
           <MilestoneRing />
           <button

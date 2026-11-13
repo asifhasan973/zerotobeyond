@@ -1,0 +1,234 @@
+.tutor-fallback {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 18px;
+  border: 1px solid var(--mint, #8ce2c2);
+  border-radius: 99px;
+  background: #302044;
+  color: #efffeb;
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 0 5px 24px #0005;
+}
+body:has(
+    .conversation-header [aria-label="Ask Orbit AI"],
+    .mobile-game-tools [aria-label="Ask Orbit AI"]
+  )
+  .tutor-fallback {
+  display: none;
+}
+.game-info.learning-drawer.tutor-drawer {
+  width: min(400px, 94vw);
+  max-width: 94vw;
+  z-index: 1400;
+  border-radius: 18px 0 0 18px;
+}
+.game-info.learning-drawer.tutor-drawer .game-info-page {
+  display: flex;
+  overflow: hidden;
+  min-height: 0;
+  padding: 16px;
+}
+.tutor-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
+  gap: 10px;
+}
+.tutor-intro {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--mint);
+  font-size: 14px;
+}
+.tutor-privacy,
+.tutor-note {
+  color: #c8bad7;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.tutor-messages {
+  flex: 1;
+  min-height: 80px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 2px 4px 2px 0;
+}
+.tutor-message {
+  border: 1px solid #c8a6db2b;
+  background: #15172b;
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin: 8px 0;
+}
+.tutor-message strong {
+  font-size: 11px;
+  color: var(--mint);
+}
+.tutor-message p {
+  margin: 5px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.tutor-message.is-user {
+  background: #4c2d5f;
+  margin-left: 24px;
+}
+.tutor-suggestions {
+  display: grid;
+  gap: 9px;
+  padding-block: 12px;
+}
+.tutor-suggestions button {
+  text-align: left;
+  color: #f2e8ff;
+  background: #332241;
+  border: 1px solid #9472a6;
+  padding: 12px;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.tutor-input-label {
+  display: block;
+  font-size: 12px;
+  color: var(--mint);
+  margin-bottom: 6px;
+}
+.tutor-input-row {
+  display: flex;
+  gap: 8px;
+}
+.tutor-input-row input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid #ad91c4;
+  border-radius: 12px;
+  background: #141224;
+  color: #f6edff;
+  padding: 12px;
+  font: inherit;
+  font-size: 14px;
+}
+.tutor-input-row button {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  border: 1px solid #9fe0c2;
+  background: #294c44;
+  color: #dcffed;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.tutor-input-row button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.tutor-error {
+  color: #ffd38d;
+  font-size: 13px;
+}
+.tutor-drawer :focus-visible {
+  outline: 2px solid var(--yellow, #ffdf89);
+  outline-offset: 2px;
+}
+@media (max-height: 450px) {
+  .tutor-content {
+    gap: 6px;
+  }
+  .tutor-privacy,
+  .tutor-note {
+    font-size: 10px;
+  }
+  .game-info.learning-drawer.tutor-drawer .game-info-page {
+    padding: 10px;
+  }
+  .tutor-message p {
+    font-size: 12px;
+  }
+}
+
+.game-info.learning-drawer.tutor-drawer {
+  width: var(--tutor-width, 320px);
+  max-width: 60vw;
+  border-radius: 0;
+}
+.tutor-resizer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: calc(var(--tutor-width, 320px) - 5px);
+  width: 10px;
+  cursor: ew-resize;
+  touch-action: none;
+  z-index: 1402;
+}
+.tutor-resizer:hover,
+.tutor-resizer:focus-visible {
+  background: #8ce2c270;
+  outline: none;
+}
+body.tutor-split-open .conversation-game {
+  width: calc(100% - var(--tutor-width));
+  max-width: calc(100% - var(--tutor-width));
+  margin-right: var(--tutor-width);
+}
+body.tutor-split-open.keyword-split-open .conversation-game {
+  width: calc(100% - var(--tutor-width));
+  max-width: calc(100% - var(--tutor-width));
+  margin-right: var(--tutor-width);
+}
+.tutor-retry {
+  display: block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: 1px solid #8ce2c2;
+  border-radius: 10px;
+  background: #294c44;
+  color: #efffeb;
+  font: inherit;
+  cursor: pointer;
+}
+.tutor-message p strong {
+  font-size: inherit;
+  color: inherit;
+}
+.tutor-drawer .game-info-header-actions {
+  display: flex;
+  gap: 6px;
+}
+
+body.tutor-split-open:not(:has(.conversation-game)) #root {
+  width: calc(100% - var(--tutor-width));
+}
+body.tutor-split-open
+  .conversation-game.conversation-game
+  .conversation-controls {
+  gap: 4px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+body.tutor-split-open
+  .conversation-game.conversation-game
+  .conversation-controls
+  .conversation-back {
+  font-size: 0;
+  padding: 8px;
+  min-width: 36px;
+}
+body.tutor-split-open .conversation-controls .game-hint span {
+  display: none;
+}
+body.tutor-split-open .conversation-controls .next-control {
+  gap: 4px;
+}

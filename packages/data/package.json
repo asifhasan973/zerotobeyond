@@ -21,6 +21,10 @@
     "./missions": {
       "types": "./src/missions/index.ts",
       "import": "./src/missions/index.ts"
+    },
+    "./engineering": {
+      "types": "./src/engineering/index.ts",
+      "import": "./src/engineering/index.ts"
     }
   },
   "scripts": {

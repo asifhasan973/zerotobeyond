@@ -44,7 +44,7 @@ After authenticating Wrangler to the same account:
 
 ```sh
 pnpm run build
-wrangler pages deploy apps/web/dist --project-name=zero-to-beyond --branch=main
+wrangler pages deploy apps/web/dist --project-name=zerotobeyond --branch=main
 ```
 
 ## Troubleshooting
@@ -53,3 +53,9 @@ Check the [GitHub Actions run](https://github.com/asifhasan973/zerotobeyond/acti
 Authentication errors require checking the dedicated token's permissions and
 account scope. Install/build failures happen before publication, leaving the
 current Cloudflare release available.
+
+## Space tutor API
+
+`functions/api/tutor.ts` is the Cloudflare Pages endpoint for `/api/tutor`. Add `GEMINI_API_KEY` as an encrypted Pages environment secret before deploying this feature. Optional `GEMINI_MODEL` defaults to `gemini-3.5-flash-lite`. Never use a `VITE_` prefix for either setting.
+
+Local Vite development reads the same server-only settings from the ignored root `.env.local`. Questions and a bounded text excerpt of the current page are sent to Gemini; chat history stays in memory and is cleared on reload. The model receives project guidance and NASA references, not custom model training. Request size, response size, timeout and per-instance request limits are bounded. Provider/account quotas remain the authoritative global usage limit.

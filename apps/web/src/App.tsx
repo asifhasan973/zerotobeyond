@@ -1,3 +1,4 @@
+import { SpaceTutor } from "@/shared/tutor/SpaceTutor";
 import { lazy, Suspense, useEffect } from "react";
 import {
   OrientationGuard,
@@ -97,6 +98,7 @@ export default function App() {
             }
           >
             {content}
+            <SpaceTutor />
           </Suspense>
         </div>
       </OrientationGuard>

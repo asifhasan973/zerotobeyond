@@ -1,3 +1,4 @@
+import { TutorButton } from "@/shared/tutor/SpaceTutor";
 import {
   ArrowLeft,
   ArrowRight,
@@ -146,6 +147,7 @@ export function StoryShell({
               {headerExtra}
               <MilestoneRing />
               <LearningControls />
+              <TutorButton />
               <SettingsButton />
             </nav>
           </header>

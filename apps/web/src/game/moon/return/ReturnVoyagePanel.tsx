@@ -1,3 +1,4 @@
+import { SourceNotes } from "../core/learning/SourceNotes";
 import {
   ArrowRight,
   Check,
@@ -266,6 +267,13 @@ export function ReturnVoyagePanel({
           </button>
         )}
       </fieldset>
+      <SourceNotes
+        ids={
+          ["docked", "burning", "coast"].includes(r.stage)
+            ? ["return"]
+            : ["entry"]
+        }
+      />
     </div>
   );
 }

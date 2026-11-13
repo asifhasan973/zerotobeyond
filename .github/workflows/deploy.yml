@@ -65,7 +65,7 @@ jobs:
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           packageManager: pnpm
           wranglerVersion: "4.151.2"
-          command: pages deploy apps/web/dist --project-name=zero-to-beyond --branch=main
+          command: pages deploy apps/web/dist --project-name=zerotobeyond --branch=main
 
       - name: Verify live frontend
-        run: curl --fail --silent --show-error --retry 5 --retry-all-errors --retry-delay 5 --output /dev/null https://zero-to-beyond.pages.dev/
+        run: curl --fail --silent --show-error --retry 5 --retry-all-errors --retry-delay 5 --output /dev/null https://zerotobeyond.pages.dev/

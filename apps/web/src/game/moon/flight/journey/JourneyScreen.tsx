@@ -1,3 +1,4 @@
+import { SourceNotes } from "../../core/learning/SourceNotes";
 import {
   TRANSFER_DATES,
   captureOrbit,
@@ -786,7 +787,11 @@ export function JourneyScreen({
               </strong>
             </div>
             <div className="journey-scene-footer">
-              <span>Body sizes adjusted in map · time compressed</span>
+              <span>
+                Body sizes adjusted in map · time compressed
+                <br />
+                <SourceNotes ids={["horizons"]} />
+              </span>
               <span>
                 {(moon.resources.elapsedMissionSeconds / 86400).toFixed(2)}{" "}
                 mission days elapsed

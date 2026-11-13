@@ -1,3 +1,4 @@
+import { SourceNotes } from "../../core/learning/SourceNotes";
 import { lazy, Suspense, useEffect } from "react";
 import { Check, Flag, Pause, Play, Radio } from "lucide-react";
 import {
@@ -300,6 +301,7 @@ export function SurfaceArrivalScreen({
               ) : null}
             </aside>
           </div>
+          <SourceNotes ids={["crew-radio", "first-steps"]} />
         </main>
       </StoryShell>
     </StoryNavigationContext.Provider>

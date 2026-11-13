@@ -1,3 +1,4 @@
+import { SourceNotes } from "../../core/learning/SourceNotes";
 import { useGameSettings } from "@/shared/shell";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import {
@@ -477,6 +478,7 @@ export function FlightScreen({
             ]}
           />
         ) : null}
+        <SourceNotes ids={["rocket"]} />
       </main>
     </StoryShell>
   );

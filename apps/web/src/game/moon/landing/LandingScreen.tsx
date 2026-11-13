@@ -1,3 +1,4 @@
+import { SourceNotes } from "../core/learning/SourceNotes";
 import {
   lazy,
   Suspense,
@@ -841,6 +842,7 @@ export function LandingScreen({
             />
           </div>
         </section>
+        <SourceNotes ids={["apollo"]} />
       </main>
       {notes ? (
         <GameInfo

@@ -1,3 +1,5 @@
+import { engineeringDev } from "./server/engineering/dev";
+import { tutorDev } from "./server/tutorDev";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
@@ -7,6 +9,7 @@ import { VitePWA } from "vite-plugin-pwa";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  envDir: path.resolve(__dirname, "../.."),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -18,6 +21,8 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    tutorDev(),
+    engineeringDev(),
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: [

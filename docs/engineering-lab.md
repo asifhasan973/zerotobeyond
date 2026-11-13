@@ -1,35 +1,85 @@
-# Engineering Lab — power study
+# Engineering Lab — Mission Blueprint Studio
 
-A separate home/navigation entry and direct URL `/?explore=engineering` open a bounded lunar rover electrical study. Five tabs cover Mission, Design, Test, Compare and NASA Data. A compact NASA reference bundle reuses the existing Atlas/Signal products without loading their complete maps. It preserves the active mission and its save. Browser drafts use `zero_to_beyond_engineering_power_v1`; a baseline snapshot stays in memory until leaving/reloading the page. JSON export includes current inputs, output, model version, baseline, bundled NASA references and scope.
+Open `/?explore=engineering`. The standalone lab supports engineering students and university teams developing an early lunar-science-orbiter concept. It never writes to the active game's mission or preparation save. The original rover power study remains available through **Rover power study**, with its original draft key and NASA references.
 
-## Model and shared game logic
+## Workflow
 
-`apps/web/src/features/engineering/powerModel.ts` uses the existing `energyWh` function from the game resource model. Three piecewise-constant phases represent outbound travel, science and return. Inputs define battery energy/capacity, starting state, reserve, solar power, usable sunlight, load, output limit, duration and constant charge/discharge efficiencies. The analytic integration separates served demand, unserved demand, conversion losses, stored energy and curtailed solar generation. Conversion efficiencies apply only to battery energy transfer. Direct solar supplies loads first. Charge saturates at capacity. Battery exhaustion and saturation add chart turning points. The minimum across the whole profile controls reserve status; a later recharge cannot erase an earlier reserve breach.
+Define a science objective → select instruments and resource allocations → test 24 hours → pin and compare designs → export a mission blueprint. The layout has workflow/geometry controls, a scrollable workbench, and live resource budgets. It supports compact landscape through desktop without scrolling the document.
 
-Conservation: initial battery Wh + solar-generated Wh = served-load Wh + conversion-loss Wh + curtailed Wh + final battery Wh. The discharge limit is electrical output W; limited output leaves demand unserved even with stored energy remaining. No charging power limit, thermal/voltage/ageing effects, transient behavior or battery certification is modeled. The report is a power feasibility check, not complete crew/mission safety.
+The default scenario selects LROC and LOLA, a 260 Wh battery, 280 W sunlit array, 12 Gbit storage and a 20 W electrical transmitter. The authored orbit lasts 120 minutes: the first 75 are sunlit, observation starts each orbit (24 minutes by default), and downlink occupies the last 15 minutes. These are educational conditions, not actual LRO ephemeris, eclipse or ground-station access predictions.
 
-The reference scenario uses authored teaching inputs: 220 Wh battery at full charge, 20% reserve, 150 W solar, 450 W discharge ceiling, 90% charging/95% discharging efficiencies. Phases: 20 min at 160 W/0.7 usable sunlight; 30 min at 220 W/zero sunlight; 20 min at 160 W/0.3 sunlight. Calculated minimum ~44.56 Wh, reserve 44 Wh, margin ~0.56 Wh. A 45-minute shadow-science phase exhausts this reference battery; a larger battery can be compared under the same schedule. These values are not measured flight-hardware specifications.
+Browser drafts and comparison snapshots use `zero_to_beyond_engineering_blueprint_v1`. Save is explicit. Baseline pinning also saves both designs when storage is available; on storage failure they remain usable in memory. Invalid/corrupt stored drafts fall back to the bundled reference. No existing game or legacy power-study save is migrated or deleted.
 
-Workshop import reads a snapshot of the saved preparation through the standalone page wrapper; the mission session is not mounted on lab routes. Capacity and solar rating come from selected equipment; traverse and analysis load come from the shared `operatingPower` function. All selected analysis instruments are assumed active together; no drilling peak is implied. Life support is excluded as a separate supplied-platform account. Duration, illumination, efficiencies, reserve and starting state remain lab assumptions. Import requires a battery and never changes the workshop.
+## NASA API: exact inputs and uses
 
-## Interface
+`GET /api/engineering/horizons?date=YYYY-MM-DD` is a read-only, fixed-upstream adapter to `https://ssd.jpl.nasa.gov/api/horizons.api`. The Vite development adapter and Cloudflare Pages Function use the same handler. No API key or paid service is required. Arbitrary upstream URLs/commands are not accepted; invalid dates fail before fetching. Upstream timeout is 12 seconds; upstream errors return 502, never fabricated data. Successful responses are cacheable for one hour.
 
-Use the numbered tabs or the contextual next/revise actions. Inputs have units and validation; invalid inputs suspend results and disable save/export. The results panel identifies power-limit, energy or reserve bottlenecks. Test provides a trace and phase table; Compare states how many numeric inputs differ and warns when the comparison is not a one-variable experiment. The equations/source section explains all model boundaries. Reference material: https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/ — conceptual context, not certification of authored equipment values.
+The request selects Moon **301**, Earth center **500@399**, geometric **VECTORS**, **ICRF/FRAME**, **KM-S**, **TDB**, a one-day interval and one-hour samples. Response validation requires matching target, center, units and frame plus 25 finite hourly vectors with the expected Julian dates. Metadata includes the exact reproducible query URL, retrieval timestamp and NASA API version. The API documentation is https://ssd-api.jpl.nasa.gov/doc/horizons.html.
 
-## Verification
+| NASA input                               | Derived use in this lab                              | Boundary                                                     |
+| ---------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
+| Hourly X/Y/Z vectors                     | Linearly interpolated geocentric Earth–Moon distance | Not a propagated spacecraft orbit                            |
+| Distance / 299792.458 km/s               | One-way vacuum signal delay                          | Excludes station, electronics and processing delay           |
+| Distance, authored 32 GHz frequency      | Free-space path loss                                 | Ignores occultation, atmosphere and pointing                 |
+| Path loss plus authored radio parameters | Power-limited downlink capacity each minute          | Not a validated radio design; fixed contacts and channel cap |
 
-`node --import ./scripts/register-workspace.mjs scripts/check-engineering.mjs` checks 100 W for 30 min → 50 Wh, energy exhaustion, output limiting, efficiency losses, charging saturation, initial reserve breach despite later charging, invalid efficiency/zero-duration inputs, immutable reference data, and nine complete energy-conservation cases. `pnpm run build` builds the normal app. Browser verification covers the lab workflow, changed-input output, baseline comparison, and landscape layout. Existing complete Moon missions, hardware performance, physical touch devices and screen readers are outside this verification scope.
+The bundled prediction was retrieved directly from this API for **13–14 November 2026 TDB**. It is a dated prediction, not live tracking. **Fetch NASA data** requests the selected date. A failed refresh preserves a matching dated prediction; a different selected date has unavailable results until matching geometry is fetched or the bundled date is explicitly restored. TDB and UTC are never silently interchanged.
 
-## NASA Data
+## NASA publication: payload allocation and science volume
 
-`NasaData.tsx` presents five separate questions while keeping observation, prediction and design assumptions distinct. Local selections persist across tabs, but site/hour, crew inputs and refreshed weather reset on page reload. Only an explicitly applied solar derivation enters the saved electrical experiment. Exported `nasaReference` is the bundled reference snapshot, not a log of current NASA-tab selections or subsequent live refreshes.
+Source: Chin et al., **Lunar Reconnaissance Orbiter Overview: The Instrument Suite and Mission** (2007), DOI `10.1007/s11214-007-9153-y`, hosted by NASA: https://science.nasa.gov/wp-content/uploads/2024/01/lro-space-science-paper.pdf.
 
-- **LRO LOLA and Diviner:** three previously prepared Atlas reference points. Elevation uses LOLA LDEM_16 V3.1 (2009–2016); summer maximum brightness temperatures use Diviner's 2009–2019 polar map. Derived slope has a ~2.95 km baseline, unsuitable for rover-scale hazard assessment. Source links, dates and resolution are shown. These values do not imply local illumination, present temperature or safe landing.
-- **NASA SVS:** 25 hourly predicted centre distances from 8 November 2026 00:00 to 9 November 00:00 UTC, sourced from https://svs.gsfc.nasa.gov/5587/. Light time is distance / 299792.458 km/s. It excludes local terrain, station availability, processing and bandwidth.
-- **NASA SORCE:** 1361 W/m² at 1 AU, sourced from https://earth.gsfc.nasa.gov/climate/projects/solar-irradiance/science. Estimated electrical output = irradiance × assumed panel area × assumed efficiency × cos(assumed incidence). Apply explicitly updates `design.solarW` and stores `solarBasis`. Manual solar edits and workshop import remove that derivation. Existing phase light factors still apply; avoid counting incidence loss twice. No dust, ageing or thermal derating is inferred.
-- **NASA BVAD Rev. 1 (2018), Table 3-22, printed page 45:** https://ntrs.nasa.gov/api/citations/20180001338/downloads/20180001338.pdf. Short-duration baseline per crew-day: 0.82 kg oxygen, 1.04 kg CO₂, 12000 kJ metabolic heat. Outputs scale by crew-days; average heat converts kJ/day to W. The source assumes an 82 kg reference crewmember with a specific daily activity profile. This is gross demand, not consumable launch mass or ECLSS performance. Recycling, reserve, leaks and EVA are excluded. Thermal heat is not electrical power. The 30-day input cap is a tool choice, not a NASA duration threshold.
-- **NASA CCMC DONKI:** a dated bundled seven-date snapshot plus user-triggered FLR/CME/SEP refresh. Uses public `https://ccmc.gsfc.nasa.gov/DONKI/WS/get/{type}`, no API key required. Requests run independently with 12-second timeouts. Partial failures remain visibly unavailable; total failure preserves the dated previous report. Counts and at most eight latest records are shown with NASA links. Date window is independent of SVS epoch. Catalogue events are research-quality context, not a local radiation forecast or protection model. See https://ccmc.gsfc.nasa.gov/tools/DONKI/.
+| Reference location   | Values used                                             | Where they affect results                                                   |
+| -------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------- |
+| PDF page 27, Table 7 | LROC 16.5 kg / 27.6 W; LOLA 15.3 kg / 39.6 W            | Selected payload mass and continuous orbit-average electrical allowance     |
+| PDF page 7, Table 2  | LROC NAC 515 + WAC 41 = 556 Gbit/day; LOLA 1.4 Gbit/day | Planned and produced science volume under the authored observation schedule |
 
-Reproduce the compact bundle with `node scripts/exploration/prepare-engineering.mjs` after preparing the Atlas/Signal products. The script copies their reference samples and provenance and retrieves a dated DONKI snapshot; failures are recorded explicitly. Only a ~10 kB reference JSON is bundled into the lazy-loaded Engineering Lab; maps and full instrument files are not duplicated.
+These are historical pre-launch allocations and reference volumes. They are not measured modern instrument performance, procurement specifications, or instantaneous on/off power. Table 7 is used consistently instead of mixing the paper's differing design estimates. Full camera-suite mass and power accompany the combined NAC/WAC data volume.
 
-Run `node --import ./scripts/register-workspace.mjs scripts/check-nasa-engineering.mjs` for solar geometry/units, BVAD totals, invalid inputs, effect on electrical outcome, event parsing/link restrictions, partial HTTP failure, date windows and bundle integrity. Browser checks verify site/crew changes, apply-to-power behavior, live refresh and saved solar provenance. The page retains the main violet theme.
+Planned volume is `reference Gbit/day × observationMinutes / 120`. Each powered observation minute generates `reference Gbit/day / 1440`. This is an authored scaling of reference daily-average volume, not a camera acquisition or mapping-coverage model. Scientific data returned is a resource outcome, not evidence that a particular image resolution or ground coverage has been achieved.
+
+## NASA framework: review and report
+
+NASA Goddard Mission Design Lab: https://etd.gsfc.nasa.gov/capabilities/integrated-design-center/mission-design-lab/.
+
+Its requirements, alternatives, mass/power/data estimates, technical-risk and recommendations structure informs the checklist, A/B trade study and report. This is a framework reference, not numerical data, certification, or an official Concept Maturity Level score.
+
+## Educational model and provenance
+
+The source register and expandable **Calculation → source map** explain every output. All authored values and equations are exported:
+
+- Mass = 120 kg bus + 3 kg radio + 1 kg storage + battery Wh / 120 Wh/kg + array W / 50 W/kg + payload allocation. Radio/storage mass is fixed in this simplified model.
+- Bus electrical demand is 60 W. Selected payload allocations remain constant. Electrical transmitter demand applies while data is waiting during a contact.
+- Battery starts full. Solar directly supplies loads first. Battery efficiencies are 90% charge / 95% discharge; capacity saturation, curtailed generation and unserved load are separate accounts. A shortfall stops observation/downlink for that minute.
+- RF power is 30% of electrical transmitter input; 32 GHz, 30/60 dBi transmit/receive gain and 3 dB losses. Received power relative to −140 dBW at an authored 10 Mbps reference sets a proportional capacity, capped at 100 Mbps. This assumes fixed noise/bandwidth/coding conditions.
+- Data in shared storage/downlink is mixed proportionally across instruments. Overflow is lost; data still in storage at the deadline is not returned science. Planned requirements remain unchanged during power failures.
+- Credits = 140 + battery Wh × 0.06 + array W × 0.08 + storage Gbit × 0.8 + transmitter W × 0.5 + LROC 35 + LOLA 25 when selected. These are simulation credits, not NASA costs.
+- Review requires the objective's instruments, mass/credit limits, no unserved electrical demand, at least 20% minimum battery reserve, no storage loss, and at least 80% of planned data returned for each required instrument. The percentages are lab-defined.
+
+Energy conservation: initial battery + generation = served demand + conversion losses + curtailed energy + final battery. Per instrument: produced science = returned + stored + lost. The simulation is deterministic, minute-resolved and immutable; displayed charts sample the state every five minutes. The link summary is at 12:00 TDB, while downlink integration uses interpolated geometry every minute.
+
+Unmodeled requirements remain explicit in the review and report: launch/propulsion, propagated orbit/eclipses/access, detailed radio/pointing/noise, thermal/radiation, reliability and actual procurement cost. A resource pass is not a complete or flight-qualified mission design.
+
+## Export
+
+**Export JSON** includes the model version, mission inputs, complete NASA vectors and query metadata, calculated results, pinned design and its results, source register, output-to-source derivations and open requirements. **Print / Save PDF** opens a self-contained report and the browser print dialog; choose Save as PDF. The printable report includes architecture, equipment, results, comparison summary, source locations, exact API query, equations and assumptions. Mission text is escaped and the report has a restrictive content-security policy. No external PDF service receives the draft.
+
+## Implementation and verification
+
+The UI is isolated under `apps/web/src/features/engineering/blueprint`; mathematical engines live in `@exo/engine/engineering` and reference data in `@exo/data/engineering`. The existing standalone-page component facade and legacy study are preserved. The only Vite configuration addition registers the lab-specific API adapter.
+
+Run:
+
+```sh
+node --import ./scripts/register-workspace.mjs --test scripts/check-blueprint.mjs
+node --import ./scripts/register-workspace.mjs scripts/check-engineering.mjs
+node --import ./scripts/register-workspace.mjs scripts/check-nasa-engineering.mjs
+pnpm run lint
+pnpm --filter @exo/data exec tsc --noEmit
+pnpm --filter @exo/engine exec tsc --noEmit
+pnpm --filter @exo/web exec tsc --noEmit -p tsconfig.app.json
+pnpm run build
+pnpm run format:check
+```
+
+Model tests cover conservation, immutable/deterministic output, distinct constraints, geometry sensitivity, invalid dates/drafts, source integrity, API parsing/failure/success and escaped provenance-complete reports. Browser checks cover design changes, comparison, save/reload, source navigation, JSON/report export, NASA refresh/failure and landscape layouts. Physical devices, screen readers and user studies require separate validation.

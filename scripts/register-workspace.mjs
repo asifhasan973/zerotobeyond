@@ -13,9 +13,16 @@ registerHooks({
       );
     else if (specifier.startsWith("@/"))
       path = resolve(root, "apps/web/src", specifier.slice(2));
-    else if (specifier.startsWith("@exo/"))
-      path = resolve(root, "packages", specifier.slice(5), "src/index.ts");
-    else if (
+    else if (specifier.startsWith("@exo/")) {
+      const [workspace, ...subpath] = specifier.slice(5).split("/");
+      path = resolve(
+        root,
+        "packages",
+        workspace,
+        "src",
+        subpath.length ? subpath.join("/") : "index.ts",
+      );
+    } else if (
       specifier.startsWith(".") &&
       context.parentURL?.startsWith("file:")
     )
