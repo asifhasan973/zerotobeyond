@@ -37,6 +37,14 @@ try {
   const act = (event) => {
     mission = reduceMission(mission, event);
   };
+  const orbitSkip = advanceMissionSkip(mission);
+  assert.equal(orbitSkip.progress.stepId, "moon-transfer");
+  assert.equal(orbitSkip.moon.journey.stage, "coast");
+  assert.equal(
+    orbitSkip.moon.journey.storm.phase,
+    "alert",
+    "skip before journey lands at the storm, not lunar orbit",
+  );
   act({ type: "journey-date", date: TRANSFER_DATES[0] });
   const { writeSelectionSession } = await load("crew/selectionSession.ts");
   const data = new Map();
@@ -80,7 +88,13 @@ try {
     "mid",
     "Skip must retain the locked lunar target",
   );
-  assert.equal(skipped.moon.journey.stage, "complete");
+  assert.equal(skipped.moon.journey.stage, "coast");
+  assert.equal(skipped.moon.journey.storm.phase, "alert");
+  assert.equal(skipped.progress.stepId, "moon-transfer");
+  assert.equal(
+    restoreJourney(skipped.moon.journey, skipped.moon).storm.phase,
+    "alert",
+  );
   assert.equal(
     reduceJourney(
       j,
@@ -110,6 +124,118 @@ try {
   assert.ok((mission.moon.journey.dv ?? 0) >= report.tliMS * 0.992);
   act({ type: "journey-finish-burn" });
   assert.equal(mission.moon.journey.stage, "coast");
+  for (let i = 0; i < 56; i++) act({ type: "journey-tick", seconds: 0.25 });
+  assert.equal(mission.moon.journey.stage, "coast");
+  assert.equal(mission.moon.journey.storm.phase, "alert");
+  if (process.env.SOLAR_SAVE_OUTPUT) {
+    writeSelectionSession(
+      {
+        getItem: (key) => data.get(key) ?? null,
+        setItem: (key, value) => data.set(key, value),
+      },
+      mission.progress,
+      false,
+      mission.preparation,
+      mission.readiness,
+      mission.flight,
+      mission.moon,
+      mission.repair,
+    );
+    writeFileSync(process.env.SOLAR_SAVE_OUTPUT, [...data.values()][0]);
+  }
+  const oldCoast = {
+    ...mission.moon.journey,
+    storm: undefined,
+    commands: mission.moon.journey.commands.filter(
+      (c) => c.type !== "journey-storm-trigger",
+    ),
+  };
+  const restoredOldCoast = restoreJourney(oldCoast, mission.moon);
+  assert.equal(restoredOldCoast.stage, "coast");
+  let migratedCoast = { ...restoredOldCoast, elapsed: 8, paused: false };
+  migratedCoast = reduceJourney(
+    migratedCoast,
+    { type: "journey-tick", seconds: 0.05 },
+    mission.moon,
+  );
+  assert.equal(
+    migratedCoast.storm.phase,
+    "alert",
+    "old coast past trigger receives shelter on next tick",
+  );
+  const assistedShelter = advanceMissionSkip(mission);
+  assert.equal(assistedShelter.moon.journey.stage, "complete");
+  assert.equal(assistedShelter.moon.journey.assisted, true);
+  act({ type: "journey-storm", action: { kind: "briefing-next" } });
+  assert.equal(mission.moon.journey.storm.intro, 1);
+  act({ type: "journey-storm", action: { kind: "briefing-next" } });
+  assert.equal(
+    restoreJourney(mission.moon.journey, mission.moon).storm.intro,
+    2,
+  );
+  const heldElapsed = mission.moon.journey.elapsed;
+  act({ type: "journey-storm", action: { kind: "start" } });
+  act({
+    type: "journey-storm",
+    action: { kind: "place", item: "food", slot: "water" },
+  });
+  assert.equal(mission.moon.journey.storm.bundles.length, 0);
+  for (const item of ["water", "food", "supplies"])
+    act({ type: "journey-storm", action: { kind: "place", item, slot: item } });
+  for (const member of [0, 1, 2])
+    act({ type: "journey-storm", action: { kind: "crew", member } });
+  let restoredShelter = restoreJourney(mission.moon.journey, mission.moon);
+  assert.equal(restoredShelter.storm.crew.length, 3);
+  assert.equal(restoredShelter.storm.phase, "crew");
+  act({ type: "journey-storm", action: { kind: "back" } });
+  assert.deepEqual(mission.moon.journey.storm.crew, [0, 1]);
+  act({ type: "journey-storm", action: { kind: "crew", member: 2 } });
+  act({ type: "journey-storm", action: { kind: "monitor" } });
+  if (process.env.RADIATION_SAVE_OUTPUT) {
+    writeSelectionSession(
+      {
+        getItem: (key) => data.get(key) ?? null,
+        setItem: (key, value) => data.set(key, value),
+      },
+      mission.progress,
+      false,
+      mission.preparation,
+      mission.readiness,
+      mission.flight,
+      mission.moon,
+      mission.repair,
+    );
+    writeFileSync(process.env.RADIATION_SAVE_OUTPUT, [...data.values()][0]);
+  }
+  act({ type: "journey-pause" });
+  act({ type: "journey-tick", seconds: 0.25 });
+  assert.equal(mission.moon.journey.storm.monitoring, 0);
+  act({ type: "journey-resume" });
+  for (let i = 0; i < 40; i++) act({ type: "journey-tick", seconds: 0.25 });
+  restoredShelter = restoreJourney(mission.moon.journey, mission.moon);
+  assert.equal(restoredShelter.storm.monitoring, 10);
+  assert.equal(restoredShelter.storm.phase, "monitoring");
+  for (let i = 0; i < 40; i++) act({ type: "journey-tick", seconds: 0.25 });
+  assert.equal(mission.moon.journey.storm.phase, "checks");
+  act({ type: "journey-storm", action: { kind: "finish" } });
+  assert.equal(
+    mission.moon.journey.storm.phase,
+    "checks",
+    "all three checks required",
+  );
+  for (const system of ["power", "navigation", "radio"])
+    act({ type: "journey-storm", action: { kind: "check", system } });
+  const beforeReplay = mission;
+  act({ type: "journey-storm", action: { kind: "replay" } });
+  assert.equal(mission.moon.journey.storm.phase, "alert");
+  assert.deepEqual(mission.moon.journey.storm.bundles, []);
+  mission = beforeReplay;
+  act({ type: "journey-storm", action: { kind: "finish" } });
+  assert.equal(
+    mission.moon.journey.elapsed,
+    heldElapsed,
+    "shelter must not advance flight progression",
+  );
   for (let i = 0; i < 56; i++) act({ type: "journey-tick", seconds: 0.25 });
   assert.equal(mission.moon.journey.stage, "loi-window");
   act({ type: "journey-burn" });
@@ -145,6 +271,16 @@ try {
   );
   const reloaded = restoreJourney(j, mission.moon);
   assert.equal(reloaded.stage, "complete");
+  const oldCompleted = {
+    ...j,
+    storm: undefined,
+    commands: j.commands.filter((c) => !c.type.startsWith("journey-storm")),
+  };
+  assert.equal(
+    restoreJourney(oldCompleted, mission.moon).stage,
+    "complete",
+    "legacy completion remains complete",
+  );
   assert.equal(reloaded.orbitTier, "mid");
   assert.equal(reloaded.loiUsed, j.loiUsed);
   assert.deepEqual(

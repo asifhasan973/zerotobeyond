@@ -1,3 +1,4 @@
+import { shelterActive } from "../flight/journey/radiation/radiation";
 import { STORY_FLOW } from "../core/flow";
 import { replayMissionPage } from "../core/missionReplay";
 import { useState, useCallback, useEffect, useRef } from "react";
@@ -138,6 +139,15 @@ export function useStoryNavigationState({
       dispatch({ type: "return-back" });
       return;
     }
+    if (
+      !mission.review &&
+      progress.stepId === "moon-transfer" &&
+      shelterActive(mission.moon.journey.storm) &&
+      !!mission.moon.journey.storm?.history.length
+    ) {
+      dispatch({ type: "journey-storm", action: { kind: "back" } });
+      return;
+    }
     if (progress.stepId === "player-name") setHome(true);
     else dispatch({ type: "back" });
   }, [
@@ -145,6 +155,8 @@ export function useStoryNavigationState({
     overviewOpen,
     progress.stepId,
     mission.moon.returnFlight.stage,
+    mission.moon.journey.storm,
+    mission.review,
   ]);
 
   const replay = useCallback(() => {
@@ -153,6 +165,16 @@ export function useStoryNavigationState({
     setOverviewOpen(null);
     setAutoplay(true);
     setMission((current) => {
+      if (
+        !current.review &&
+        current.progress.stepId === "moon-transfer" &&
+        shelterActive(current.moon.journey.storm)
+      ) {
+        return reduceMission(
+          { ...current, past: [], future: [] },
+          { type: "journey-storm", action: { kind: "replay" } },
+        );
+      }
       if (current.progress.stepId === "crew-return")
         return reduceMission(current, { type: "return-replay" });
       const stepIndex = STORY_FLOW.findIndex(

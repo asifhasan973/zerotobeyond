@@ -48,8 +48,8 @@
 
 ## Verification & Quality Checklist
 
-- [ ] **TypeScript Check**: `npx tsc --noEmit` passes with 0 errors
-- [ ] **Production Build**: Production build succeeds cleanly (`npm run build`)
+- [ ] **TypeScript Check**: TypeScript project checks included in `pnpm run build` pass
+- [ ] **Production Build**: Production build succeeds cleanly (`pnpm run build`)
 - [ ] **Universal State Freeze**: Verifiably freezes simulations, audio, and animations during orientation blocks / loading sequences
 - [ ] **Zero Asset Popping**: Heavy textures, meshes, and buffers preload without layout shifts
 - [ ] **Leakage Policy**: Scanned working tree for zero internal execution briefs, metadata, or tooling references

@@ -1,3 +1,4 @@
+import { STORM_STORY } from "@/game/moon/flight/journey/radiation/stormAssets";
 import {
   preloadImage,
   maintainBrowserAssetCache,
@@ -166,6 +167,7 @@ export async function preloadMissionSubsystems(
     // 3. Heavy mission visuals, celestial textures & character rig atlases (20% milestone target: 70% -> 90%)
     onProgress(75, "Decoding astronaut dossiers & lunar surface maps…");
     const missionVisualAssets = [
+      ...STORM_STORY.map((scene) => scene.src),
       // 3D Flight celestial textures
       "/story/flight/earth-blue-marble.jpg",
       "/story/flight/moon-lroc.jpg",

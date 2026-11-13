@@ -1,3 +1,4 @@
+import { shelterActive } from "./radiation/radiation";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
@@ -228,6 +229,7 @@ export function JourneyViewport({
         );
         lunarOrbitRing.visible = false;
         scene.add(lunarOrbitRing);
+        let shelterClock = 0;
         let orbitClock = 0,
           lastTime = 0;
         let previous = "",
@@ -500,9 +502,17 @@ export function JourneyViewport({
               .normalize()
               .lerp(new THREE.Vector3(...path.radial), outwardBlend)
               .normalize();
+            if (moving && shelterActive(j.storm) && !reducedMotion.current)
+              shelterClock += dt;
             const craftOffset = cameraOutward
               .multiplyScalar(1.4)
-              .addScaledVector(normalUp, 0.8);
+              .addScaledVector(
+                normalUp,
+                0.8 +
+                  (shelterActive(j.storm) && !reducedMotion.current
+                    ? 0.025 * Math.sin(shelterClock * 0.65)
+                    : 0),
+              );
             const modeChanged = v !== previousMode;
             if (modeChanged) {
               manualCamera = false;

@@ -1,3 +1,4 @@
+import { SolarShelter, shelterActive } from "./radiation";
 import { SourceNotes } from "../../core/learning/SourceNotes";
 import {
   TRANSFER_DATES,
@@ -50,6 +51,7 @@ export function JourneyScreen({
 }) {
   const { moon, progress, preparation } = session,
     j = moon.journey,
+    stormActive = shelterActive(j.storm),
     { effects, gentle } = useGameSettings();
   const [panel, setPanel] = useState<"model" | "back" | "orbit" | null>(null);
   const selection = progress.stepId === "earth-orbit",
@@ -413,6 +415,7 @@ export function JourneyScreen({
           }}
           onNext={next}
           nextLabel={nextLabel}
+          nextHidden={stormActive}
           nextDisabled={
             !!panel ||
             frozen ||
@@ -470,22 +473,24 @@ export function JourneyScreen({
     >
       <main
         data-burn-direction={windowStage ? correct : undefined}
-        className={`workshop-main journey-main ${windowStage ? "is-window" : ""} ${pilot ? "is-pilot" : ""}`}
+        className={`workshop-main journey-main ${stormActive ? "is-solar" : ""} ${windowStage ? "is-window" : ""} ${pilot ? "is-pilot" : ""}`}
         id="story-content"
         tabIndex={-1}
         aria-labelledby="journey-title"
       >
         <div className="journey-heading">
           <h1 id="journey-title">
-            {selection
-              ? "Choose your Moon route"
-              : complete
-                ? "Hello, lunar orbit!"
-                : j.stage === "coast"
-                  ? "Next stop: the Moon"
-                  : j.stage.startsWith("loi")
-                    ? "Capture lunar orbit"
-                    : "Fly your departure burn"}
+            {stormActive
+              ? "Protect our crew"
+              : selection
+                ? "Choose your Moon route"
+                : complete
+                  ? "Hello, lunar orbit!"
+                  : j.stage === "coast"
+                    ? "Next stop: the Moon"
+                    : j.stage.startsWith("loi")
+                      ? "Capture lunar orbit"
+                      : "Fly your departure burn"}
           </h1>
           <div className="journey-heading-actions">
             <button
@@ -526,12 +531,25 @@ export function JourneyScreen({
             ) : null}
           </div>
           <p className="journey-advice">
-            <LearningText text={advice} />
+            <LearningText
+              text={
+                stormActive
+                  ? "Commander: Prepare the cabin shelter. Keep everyone inside until the all-clear."
+                  : advice
+              }
+            />
           </p>
         </div>
         <div className="journey-layout">
           <section className="journey-console" aria-label="Journey controls">
-            {selection ? (
+            {stormActive ? (
+              <SolarShelter
+                storm={j.storm!}
+                session={session}
+                disabled={frozen || j.paused || !!panel}
+                act={(action) => act({ type: "journey-storm", action })}
+              />
+            ) : selection ? (
               <>
                 <label className="journey-date">
                   Departure date · TDB
@@ -728,12 +746,12 @@ export function JourneyScreen({
                 </p>
               </>
             )}
-            {j.feedback && !pilotBurn ? (
+            {j.feedback && !pilotBurn && !stormActive ? (
               <p className="journey-alert" role="alert">
                 {j.feedback}
               </p>
             ) : null}
-            {!selection ? (
+            {!selection && !stormActive ? (
               <>
                 <p className="journey-resource-line">
                   Fuel{" "}

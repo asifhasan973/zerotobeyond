@@ -79,6 +79,12 @@ export function useStoryPersistence(
         : "";
   const landingCheckpoint = Math.floor(moon.landing.steps / 30);
   const journeyCheckpoint = Math.floor(moon.journey.elapsed * 2);
+  const shelterCheckpoint = JSON.stringify(
+    moon.journey.storm && {
+      ...moon.journey.storm,
+      monitoring: Math.floor(moon.journey.storm.monitoring * 2),
+    },
+  );
   const trialCheckpoint = Math.floor(readiness.trial.progress * 10);
 
   useEffect(() => {
@@ -125,6 +131,7 @@ export function useStoryPersistence(
     moon.designSignature,
     moon.human,
     moon.phase,
+    shelterCheckpoint,
     moon.journey.stage,
     moon.journey.route,
     moon.journey.date,

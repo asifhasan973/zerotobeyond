@@ -217,6 +217,13 @@ export function advanceMissionSkip(source: WorkshopSession): WorkshopSession {
     source.moon.journey.stage !== "route" &&
     source.moon.journey.route
   ) {
+    if (
+      currentStep.id === "moon-transfer" &&
+      (!source.moon.journey.storm ||
+        source.moon.journey.storm.phase === "waiting")
+    ) {
+      return reduceMission(source, { type: "journey-skip-to-storm" });
+    }
     const completed = reduceMission(source, { type: "journey-skip" });
     const assisted =
       currentStep.id === "lunar-orbit"
@@ -244,10 +251,14 @@ export function advanceMissionSkip(source: WorkshopSession): WorkshopSession {
     site: source.progress.selections.site as ChoiceId | undefined,
   });
   if (!seeded) return source;
+  const destination =
+    currentStep.id === "earth-orbit"
+      ? reduceMission(seeded, { type: "journey-skip-to-storm" })
+      : seeded;
 
   // Build merged selections preserving player decisions
   const selections = {
-    ...seeded.progress.selections,
+    ...destination.progress.selections,
     ...source.progress.selections,
   };
   if (currentStep.kind === "choice" && !selections[currentStep.choiceKey]) {
@@ -258,7 +269,7 @@ export function advanceMissionSkip(source: WorkshopSession): WorkshopSession {
   }
 
   // Ensure current step's activity is marked complete if applicable
-  const completed = new Set(seeded.progress.completedActivities ?? []);
+  const completed = new Set(destination.progress.completedActivities ?? []);
   for (const act of source.progress.completedActivities ?? []) {
     completed.add(act);
   }
@@ -278,40 +289,40 @@ export function advanceMissionSkip(source: WorkshopSession): WorkshopSession {
     effectiveObjective === "lunar-ice" ? "astrobiologist" : "geologist";
   const defaultSupport = "robotics-specialist";
   const mergedCrew = {
-    ...seeded.moon.crew,
+    ...destination.moon.crew,
     scientist:
       source.moon?.crew?.scientist ||
-      seeded.moon?.crew?.scientist ||
+      destination.moon?.crew?.scientist ||
       defaultScientist,
     support:
       source.moon?.crew?.support ||
-      seeded.moon?.crew?.support ||
+      destination.moon?.crew?.support ||
       defaultSupport,
   };
 
   return {
-    ...seeded,
+    ...destination,
     moon:
       targetStep.module >= 3 && targetStep.id !== "crew-selection"
         ? {
-            ...seeded.moon,
+            ...destination.moon,
             crew: mergedCrew,
             ...(currentStep.module >= 8 &&
             source.moon.crewOperations.flagPlanted
               ? {
                   crewOperations: {
                     ...source.moon.crewOperations,
-                    signature: seeded.moon.designSignature,
+                    signature: destination.moon.designSignature,
                   },
                 }
               : {}),
           }
-        : seeded.moon,
+        : destination.moon,
     progress: {
-      ...seeded.progress,
-      playerName: source.progress.playerName || seeded.progress.playerName,
+      ...destination.progress,
+      playerName: source.progress.playerName || destination.progress.playerName,
       playerGender:
-        source.progress.playerGender ?? seeded.progress.playerGender,
+        source.progress.playerGender ?? destination.progress.playerGender,
       selections,
       history: [
         ...source.progress.history,
@@ -322,12 +333,12 @@ export function advanceMissionSkip(source: WorkshopSession): WorkshopSession {
       ],
       completedActivities: [...completed],
       milestones: {
-        ...seeded.progress.milestones,
+        ...destination.progress.milestones,
         introduced: true,
         celebrated: [
           ...new Set([
             ...(source.progress.milestones?.celebrated ?? []),
-            ...(seeded.progress.milestones?.celebrated ?? []),
+            ...(destination.progress.milestones?.celebrated ?? []),
           ]),
         ],
       },

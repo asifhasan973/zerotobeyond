@@ -1,4 +1,13 @@
 import {
+  emptyShelter,
+  shelterActive,
+  reduceShelter,
+  tickShelter,
+  restoreShelter,
+  type ShelterState,
+  type ShelterAction,
+} from "./radiation/radiation";
+import {
   transferSolution,
   lunarArrival,
   captureOrbit,
@@ -48,6 +57,7 @@ export type JourneyStage =
 export type BurnDirection = "prograde" | "retrograde";
 export interface JourneyState {
   version: 1 | 2;
+  storm?: ShelterState;
   commands?: JourneyEvent[];
   captureModel?: 2;
   burnSeconds?: number;
@@ -75,6 +85,7 @@ export interface JourneyState {
 }
 export const emptyJourney = (): JourneyState => ({
   version: 1,
+  storm: emptyShelter(),
   signature: null,
   route: null,
   stage: "route",
@@ -259,6 +270,8 @@ export function journeyResources(
   };
 }
 export type JourneyEvent =
+  | { type: "journey-storm-trigger" }
+  | { type: "journey-storm"; action: ShelterAction }
   | { type: "journey-confirm" }
   | { type: "journey-select-orbit"; tier: LunarOrbitTierId }
   | { type: "journey-date"; date: string }
@@ -278,6 +291,7 @@ export type JourneyEvent =
   | { type: "journey-pause" }
   | { type: "journey-resume" }
   | { type: "journey-retry" }
+  | { type: "journey-skip-to-storm" }
   | { type: "journey-skip" }
   | { type: "journey-hint" };
 export function randomInitialAngle(): number {
@@ -302,6 +316,27 @@ function reduceJourneyCore(
   moon: MoonSession,
   replaying = false,
 ): JourneyState {
+  if (event.type === "journey-storm-trigger") {
+    if (j.stage !== "coast" || (j.storm && j.storm.phase !== "waiting"))
+      return j;
+    return {
+      ...j,
+      elapsed: Math.max(j.elapsed, TRANSFER_MODEL.coastScreenSeconds * 0.35),
+      firing: false,
+      storm: { ...emptyShelter(), phase: "alert" },
+    };
+  }
+  if (event.type === "journey-storm") {
+    if (j.stage !== "coast" || !shelterActive(j.storm)) return j;
+    const storm = reduceShelter(j.storm!, event.action);
+    return storm === j.storm ? j : { ...j, storm, paused: false };
+  }
+  if (shelterActive(j.storm) && event.type === "journey-tick") {
+    if (j.paused || !Number.isFinite(event.seconds) || event.seconds <= 0)
+      return j;
+    const storm = tickShelter(j.storm!, event.seconds);
+    return storm === j.storm ? j : { ...j, storm };
+  }
   if (event.type === "journey-confirm")
     return j.stage === "route" &&
       j.route &&
@@ -473,11 +508,45 @@ function reduceJourneyCore(
       feedback: null,
     };
   const route = j.route ? routeReport(moon, j.route) : null;
+  if (event.type === "journey-skip-to-storm") {
+    if (
+      !route?.feasible ||
+      j.stage === "route" ||
+      j.stage === "complete" ||
+      (j.storm && j.storm.phase !== "waiting")
+    )
+      return j;
+    const skipped = reduceJourneyCore(
+      j,
+      { type: "journey-skip" },
+      moon,
+      replaying,
+    );
+    return {
+      ...skipped,
+      stage: "coast",
+      elapsed: TRANSFER_MODEL.coastScreenSeconds * 0.35,
+      burns: ["tli"],
+      storm: { ...emptyShelter(), phase: "alert" },
+      angle: 0,
+      loiUsed: 0,
+      dv: route.tliMS,
+      radialDv: 0,
+      feedback: null,
+    };
+  }
   if (event.type === "journey-skip")
     return j.stage !== "route" && route?.feasible
       ? {
           ...j,
           stage: "complete",
+          storm: {
+            ...emptyShelter(),
+            phase: "complete",
+            bundles: ["water", "food", "supplies"],
+            crew: [0, 1, 2],
+            checks: ["power", "navigation", "radio"],
+          },
           burns: ["tli", "loi"],
           elapsed: TRANSFER_MODEL.burnScreenSeconds,
           assisted: true,
@@ -629,6 +698,19 @@ function reduceJourneyCore(
     limit,
     j.elapsed + Math.min(event.seconds, 0.25) * j.speed,
   );
+  if (
+    j.stage === "coast" &&
+    !replaying &&
+    (!j.storm || j.storm.phase === "waiting") &&
+    elapsed >= limit * 0.35
+  ) {
+    return {
+      ...j,
+      elapsed: Math.max(j.elapsed, limit * 0.35),
+      firing: false,
+      storm: { ...emptyShelter(), phase: "alert" },
+    };
+  }
   if (elapsed < limit) return { ...j, elapsed };
   if (window)
     return {
@@ -660,9 +742,13 @@ export function reduceJourney(
   const next = reduceJourneyCore(j, event, moon);
   if (next === j || next.version !== 2) return next;
   const command =
-    event.type === "journey-tick"
-      ? { ...event, seconds: Math.min(0.25, event.seconds) }
-      : event;
+    event.type === "journey-tick" &&
+    next.storm?.phase === "alert" &&
+    !shelterActive(j.storm)
+      ? { type: "journey-storm-trigger" as const }
+      : event.type === "journey-tick"
+        ? { ...event, seconds: Math.min(0.25, event.seconds) }
+        : event;
   const prefix =
     j.version === 1 && j.route
       ? [{ type: "journey-route" as const, id: j.route }]
@@ -726,8 +812,11 @@ export function restoreJourney(raw: unknown, moon: MoonSession): JourneyState {
       ...emptyJourney(),
       signature: moon.designSignature,
       captureModel: saved.captureModel,
+      storm: saved.storm === undefined ? undefined : emptyShelter(),
     };
     const allowed = [
+      "journey-storm-trigger",
+      "journey-storm",
       "journey-date",
       "journey-select-orbit",
       "journey-route",
@@ -742,6 +831,7 @@ export function restoreJourney(raw: unknown, moon: MoonSession): JourneyState {
       "journey-pause",
       "journey-resume",
       "journey-retry",
+      "journey-skip-to-storm",
       "journey-skip",
       "journey-hint",
     ];
@@ -767,7 +857,9 @@ export function restoreJourney(raw: unknown, moon: MoonSession): JourneyState {
     return {
       ...rebuilt,
       commands: [...saved.commands],
-      paused: !["route", "complete"].includes(rebuilt.stage),
+      paused: shelterActive(rebuilt.storm)
+        ? false
+        : !["route", "complete"].includes(rebuilt.stage),
       firing: false,
     };
   }
@@ -795,6 +887,7 @@ export function restoreJourney(raw: unknown, moon: MoonSession): JourneyState {
     signature: moon.designSignature,
     route: route?.id ?? null,
     stage: saved.stage,
+    storm: saved.storm ? restoreShelter(saved.storm) : undefined,
     orbitTier: Object.hasOwn(LUNAR_ORBIT_TIERS, saved.orbitTier ?? "")
       ? saved.orbitTier
       : "low",
@@ -805,7 +898,9 @@ export function restoreJourney(raw: unknown, moon: MoonSession): JourneyState {
     speed: [1, 1.5, 2].includes(saved.speed) ? saved.speed : 1,
     direction: saved.direction === "retrograde" ? "retrograde" : "prograde",
     assisted: saved.assisted === true,
-    paused: saved.stage !== "route" && saved.stage !== "complete",
+    paused: shelterActive(saved.storm)
+      ? false
+      : saved.stage !== "route" && saved.stage !== "complete",
   };
 }
 

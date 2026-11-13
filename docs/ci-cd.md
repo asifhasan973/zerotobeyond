@@ -4,10 +4,14 @@ Production branch: `main` · output: `apps/web/dist/`.
 
 ## Automatic releases
 
+Canonical Pages project: `zerotobeyond` · URL: https://zerotobeyond.pages.dev/.
+A workflow file alone does not mean releases are enabled: check the workflow status
+and the actual deployment result before treating a Git push as a live release.
+
 `.github/workflows/deploy.yml` runs for pushes and merges to `main`, or a manual
 workflow dispatch on `main`. It installs locked pnpm dependencies via `pnpm/action-setup@v4` with Node.js 22,
 builds the production frontend via `pnpm run build`, deploys through Wrangler 4.151.2, and verifies the
-live URL. Releases run sequentially. Action versions are pinned to commit SHAs.
+live URL. Releases run sequentially. Checkout, Node setup and Wrangler action versions are pinned to commit SHAs.
 
 Missing credentials fail immediately; a green run cannot silently skip deployment.
 Cloudflare credentials are available only to credential validation and deployment,
