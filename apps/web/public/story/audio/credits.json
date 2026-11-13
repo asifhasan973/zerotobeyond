@@ -1,0 +1,3801 @@
+{
+  "voices": {
+    "chief": "en-US-GuyNeural",
+    "commander": "en-GB-SoniaNeural",
+    "commander-male": "en-US-AndrewNeural"
+  },
+  "format": "MP3",
+  "purpose": "Synthetic character narration",
+  "lines": [
+    {
+      "id": "rover-run-intro-0",
+      "character": "commander",
+      "text": "We\u2019ll control the rover from here."
+    },
+    {
+      "id": "rover-run-intro-1",
+      "character": "chief",
+      "text": "First, collect the sample in sunlight."
+    },
+    {
+      "id": "rover-run-setback-0",
+      "character": "chief",
+      "text": "Too hard to drill. Try the nearby site."
+    },
+    {
+      "id": "rover-run-setback-1",
+      "character": "commander",
+      "text": "New target marked. Let\u2019s try there."
+    },
+    {
+      "id": "rover-run-launch-0",
+      "character": "chief",
+      "text": "Both samples secured."
+    },
+    {
+      "id": "rover-run-launch-1",
+      "character": "commander",
+      "text": "Ready for ascent."
+    },
+    {
+      "id": "rover-radio-charge",
+      "character": "chief",
+      "text": "Hold the charge control. Then head into shadow."
+    },
+    {
+      "id": "rover-radio-charged",
+      "character": "chief",
+      "text": "Charged. The shadow outcrop is marked."
+    },
+    {
+      "id": "rover-radio-first",
+      "character": "commander",
+      "text": "First sample delivered. Recharge at Solar Ridge."
+    },
+    {
+      "id": "rover-radio-second",
+      "character": "commander",
+      "text": "Both samples delivered. Park the rover inside."
+    },
+    {
+      "id": "rocket-intro",
+      "character": "commander",
+      "text": "Match each rocket part to its outline."
+    },
+    {
+      "id": "rocket-engines",
+      "character": "commander",
+      "text": "Engine cluster locked. Ready to push!"
+    },
+    {
+      "id": "rocket-core",
+      "character": "commander",
+      "text": "Main tank secured."
+    },
+    {
+      "id": "rocket-interstage",
+      "character": "commander",
+      "text": "Stage connector locked."
+    },
+    {
+      "id": "rocket-upper",
+      "character": "commander",
+      "text": "Upper stage secured. Next stop, orbit!"
+    },
+    {
+      "id": "rocket-adapter",
+      "character": "commander",
+      "text": "Payload mount ready for our spacecraft."
+    },
+    {
+      "id": "rocket-lander",
+      "character": "commander",
+      "text": "Lunar lander aboard."
+    },
+    {
+      "id": "rocket-rover",
+      "character": "commander",
+      "text": "Our rover is packed for the Moon."
+    },
+    {
+      "id": "rocket-capsule",
+      "character": "commander",
+      "text": "Crew capsule secured."
+    },
+    {
+      "id": "rocket-cover-left",
+      "character": "commander",
+      "text": "Left cover sealed."
+    },
+    {
+      "id": "rocket-cover-right",
+      "character": "commander",
+      "text": "Right cover sealed."
+    },
+    {
+      "id": "rocket-tower",
+      "character": "commander",
+      "text": "Escape tower locked."
+    },
+    {
+      "id": "rocket-blocked",
+      "character": "commander",
+      "text": "Open the cover before loading the cargo."
+    },
+    {
+      "id": "rocket-wrong",
+      "character": "commander",
+      "text": "Try the matching outline."
+    },
+    {
+      "id": "rocket-open",
+      "character": "commander",
+      "text": "Bay open. Load the cargo first."
+    },
+    {
+      "id": "rocket-complete",
+      "character": "commander",
+      "text": "Rocket complete! Ready for the launch pad."
+    },
+    {
+      "id": "rocket-removed",
+      "character": "commander",
+      "text": "Part removed. Try another fit."
+    },
+    {
+      "id": "geo-site-01",
+      "character": "commander",
+      "text": "Choose highlands for ancient crust, or an old crater for impact clues."
+    },
+    {
+      "id": "geo-scout",
+      "character": "commander",
+      "text": "Visit the rock patch, then return to Base."
+    },
+    {
+      "id": "geo-sensorSite",
+      "character": "commander",
+      "text": "Put the sensor on quiet ground, away from our wheels."
+    },
+    {
+      "id": "geo-sensorWrong",
+      "character": "commander",
+      "text": "Wheels shake the sensor. Place it on the ground instead."
+    },
+    {
+      "id": "geo-listening",
+      "character": "commander",
+      "text": "Listening to ground shakes. A signal is not a map of the Moon\u2019s inside."
+    },
+    {
+      "id": "geo-sampleLimit",
+      "character": "commander",
+      "text": "Sample box full. Keep the samples we already collected."
+    },
+    {
+      "id": "geo-plan",
+      "character": "commander",
+      "text": "Pick a rock site. Survey it, then collect and test a sample."
+    },
+    {
+      "id": "geo-travel",
+      "character": "commander",
+      "text": "Rover on its way. The return path is saved!"
+    },
+    {
+      "id": "geo-survey",
+      "character": "commander",
+      "text": "Camera and fitted radar are surveying this patch."
+    },
+    {
+      "id": "geo-drill",
+      "character": "commander",
+      "text": "Collecting a sample! A deeper drill uses more energy."
+    },
+    {
+      "id": "geo-analysis",
+      "character": "commander",
+      "text": "Testing the rock with the tools you packed."
+    },
+    {
+      "id": "geo-returning",
+      "character": "commander",
+      "text": "Measurements stored. Coming back to a radio link!"
+    },
+    {
+      "id": "geo-charge",
+      "character": "commander",
+      "text": "Sunlight is charging our rover. Save energy for science!"
+    },
+    {
+      "id": "geo-clue",
+      "character": "commander",
+      "text": "Picture saved. Collect and test a rock for stronger clues."
+    },
+    {
+      "id": "geo-report",
+      "character": "commander",
+      "text": "Match the rock type to the tool cards."
+    },
+    {
+      "id": "geo-wrong",
+      "character": "commander",
+      "text": "That answer needs more evidence. Check the tool cards."
+    },
+    {
+      "id": "geo-confirm",
+      "character": "commander",
+      "text": "The rock clues agree! Send this finding to our team."
+    },
+    {
+      "id": "geo-negative",
+      "character": "commander",
+      "text": "No water detected here. A useful result!"
+    },
+    {
+      "id": "geo-inconclusive",
+      "character": "commander",
+      "text": "Still unsure. Save the clues without guessing the rock type."
+    },
+    {
+      "id": "geo-transmit",
+      "character": "commander",
+      "text": "Sending our measurements to the mission team."
+    },
+    {
+      "id": "geo-delivered",
+      "character": "commander",
+      "text": "Data delivered! Bring the rover back to Base."
+    },
+    {
+      "id": "geo-complete",
+      "character": "commander",
+      "text": "Science safely stored. Our crew\u2019s return comes next!"
+    },
+    {
+      "id": "geo-reserve",
+      "character": "commander",
+      "text": "This trip needs more energy. Charge or choose a closer site."
+    },
+    {
+      "id": "geo-thermal",
+      "character": "commander",
+      "text": "Too cold for this kit. Try the light-rock patch."
+    },
+    {
+      "id": "geo-terrain",
+      "character": "commander",
+      "text": "No safe path with these wheels. Try a closer site."
+    },
+    {
+      "id": "geo-duplicate",
+      "character": "commander",
+      "text": "We already measured that. Try another site or depth."
+    },
+    {
+      "id": "geo-paused",
+      "character": "commander",
+      "text": "Science paused. Continue when you\u2019re ready."
+    },
+    {
+      "id": "geo-failed",
+      "character": "commander",
+      "text": "Rover stopped. Retry this expedition from its saved start."
+    },
+    {
+      "id": "geo-noLink",
+      "character": "commander",
+      "text": "Return to a linked waypoint before sending the data."
+    },
+    {
+      "id": "geo-sampleFirst",
+      "character": "commander",
+      "text": "Pictures alone cannot name a rock. Use a mineral or element tool."
+    },
+    {
+      "id": "geo-recovery",
+      "character": "commander",
+      "text": "Park, relay, seal samples, then check our crew."
+    },
+    {
+      "id": "geo-samplesStowed",
+      "character": "commander",
+      "text": "Samples sealed and labeled. Ready to bring them home!"
+    },
+    {
+      "id": "return-ready",
+      "character": "commander",
+      "text": "Rover parked. Data sent. Bring our two Moon explorers back to orbit!"
+    },
+    {
+      "id": "return-ascending",
+      "character": "commander",
+      "text": "Only the upper cabin lifts off. The legs and rover stay on the Moon."
+    },
+    {
+      "id": "return-rendezvous",
+      "character": "commander",
+      "text": "Line up the cabins. Slow down before you dock."
+    },
+    {
+      "id": "return-unsafeDock",
+      "character": "commander",
+      "text": "Too fast or off-center! Brake and line up. We\u2019re holding safely."
+    },
+    {
+      "id": "return-docked",
+      "character": "commander",
+      "text": "All three crew together! Leave the empty lander. Fire toward Earth."
+    },
+    {
+      "id": "return-burning",
+      "character": "commander",
+      "text": "Our service engine sends us home. Keep the cabin attached."
+    },
+    {
+      "id": "return-coast",
+      "character": "commander",
+      "text": "Three days home, sped up. Our crew still uses food and power."
+    },
+    {
+      "id": "return-entry-ready",
+      "character": "commander",
+      "text": "Earth ahead! Leave the service module. Turn the heat shield forward."
+    },
+    {
+      "id": "return-shield",
+      "character": "commander",
+      "text": "Heat shield first! Earth\u2019s air slows our capsule."
+    },
+    {
+      "id": "return-wrongShield",
+      "character": "commander",
+      "text": "That points the nose into the heat. Turn the broad shield forward."
+    },
+    {
+      "id": "return-chute-ready",
+      "character": "commander",
+      "text": "We\u2019re low and slow enough now. Open the Earth parachutes!"
+    },
+    {
+      "id": "return-chutes",
+      "character": "commander",
+      "text": "Parachutes slow us over the ocean. Nearly home!"
+    },
+    {
+      "id": "return-splashdown",
+      "character": "commander",
+      "text": "Splashdown! All three crew are home. Let\u2019s see what we learned!"
+    },
+    {
+      "id": "return-fuel",
+      "character": "commander",
+      "text": "Hold here. We need enough ascent and Earth-return fuel."
+    },
+    {
+      "id": "return-reserve",
+      "character": "commander",
+      "text": "Hold here. Protect food and cabin power for the whole trip."
+    },
+    {
+      "id": "return-assisted",
+      "character": "commander",
+      "text": "Nice alignment! Assistance is recorded. Now dock gently."
+    },
+    {
+      "id": "incident-dust",
+      "character": "commander",
+      "text": "Dust is coating our tools. Less sunlight and fuzzier readings!"
+    },
+    {
+      "id": "incident-radio",
+      "character": "commander",
+      "text": "The ridge blocks our radio. The saved route will bring us back."
+    },
+    {
+      "id": "incident-power",
+      "character": "commander",
+      "text": "Our return energy is tight. Save power before doing more science."
+    },
+    {
+      "id": "incident-radiation",
+      "character": "commander",
+      "text": "Space-weather alert! Keep our crew inside the shelter."
+    },
+    {
+      "id": "incident-brush",
+      "character": "commander",
+      "text": "Crew cleaning at Base. Some sticky dust will remain."
+    },
+    {
+      "id": "incident-calibration",
+      "character": "commander",
+      "text": "Our systems expert is checking the sensor. Dust stays on the panels."
+    },
+    {
+      "id": "incident-wait",
+      "character": "commander",
+      "text": "Crew sheltered. Waiting for the space-weather all-clear."
+    },
+    {
+      "id": "incident-partial",
+      "character": "commander",
+      "text": "Fieldwork stopped safely. We\u2019ll keep the data we already have."
+    },
+    {
+      "id": "incident-kit",
+      "character": "commander",
+      "text": "No care kit aboard. Save the clues and keep a safe return path."
+    },
+    {
+      "id": "incident-evaBlocked",
+      "character": "commander",
+      "text": "No Moon walk during this alert. Keep the crew sheltered."
+    },
+    {
+      "id": "incident-radioBlocked",
+      "character": "commander",
+      "text": "More radio power cannot see through this ridge. Follow the saved plan."
+    },
+    {
+      "id": "incident-remote",
+      "character": "commander",
+      "text": "No live link here. The rover uses its preplanned safe fallback."
+    },
+    {
+      "id": "incident-unsafe",
+      "character": "commander",
+      "text": "That action would spend our return reserve. Choose a safer option."
+    },
+    {
+      "id": "incident-cleaned",
+      "character": "commander",
+      "text": "View improved! Some dust remains. Check the new power reading."
+    },
+    {
+      "id": "incident-calibrated",
+      "character": "commander",
+      "text": "Sensor checked. The panel is still dusty."
+    },
+    {
+      "id": "incident-shed",
+      "character": "commander",
+      "text": "Gas tool off. Heaters and navigation stay on."
+    },
+    {
+      "id": "incident-shorter",
+      "character": "commander",
+      "text": "Shorter sample selected. Check its return-energy estimate."
+    },
+    {
+      "id": "incident-closer",
+      "character": "commander",
+      "text": "Closer science site selected. Check the new trip estimate."
+    },
+    {
+      "id": "incident-linked",
+      "character": "commander",
+      "text": "Radio reconnected. Our stored measurements are still safe."
+    },
+    {
+      "id": "incident-clear",
+      "character": "commander",
+      "text": "Space-weather all-clear. Surface work can resume."
+    },
+    {
+      "id": "incident-accepted",
+      "character": "commander",
+      "text": "Safe plan selected. Watch the rover carry it out."
+    },
+    {
+      "id": "incident-recovery",
+      "character": "commander",
+      "text": "Park the rover, relay all data, then check our crew."
+    },
+    {
+      "id": "incident-relay",
+      "character": "commander",
+      "text": "Sending all rover records to the mission team."
+    },
+    {
+      "id": "incident-parked",
+      "character": "commander",
+      "text": "Rover parked at Base. Its heaters stay on."
+    },
+    {
+      "id": "incident-archived",
+      "character": "commander",
+      "text": "All rover records relayed to the mission team."
+    },
+    {
+      "id": "incident-crew",
+      "character": "commander",
+      "text": "Two crew sheltered below. Our support specialist is safe in orbit."
+    },
+    {
+      "id": "incident-secured",
+      "character": "commander",
+      "text": "Surface secured! Crew ascent comes next."
+    },
+    {
+      "id": "science-sensorSite",
+      "character": "commander",
+      "text": "Put the sensor on quiet ground."
+    },
+    {
+      "id": "science-sensorWrong",
+      "character": "commander",
+      "text": "Wheels shake the sensor. Place it on the ground."
+    },
+    {
+      "id": "science-listening",
+      "character": "commander",
+      "text": "Listening for ground vibrations."
+    },
+    {
+      "id": "science-sampleLimit",
+      "character": "commander",
+      "text": "Sample box full. Keep what we collected."
+    },
+    {
+      "id": "science-plan",
+      "character": "commander",
+      "text": "Pick a site. Scan first, or plan a soil sample."
+    },
+    {
+      "id": "science-travel",
+      "character": "commander",
+      "text": "Rover on its way. The return path is saved!"
+    },
+    {
+      "id": "science-survey",
+      "character": "commander",
+      "text": "NSS is looking for hydrogen clues. That isn\u2019t proof of ice."
+    },
+    {
+      "id": "science-drill",
+      "character": "commander",
+      "text": "Drill turning! Deeper samples take more energy."
+    },
+    {
+      "id": "science-analysis",
+      "character": "commander",
+      "text": "Checking the soil with light. Gas tools help if fitted."
+    },
+    {
+      "id": "science-returning",
+      "character": "commander",
+      "text": "Measurements stored. Coming back to a radio link!"
+    },
+    {
+      "id": "science-charge",
+      "character": "commander",
+      "text": "Sunlight is charging our rover. Save energy for science!"
+    },
+    {
+      "id": "science-clue",
+      "character": "commander",
+      "text": "Hydrogen clue found. Check a soil sample next."
+    },
+    {
+      "id": "science-report",
+      "character": "commander",
+      "text": "Match your answer to the tools. Every result can teach us!"
+    },
+    {
+      "id": "science-wrong",
+      "character": "commander",
+      "text": "That answer needs more evidence. Check the tool cards."
+    },
+    {
+      "id": "science-confirm",
+      "character": "commander",
+      "text": "Two tools agree on water in this simulated sample!"
+    },
+    {
+      "id": "science-negative",
+      "character": "commander",
+      "text": "No water detected here. A useful result!"
+    },
+    {
+      "id": "science-inconclusive",
+      "character": "commander",
+      "text": "Still unsure. Save the clues without calling it ice."
+    },
+    {
+      "id": "science-transmit",
+      "character": "commander",
+      "text": "Sending our measurements to the mission team."
+    },
+    {
+      "id": "science-delivered",
+      "character": "commander",
+      "text": "Data delivered! Bring the rover back to Base."
+    },
+    {
+      "id": "science-complete",
+      "character": "commander",
+      "text": "Science safely stored. Our crew\u2019s return comes next!"
+    },
+    {
+      "id": "science-reserve",
+      "character": "commander",
+      "text": "This trip needs more energy. Charge or choose a closer site."
+    },
+    {
+      "id": "science-thermal",
+      "character": "commander",
+      "text": "Too cold for this kit. Try the sunlit lookout."
+    },
+    {
+      "id": "science-terrain",
+      "character": "commander",
+      "text": "No safe path with these wheels. Try a closer site."
+    },
+    {
+      "id": "science-duplicate",
+      "character": "commander",
+      "text": "We already measured that. Try another site or depth."
+    },
+    {
+      "id": "science-paused",
+      "character": "commander",
+      "text": "Science paused. Continue when you\u2019re ready."
+    },
+    {
+      "id": "science-failed",
+      "character": "commander",
+      "text": "Rover stopped. Retry this expedition from its saved start."
+    },
+    {
+      "id": "science-noLink",
+      "character": "commander",
+      "text": "Return to a linked waypoint before sending the data."
+    },
+    {
+      "id": "science-sampleFirst",
+      "character": "commander",
+      "text": "Scan clues alone don\u2019t prove water. Check a soil sample."
+    },
+    {
+      "id": "surface-stowed",
+      "character": "commander",
+      "text": "Deploy your rover. Let\u2019s check the path!"
+    },
+    {
+      "id": "surface-deploying",
+      "character": "commander",
+      "text": "Rover coming down. Our crew will return inside."
+    },
+    {
+      "id": "surface-ready",
+      "character": "commander",
+      "text": "Visit a lookout, then the shadow edge."
+    },
+    {
+      "id": "surface-drive",
+      "character": "commander",
+      "text": "Keep going. Save enough energy to come back!"
+    },
+    {
+      "id": "surface-hold",
+      "character": "commander",
+      "text": "Hold W to drive. Let go to pause."
+    },
+    {
+      "id": "surface-shade",
+      "character": "commander",
+      "text": "Solar is off here. Our battery keeps us moving."
+    },
+    {
+      "id": "surface-blocked",
+      "character": "commander",
+      "text": "Radio blocked. The rover is following its return plan."
+    },
+    {
+      "id": "surface-charge",
+      "character": "commander",
+      "text": "Sunlight is filling the battery. Nice parking spot!"
+    },
+    {
+      "id": "surface-pause",
+      "character": "commander",
+      "text": "Trip paused. Continue when you\u2019re ready."
+    },
+    {
+      "id": "surface-reserve",
+      "character": "commander",
+      "text": "Not enough for the return. Charge in sunlight first."
+    },
+    {
+      "id": "surface-terrain",
+      "character": "commander",
+      "text": "Take the smooth path. This shortcut needs better wheels and cameras."
+    },
+    {
+      "id": "surface-thermal",
+      "character": "commander",
+      "text": "That deep cold needs advanced thermal protection."
+    },
+    {
+      "id": "surface-autonomy",
+      "character": "commander",
+      "text": "Plan the return loop before going behind the ridge."
+    },
+    {
+      "id": "surface-full",
+      "character": "commander",
+      "text": "Battery full. Pick your next path!"
+    },
+    {
+      "id": "surface-dark",
+      "character": "commander",
+      "text": "No sunlight here. Go to the sunny ridge to charge."
+    },
+    {
+      "id": "surface-failed",
+      "character": "commander",
+      "text": "Rover stopped. Retry from the surface checkpoint."
+    },
+    {
+      "id": "surface-arrived",
+      "character": "commander",
+      "text": "Waypoint reached! Pick the next path."
+    },
+    {
+      "id": "surface-complete",
+      "character": "commander",
+      "text": "Route scouted! Ready for science."
+    },
+    {
+      "id": "landing-controls",
+      "character": "commander",
+      "text": "Steer with A and D. Hold Space to slow down. You have control."
+    },
+    {
+      "id": "landing-ready",
+      "character": "commander",
+      "text": "Two crew will land. One stays in orbit. Ready to separate?"
+    },
+    {
+      "id": "landing-separate",
+      "character": "commander",
+      "text": "Lander free! Start the braking burn."
+    },
+    {
+      "id": "landing-separating",
+      "character": "commander",
+      "text": "Releasing the lander. One teammate stays in orbit."
+    },
+    {
+      "id": "landing-scanning",
+      "character": "commander",
+      "text": "Scanning for a clear landing spot."
+    },
+    {
+      "id": "landing-braking",
+      "character": "commander",
+      "text": "Slowing down. Our landing radar is watching the ground."
+    },
+    {
+      "id": "landing-flying",
+      "character": "commander",
+      "text": "Aim for a clear patch. Keep both speeds in green."
+    },
+    {
+      "id": "landing-hazard",
+      "character": "commander",
+      "text": "Rocks ahead! Choose a clear patch, then continue."
+    },
+    {
+      "id": "landing-guided",
+      "character": "commander",
+      "text": "I\u2019ll help with thrust. You choose where we land."
+    },
+    {
+      "id": "landing-paused",
+      "character": "commander",
+      "text": "Descent paused. Ready when you are."
+    },
+    {
+      "id": "landing-landed",
+      "character": "commander",
+      "text": "Touchdown! Two crew on the Moon. One safe in orbit."
+    },
+    {
+      "id": "landing-fast",
+      "character": "commander",
+      "text": "Too fast! Retry and use more thrust sooner."
+    },
+    {
+      "id": "landing-sideways",
+      "character": "commander",
+      "text": "Too much sideways speed. Brake before touchdown."
+    },
+    {
+      "id": "landing-terrain",
+      "character": "commander",
+      "text": "Land inside A or B. Move over the clear circle before touching down."
+    },
+    {
+      "id": "landing-bounds",
+      "character": "commander",
+      "text": "Outside the landing zone! Retry and aim for a clear patch."
+    },
+    {
+      "id": "landing-fuel",
+      "character": "commander",
+      "text": "Fuel used up! Retry with less hovering."
+    },
+    {
+      "id": "landing-aborting",
+      "character": "commander",
+      "text": "Climbing to a safe orbit. Landing is cancelled."
+    },
+    {
+      "id": "landing-aborted",
+      "character": "commander",
+      "text": "Abort complete. Retry from lunar orbit."
+    },
+    {
+      "id": "landing-blocked",
+      "character": "commander",
+      "text": "Too low or too fast for this abort. Brake now!"
+    },
+    {
+      "id": "journey-ready",
+      "character": "commander",
+      "text": "Your departure plan is locked. Ready to launch!"
+    },
+    {
+      "id": "journey-route",
+      "character": "commander",
+      "text": "We\u2019re in Earth orbit! Pick our route to the Moon."
+    },
+    {
+      "id": "journey-tli",
+      "character": "commander",
+      "text": "Point forward. Fire the engine to leave Earth orbit."
+    },
+    {
+      "id": "journey-coast",
+      "character": "commander",
+      "text": "Moon-bound! Our upper stage is away. Enjoy the coast."
+    },
+    {
+      "id": "journey-loi",
+      "character": "commander",
+      "text": "Point backward. Slow down so the Moon can hold us."
+    },
+    {
+      "id": "journey-burn",
+      "character": "commander",
+      "text": "Engine firing. Watch the fuel and keep our return reserve."
+    },
+    {
+      "id": "journey-wrongForward",
+      "character": "commander",
+      "text": "Point forward to head for the Moon."
+    },
+    {
+      "id": "journey-wrongBackward",
+      "character": "commander",
+      "text": "Point backward to slow down at the Moon."
+    },
+    {
+      "id": "journey-early",
+      "character": "commander",
+      "text": "Wait for the green window. No fuel spent."
+    },
+    {
+      "id": "journey-missed",
+      "character": "commander",
+      "text": "Window missed. Retry this burn; no fuel spent."
+    },
+    {
+      "id": "journey-paused",
+      "character": "commander",
+      "text": "Journey paused. Continue when you\u2019re ready."
+    },
+    {
+      "id": "journey-arrived",
+      "character": "commander",
+      "text": "Lunar orbit reached! All three crew are safe. Landing comes next."
+    },
+    {
+      "id": "check-crewIntro",
+      "character": "commander",
+      "text": "The crew hatch is open. Close it to keep air inside, then pack day kits."
+    },
+    {
+      "id": "check-sealed",
+      "character": "commander",
+      "text": "Click! The hatch is locked and the cabin can hold air."
+    },
+    {
+      "id": "check-supplies",
+      "character": "commander",
+      "text": "Extra day kits give our crew enough supplies."
+    },
+    {
+      "id": "check-suppliesFail",
+      "character": "commander",
+      "text": "Not enough day kits. Pack the extended supplies."
+    },
+    {
+      "id": "check-crewPass",
+      "character": "commander",
+      "text": "Crew check passed. Let\u2019s test the equipment!"
+    },
+    {
+      "id": "check-returnIntro",
+      "character": "commander",
+      "text": "Let\u2019s put our spacecraft to work!"
+    },
+    {
+      "id": "check-ascentIntro",
+      "character": "commander",
+      "text": "Ready for a lift test?"
+    },
+    {
+      "id": "check-serviceIntro",
+      "character": "commander",
+      "text": "Can you send the capsule through the ring?"
+    },
+    {
+      "id": "check-shieldIntro",
+      "character": "commander",
+      "text": "Let\u2019s see the heat shield in action."
+    },
+    {
+      "id": "check-parachutesIntro",
+      "character": "commander",
+      "text": "Can you give the capsule a soft landing?"
+    },
+    {
+      "id": "check-returnRetry",
+      "character": "commander",
+      "text": "Almost! Adjust it and try again."
+    },
+    {
+      "id": "check-ascent",
+      "character": "commander",
+      "text": "Liftoff! The ascent engine works."
+    },
+    {
+      "id": "check-service",
+      "character": "commander",
+      "text": "On target! The return engine works."
+    },
+    {
+      "id": "check-shield",
+      "character": "commander",
+      "text": "The shield kept the cabin safe!"
+    },
+    {
+      "id": "check-parachutes",
+      "character": "commander",
+      "text": "Parachutes open! A soft landing on Earth."
+    },
+    {
+      "id": "check-returnPass",
+      "character": "commander",
+      "text": "Return systems passed. Time for a little Moon practice!"
+    },
+    {
+      "id": "check-mobilityIntro",
+      "character": "commander",
+      "text": "Quiz time! The rover has a choice. What would you do?"
+    },
+    {
+      "id": "check-mobilityPass",
+      "character": "commander",
+      "text": "Nice! That path is easier for the rover."
+    },
+    {
+      "id": "check-mobilityFail",
+      "character": "commander",
+      "text": "Oops, wrong route. Let\u2019s try the next one!"
+    },
+    {
+      "id": "check-dustIntro",
+      "character": "commander",
+      "text": "Moon dust is on the camera. What would you do?"
+    },
+    {
+      "id": "check-dustPass",
+      "character": "commander",
+      "text": "Nice! The view is clear again."
+    },
+    {
+      "id": "check-dustFail",
+      "character": "commander",
+      "text": "Oops, the camera still cannot see. Next question!"
+    },
+    {
+      "id": "check-communicationIntro",
+      "character": "commander",
+      "text": "The lander signal is gone. What would you do?"
+    },
+    {
+      "id": "check-communicationPass",
+      "character": "commander",
+      "text": "Nice! The signal is back."
+    },
+    {
+      "id": "check-communicationFail",
+      "character": "commander",
+      "text": "Oops, the hill still blocks us. Next question!"
+    },
+    {
+      "id": "check-radiationIntro",
+      "character": "commander",
+      "text": "A space-weather alert arrives. What would you do?"
+    },
+    {
+      "id": "check-radiationPass",
+      "character": "commander",
+      "text": "Nice! The crew is safe."
+    },
+    {
+      "id": "check-radiationFail",
+      "character": "commander",
+      "text": "Oops, the crew needs cover. Next question!"
+    },
+    {
+      "id": "check-practicePass",
+      "character": "commander",
+      "text": "Quiz complete! See your score."
+    },
+    {
+      "id": "check-quizRetry",
+      "character": "commander",
+      "text": "No points yet. Restart the quiz and try again!"
+    },
+    {
+      "id": "check-packIntro",
+      "character": "commander",
+      "text": "Secure the capsule, lander and crew supplies."
+    },
+    {
+      "id": "check-packcapsuleIntro",
+      "character": "commander",
+      "text": "Fit the capsule on the ring, then close both clamps."
+    },
+    {
+      "id": "check-packcapsulePass",
+      "character": "commander",
+      "text": "Click! Both clamps are locked."
+    },
+    {
+      "id": "check-packlanderIntro",
+      "character": "commander",
+      "text": "Line up the marks, then hold to lower the lander."
+    },
+    {
+      "id": "check-packlanderPass",
+      "character": "commander",
+      "text": "Perfect landing! The cargo mount is locked."
+    },
+    {
+      "id": "check-packsuppliesIntro",
+      "character": "commander",
+      "text": "Match the food, water and oxygen cases to their lockers."
+    },
+    {
+      "id": "check-packsuppliesPass",
+      "character": "commander",
+      "text": "All three cases are strapped in. Ready for launch!"
+    },
+    {
+      "id": "check-packed",
+      "character": "commander",
+      "text": "Everything is locked in. Great teamwork!"
+    },
+    {
+      "id": "check-ready",
+      "character": "commander",
+      "text": "Your departure plan is locked. Great teamwork!"
+    },
+    {
+      "id": "crew-briefing-1",
+      "character": "chief",
+      "text": "Your explorer is built. Time to choose your crew."
+    },
+    {
+      "id": "crew-briefing-3",
+      "character": "chief",
+      "text": "Take one science expert and one support expert."
+    },
+    {
+      "id": "crew-briefing-4",
+      "character": "commander",
+      "text": "Two of us land. Our support expert stays in orbit."
+    },
+    {
+      "id": "crew-advice-intro",
+      "character": "commander",
+      "text": "Match a scientist and a support expert."
+    },
+    {
+      "id": "crew-advice-complete",
+      "character": "commander",
+      "text": "Great team! Our flight checks come next."
+    },
+    {
+      "id": "crew-advice-scienceSeat",
+      "character": "commander",
+      "text": "Now tap the science seat."
+    },
+    {
+      "id": "crew-advice-supportSeat",
+      "character": "commander",
+      "text": "Now tap the support seat."
+    },
+    {
+      "id": "crew-advice-wrongScience",
+      "character": "commander",
+      "text": "That job needs a scientist. Try a science expert!"
+    },
+    {
+      "id": "crew-advice-wrongSupport",
+      "character": "commander",
+      "text": "That job needs a support expert. Try the other seat!"
+    },
+    {
+      "id": "crew-advice-robotics",
+      "character": "commander",
+      "text": "Our robotics expert helps save drive energy."
+    },
+    {
+      "id": "crew-advice-systems",
+      "character": "commander",
+      "text": "Our engineer can help with power, heat and radio repairs."
+    },
+    {
+      "id": "crew-advice-geologist",
+      "character": "commander",
+      "text": "Our geologist will help read rock clues."
+    },
+    {
+      "id": "crew-advice-astrobiologist",
+      "character": "commander",
+      "text": "Our astrobiologist will help read water clues."
+    },
+    {
+      "id": "crew-advice-open",
+      "character": "commander",
+      "text": "Seat open. Try another expert."
+    },
+    {
+      "id": "appointment-01",
+      "character": "chief",
+      "text": "Charlie, good to see you."
+    },
+    {
+      "id": "appointment-02",
+      "character": "commander",
+      "text": "Thank you, Chief."
+    },
+    {
+      "id": "appointment-03",
+      "character": "chief",
+      "text": "In our last meeting, we made an important decision. You\u2019ve been selected to lead your own space mission as the Commander."
+    },
+    {
+      "id": "appointment-04",
+      "character": "commander",
+      "text": "My own mission?"
+    },
+    {
+      "id": "appointment-05",
+      "character": "chief",
+      "text": "That\u2019s right. You\u2019ll choose where you want to go, what you want to investigate, and how you\u2019ll prepare your spacecraft and crew."
+    },
+    {
+      "id": "appointment-06",
+      "character": "commander",
+      "text": "That\u2019s a big responsibility."
+    },
+    {
+      "id": "appointment-07",
+      "character": "chief",
+      "text": "It is. So, Commander\u2026 where do you want to go? Well then, best of luck!!"
+    },
+    {
+      "id": "companionIntro-01",
+      "character": "commander",
+      "text": "Hey there, little learner! As you can see, I have just received a huge responsibility. I must succeed no matter what!!"
+    },
+    {
+      "id": "companionIntro-02",
+      "character": "commander",
+      "text": "As one of my closest friends, I want you to help me complete the mission. Don\u2019t worry. I am always here to guide you. Now let\u2019s start with the planet selection!"
+    },
+    {
+      "id": "objectiveBriefing-01",
+      "character": "commander",
+      "text": "What exactly will we be looking for? Great! Now lets decide what exactly we will be looking for."
+    },
+    {
+      "id": "objectiveBriefing-02",
+      "character": "chief",
+      "text": "That depends on your mission objective. Think carefully.Your objective will determine what location is best, what kind of spacecraft, instruments, rover, power system, and other equipment you\u2019ll need."
+    },
+    {
+      "id": "objectiveBriefing-03",
+      "character": "commander",
+      "text": "It depends on our mission objective. Think carefully. Our objective will determine what location is best, what kind of spacecraft, instruments, rover, power system, and other equipment we\u2019ll need."
+    },
+    {
+      "id": "siteBriefing-01",
+      "character": "commander",
+      "text": "Now that our mission is fixed, we will choose the landing site."
+    },
+    {
+      "id": "resourceBriefing-01",
+      "character": "chief",
+      "text": "You\u2019ll have a limited budget, mass, and power supply. Every choice comes with a trade-off."
+    },
+    {
+      "id": "resourceBriefing-02",
+      "character": "commander",
+      "text": "Then I\u2019d better choose wisely."
+    },
+    {
+      "id": "resourceBriefing-03",
+      "character": "chief",
+      "text": "That\u2019s what I want to hear. Your mission begins now, Commander. Make every decision count."
+    },
+    {
+      "id": "resourceBriefing-04",
+      "character": "commander",
+      "text": "We must remember that we\u2019ll have limited budget, mass, and power supply. Every choice we make, comes with a trade-off."
+    },
+    {
+      "id": "resourceBriefing-05",
+      "character": "commander",
+      "text": "Now I thing we are good to go. Let\u2019s dive into the mission, mate!"
+    },
+    {
+      "id": "short-appointment-01",
+      "character": "chief",
+      "text": "Good to see you, Commander."
+    },
+    {
+      "id": "short-appointment-02",
+      "character": "commander",
+      "text": "Thank you, Chief!"
+    },
+    {
+      "id": "short-appointment-03",
+      "character": "chief",
+      "text": "You\u2019re our new Mission Commander!"
+    },
+    {
+      "id": "short-appointment-04",
+      "character": "commander",
+      "text": "My own mission?"
+    },
+    {
+      "id": "short-appointment-05",
+      "character": "chief",
+      "text": "Choose a destination. Build your explorer!"
+    },
+    {
+      "id": "short-appointment-06",
+      "character": "commander",
+      "text": "I\u2019m ready for the challenge!"
+    },
+    {
+      "id": "short-appointment-07",
+      "character": "chief",
+      "text": "Where will you go? Good luck, Commander!"
+    },
+    {
+      "id": "short-companionIntro-01",
+      "character": "commander",
+      "text": "Hey, Explorer! Will you help me?"
+    },
+    {
+      "id": "short-companionIntro-02",
+      "character": "commander",
+      "text": "Let\u2019s choose where to go!"
+    },
+    {
+      "id": "short-objectiveBriefing-01",
+      "character": "commander",
+      "text": "What shall we discover?"
+    },
+    {
+      "id": "short-objectiveBriefing-02",
+      "character": "chief",
+      "text": "Choose your mission objective."
+    },
+    {
+      "id": "short-objectiveBriefing-03",
+      "character": "commander",
+      "text": "Ice clues or Moon rocks? You decide!"
+    },
+    {
+      "id": "short-siteBriefing-01",
+      "character": "commander",
+      "text": "Pick a place to land!"
+    },
+    {
+      "id": "short-resourceBriefing-01",
+      "character": "chief",
+      "text": "Watch your budget, mass and power."
+    },
+    {
+      "id": "short-resourceBriefing-02",
+      "character": "commander",
+      "text": "I\u2019ll choose wisely!"
+    },
+    {
+      "id": "short-resourceBriefing-03",
+      "character": "chief",
+      "text": "Your mission starts now!"
+    },
+    {
+      "id": "short-resourceBriefing-04",
+      "character": "commander",
+      "text": "Let\u2019s keep our explorer light and ready."
+    },
+    {
+      "id": "short-resourceBriefing-05",
+      "character": "commander",
+      "text": "Time to build, Explorer!"
+    },
+    {
+      "id": "engineer-lander",
+      "character": "commander",
+      "text": "Nice fit! Our lander is coming together."
+    },
+    {
+      "id": "engineer-lander-1",
+      "character": "commander",
+      "text": "Great work! Another piece of our lander is ready."
+    },
+    {
+      "id": "engineer-lander-2",
+      "character": "commander",
+      "text": "Locked in! Let\u2019s keep building."
+    },
+    {
+      "id": "engineer-lander-3",
+      "character": "commander",
+      "text": "Perfect! Our lander is taking shape."
+    },
+    {
+      "id": "engineer-lander-4",
+      "character": "commander",
+      "text": "You\u2019ve got it! That part is secure."
+    },
+    {
+      "id": "engineer-lander-5",
+      "character": "commander",
+      "text": "Looking good, Explorer! What comes next?"
+    },
+    {
+      "id": "engineer-rover",
+      "character": "commander",
+      "text": "Rover ready! Its power use changes our battery time."
+    },
+    {
+      "id": "engineer-rover-1",
+      "character": "commander",
+      "text": "Wheels ready! Let\u2019s explore."
+    },
+    {
+      "id": "engineer-rover-2",
+      "character": "commander",
+      "text": "Good pick! Our rover is ready to roll."
+    },
+    {
+      "id": "engineer-rover-3",
+      "character": "commander",
+      "text": "Explorer on board! Let\u2019s pack its tools."
+    },
+    {
+      "id": "engineer-science",
+      "character": "commander",
+      "text": "Tool secured! Choose how deep we should drill."
+    },
+    {
+      "id": "engineer-science-1",
+      "character": "commander",
+      "text": "Science gear ready! Keep building."
+    },
+    {
+      "id": "engineer-science-2",
+      "character": "commander",
+      "text": "Tool locked in! Great work, Explorer."
+    },
+    {
+      "id": "engineer-science-3",
+      "character": "commander",
+      "text": "Another tool ready for discovery!"
+    },
+    {
+      "id": "engineer-power",
+      "character": "commander",
+      "text": "Power connected! Watch our time in shadow."
+    },
+    {
+      "id": "engineer-power-1",
+      "character": "commander",
+      "text": "Connected! Our explorer has more power."
+    },
+    {
+      "id": "engineer-power-2",
+      "character": "commander",
+      "text": "Power ready! Keep an eye on the battery."
+    },
+    {
+      "id": "engineer-power-3",
+      "character": "commander",
+      "text": "Good work! Let\u2019s keep our explorer running."
+    },
+    {
+      "id": "engineer-survival",
+      "character": "commander",
+      "text": "Good choice! Your explorer is better protected."
+    },
+    {
+      "id": "engineer-survival-1",
+      "character": "commander",
+      "text": "Protected! Ready for the next challenge."
+    },
+    {
+      "id": "engineer-survival-2",
+      "character": "commander",
+      "text": "System secure! Great planning."
+    },
+    {
+      "id": "engineer-survival-3",
+      "character": "commander",
+      "text": "Good pick! One step closer to launch."
+    },
+    {
+      "id": "engineer-complete",
+      "character": "commander",
+      "text": "You did it! This system is ready."
+    },
+    {
+      "id": "engineer-complete-1",
+      "character": "commander",
+      "text": "Mission step complete! You\u2019re doing great."
+    },
+    {
+      "id": "engineer-complete-2",
+      "character": "commander",
+      "text": "All set! Let\u2019s tackle the next step."
+    },
+    {
+      "id": "engineer-complete-3",
+      "character": "commander",
+      "text": "Brilliant work! This system is ready to go."
+    },
+    {
+      "id": "engineer-warning",
+      "character": "commander",
+      "text": "Over budget! Swap an upgrade before launch."
+    },
+    {
+      "id": "engineer-depth",
+      "character": "commander",
+      "text": "Deeper drilling uses more energy. Save enough to come back."
+    },
+    {
+      "id": "engineer-intro",
+      "character": "commander",
+      "text": "Let\u2019s build! Pick a part and drag it into the bay."
+    },
+    {
+      "id": "engineer-trialPass",
+      "character": "commander",
+      "text": "We made it back with energy to spare. Great planning!"
+    },
+    {
+      "id": "engineer-trialFail",
+      "character": "commander",
+      "text": "Our test found a problem. Change the equipment and try again."
+    },
+    {
+      "id": "word-ascent",
+      "character": "commander",
+      "text": "Ascent. Going up from the Moon. The upper cabin takes two explorers back to their friend in orbit."
+    },
+    {
+      "id": "word-docking",
+      "character": "commander",
+      "text": "Docking. Joining two spacecraft gently. Line them up and move slowly, like joining two toy blocks."
+    },
+    {
+      "id": "word-heatshield",
+      "character": "commander",
+      "text": "Heat shield. A special layer that protects the cabin from very hot air. Point the wide shield forward when coming back to Earth."
+    },
+    {
+      "id": "word-reentry",
+      "character": "commander",
+      "text": "Re-entry. Coming back into the air around Earth. Earth\u2019s air slows our cabin. The shield keeps the heat outside."
+    },
+    {
+      "id": "word-parachutes",
+      "character": "commander",
+      "text": "Parachutes. Big cloth shapes that catch air and slow a falling cabin. They open near Earth. The Moon has no thick air, so we use engines there."
+    },
+    {
+      "id": "word-mineral",
+      "character": "commander",
+      "text": "Mineral. A natural solid that can be an ingredient of a rock. One rock can contain several minerals. Matching tools help us find which ones."
+    },
+    {
+      "id": "word-plagioclase",
+      "character": "commander",
+      "text": "Plagioclase. A mineral often found in pale Moon rocks. It can be in other rock types too. Check a second kind of clue before naming the rock."
+    },
+    {
+      "id": "word-elements",
+      "character": "commander",
+      "text": "Elements. Tiny kinds of building pieces that make up rocks and other things. Calcium and aluminium are two kinds. A scanner checks which pieces a rock contains."
+    },
+    {
+      "id": "word-anorthosite",
+      "character": "commander",
+      "text": "Ancient crust rock. A rock rich in pale minerals called plagioclase. Many Moon highland rocks are like this. Light and element clues help us check."
+    },
+    {
+      "id": "word-basalt",
+      "character": "commander",
+      "text": "Lava rock. Rock made when hot melted rock cools. We look for matching mineral and element clues before naming it."
+    },
+    {
+      "id": "word-breccia",
+      "character": "commander",
+      "text": "Impact-mixed rock. Different broken rock pieces joined together. A big space-rock crash can break and mix Moon rocks. A mixed soil sample alone is not proof."
+    },
+    {
+      "id": "word-xrf",
+      "character": "commander",
+      "text": "Element scanner. A tool that checks which tiny building pieces are in a rock. Elements are like ingredients. This tool checks them, not how the crystals are arranged."
+    },
+    {
+      "id": "word-xrd",
+      "character": "commander",
+      "text": "Crystal lab. A tool that finds minerals by how their tiny pieces are arranged. First collect a sample. Then the lab checks its crystal pattern."
+    },
+    {
+      "id": "word-gpr",
+      "character": "commander",
+      "text": "Layer radar. A tool that listens for radio echoes from under the ground. An echo can show a boundary. It cannot name a rock\u2019s ingredients."
+    },
+    {
+      "id": "word-seismometer",
+      "character": "commander",
+      "text": "Moonquake sensor. A tool that records tiny shakes in the ground. Put it away from moving wheels. One short reading cannot tell us everything inside the Moon."
+    },
+    {
+      "id": "word-sample",
+      "character": "commander",
+      "text": "Rock sample. A small piece of rock or soil saved for testing. A scoop takes a surface piece. A drill can take deeper material. Keep its place and depth label."
+    },
+    {
+      "id": "word-mission",
+      "character": "commander",
+      "text": "Mission. A job to do in space. Our job: look for clues of ice on the Moon."
+    },
+    {
+      "id": "word-objective",
+      "character": "commander",
+      "text": "Objective. The thing you want to find or do. Like a treasure hunt: your goal is to find ice clues."
+    },
+    {
+      "id": "word-lander",
+      "character": "commander",
+      "text": "Lander. A spacecraft that lands on the ground. It carries our rover safely down to the Moon."
+    },
+    {
+      "id": "word-rover",
+      "character": "commander",
+      "text": "Rover. A robot with wheels that explores the ground. Like a little car that can work on the Moon!"
+    },
+    {
+      "id": "word-mass",
+      "character": "commander",
+      "text": "Mass. How much stuff is in something. We count it in kilograms (kg). More parts add more mass. Our rocket can only carry so much."
+    },
+    {
+      "id": "word-budget",
+      "character": "commander",
+      "text": "Budget. How many game coins you can spend. Your mission shows a coin limit. Keep your choices under it."
+    },
+    {
+      "id": "word-credits",
+      "character": "commander",
+      "text": "Credits. The pretend coins we use to buy game parts. 100 credits means 100 game coins. It is not a real price."
+    },
+    {
+      "id": "word-power",
+      "character": "commander",
+      "text": "Power. How fast something uses energy. A busy drill uses energy faster than a small camera."
+    },
+    {
+      "id": "word-peak",
+      "character": "commander",
+      "text": "Peak load. The most power your equipment needs at one time. When the drill starts, it may need a big burst of power."
+    },
+    {
+      "id": "word-energy",
+      "character": "commander",
+      "text": "Energy. The stored supply that helps things work. A full battery holds more energy than an empty one."
+    },
+    {
+      "id": "word-battery",
+      "character": "commander",
+      "text": "Battery. A box that stores energy to run your robot. In a dark crater, the battery keeps the rover moving."
+    },
+    {
+      "id": "word-watts",
+      "character": "commander",
+      "text": "W \u00b7 Watts. A number that tells us how fast energy is used or made. A 100 W robot uses energy faster than a 50 W robot."
+    },
+    {
+      "id": "word-wh",
+      "character": "commander",
+      "text": "Wh \u00b7 Watt-hours. A number that tells us how much energy a battery holds. For the same robot, a bigger Wh number means the battery lasts longer."
+    },
+    {
+      "id": "word-reserve",
+      "character": "commander",
+      "text": "Reserve. Energy you save for later. We leave 20% in the battery, like saving a snack for the trip home."
+    },
+    {
+      "id": "word-solar",
+      "character": "commander",
+      "text": "Solar array. Panels that turn sunlight into electricity. They need sunlight. In dark shadow, they cannot charge our battery."
+    },
+    {
+      "id": "word-shadow",
+      "character": "commander",
+      "text": "Permanent shadow. A place where sunlight never reaches the ground. Some deep Moon craters stay dark and very cold."
+    },
+    {
+      "id": "word-thermal",
+      "character": "commander",
+      "text": "Thermal protection. Layers and heaters that help keep the robot at a safe temperature. Like a warm coat and a heater for our rover."
+    },
+    {
+      "id": "word-navigation",
+      "character": "commander",
+      "text": "Navigation. Finding the way to a place. Cameras help our rover spot rocks and choose a safe path."
+    },
+    {
+      "id": "word-communication",
+      "character": "commander",
+      "text": "Communication. Sending messages to someone far away. The rover uses a radio to send its discoveries to the lander."
+    },
+    {
+      "id": "word-radar",
+      "character": "commander",
+      "text": "Radar. A tool that sends out radio waves and listens for them to bounce back. It helps the lander tell how close the ground is."
+    },
+    {
+      "id": "word-antenna",
+      "character": "commander",
+      "text": "Antenna. A part that sends and catches radio messages. Like ears for the robot\u2019s radio."
+    },
+    {
+      "id": "word-drill",
+      "character": "commander",
+      "text": "Drill depth. How far your tool digs into the ground. A deeper hole takes more time and battery energy."
+    },
+    {
+      "id": "word-reliability",
+      "character": "commander",
+      "text": "Reliability. How often something works without trouble. A higher game rating means a better chance of working well."
+    },
+    {
+      "id": "word-geology",
+      "character": "commander",
+      "text": "Geology. Learning about rocks and the ground. Moon rocks can tell us what happened there long ago."
+    },
+    {
+      "id": "word-crater",
+      "character": "commander",
+      "text": "Crater rim. The edge of a big bowl-shaped hole in the ground. A Moon crater\u2019s edge can get light while its deep floor stays dark."
+    },
+    {
+      "id": "word-payload",
+      "character": "commander",
+      "text": "Payload. The things a rocket is carrying to space. Our lander, rover and tools travel inside the rocket."
+    },
+    {
+      "id": "word-adapter",
+      "character": "commander",
+      "text": "Adapter. A joining piece that holds two things together. It holds our explorer firmly inside the rocket."
+    },
+    {
+      "id": "word-fairing",
+      "character": "commander",
+      "text": "Fairing. The rocket\u2019s protective cover. It protects our explorer from fast-moving air during launch."
+    },
+    {
+      "id": "word-booster",
+      "character": "commander",
+      "text": "Booster. A rocket part that gives a big push at launch. When its fuel is used up, we let it go to carry less mass."
+    },
+    {
+      "id": "word-eva",
+      "character": "commander",
+      "text": "Suit time \u00b7 EVA. Time astronauts spend outside their spacecraft. Their suits carry a limited supply. They go back inside before it runs low."
+    },
+    {
+      "id": "word-thrust",
+      "character": "commander",
+      "text": "Thrust. The push made by a rocket engine. More upward push helps our lander slow down."
+    },
+    {
+      "id": "word-gravity",
+      "character": "commander",
+      "text": "Gravity. The pull that brings things toward a moon or planet. Moon gravity pulls our lander down. The engine helps it land softly."
+    },
+    {
+      "id": "word-abort",
+      "character": "commander",
+      "text": "Abort. Stop the landing when it is unsafe. With enough fuel and height, our crew can climb back toward orbit."
+    },
+    {
+      "id": "word-orbit",
+      "character": "commander",
+      "text": "Orbit. Moving around a planet while gravity pulls you toward it. Our spacecraft moves sideways fast enough to keep going around Earth."
+    },
+    {
+      "id": "word-rehearsal",
+      "character": "commander",
+      "text": "Rehearsal. A practice run before the real adventure. Try driving and drilling here. Practice samples earn no science points."
+    },
+    {
+      "id": "word-dust",
+      "character": "commander",
+      "text": "Moon dust. Tiny, sharp bits of Moon soil that stick to tools. Digging can put dust on a camera or solar panel. The Moon has no wind like Earth."
+    },
+    {
+      "id": "word-radiation",
+      "character": "commander",
+      "text": "Space radiation. Tiny fast particles and energy from space that can hurt people. During a space-weather alert, our crew stays inside a protective shelter."
+    },
+    {
+      "id": "word-care",
+      "character": "commander",
+      "text": "Care kit. Cleaning tools packed before launch. Our crew can use one cleaning kit at Base. It improves the view, but some sticky dust stays."
+    },
+    {
+      "id": "word-hydrogen",
+      "character": "commander",
+      "text": "Hydrogen. A tiny building piece of many things, including water. Finding it is a clue. It does not always mean there is ice."
+    },
+    {
+      "id": "word-hydroxyl",
+      "character": "commander",
+      "text": "Hydroxyl. A small oxygen-and-hydrogen piece that can be attached to a mineral. It is not a whole water molecule. We need more clues before saying there is water."
+    },
+    {
+      "id": "word-evidence",
+      "character": "commander",
+      "text": "Evidence. Clues that help us check an answer. Two tools agreeing gives us a stronger clue than guessing."
+    },
+    {
+      "id": "word-confidence",
+      "character": "commander",
+      "text": "Confidence. How sure we are about what a clue means. A faint or mixed clue means we should say we are not sure yet."
+    },
+    {
+      "id": "word-nss",
+      "character": "commander",
+      "text": "NSS. A tool that looks for tiny particle clues called neutrons. It can find hydrogen clues. More tools must check whether there is water ice."
+    },
+    {
+      "id": "word-nirvss",
+      "character": "commander",
+      "text": "NIRVSS. A tool that studies the ground using light our eyes cannot see. The light can give clues about water and minerals."
+    },
+    {
+      "id": "word-trident",
+      "character": "commander",
+      "text": "TRIDENT. A drill that brings little pieces of Moon soil up to the surface. Other tools can study the pieces it digs up."
+    },
+    {
+      "id": "word-msolo",
+      "character": "commander",
+      "text": "MSOLO. A tool that checks gases coming from the soil. It helps scientists look for clues of water and other gases."
+    },
+    {
+      "id": "repair-science-mass",
+      "character": "commander",
+      "text": "Choose a lighter science tool or leave an extra one behind."
+    },
+    {
+      "id": "repair-thermal",
+      "character": "commander",
+      "text": "Advanced protection keeps us warm in cold shadows."
+    },
+    {
+      "id": "repair-energy",
+      "character": "commander",
+      "text": "A bigger battery saves enough energy to get home."
+    },
+    {
+      "id": "repair-depth",
+      "character": "commander",
+      "text": "A shorter drill uses less energy. Save enough for the trip home."
+    },
+    {
+      "id": "repair-peak",
+      "character": "commander",
+      "text": "This part needs less power at once. Our battery can handle it better."
+    },
+    {
+      "id": "repair-mass",
+      "character": "commander",
+      "text": "This lighter part saves weight so our rocket can carry everything."
+    },
+    {
+      "id": "repair-budget",
+      "character": "commander",
+      "text": "This part costs less. Keep our mission within budget."
+    },
+    {
+      "id": "repair-remove-mass",
+      "character": "commander",
+      "text": "Leave this extra tool behind to save weight."
+    },
+    {
+      "id": "repair-remove-budget",
+      "character": "commander",
+      "text": "Leave this extra tool behind to save credits."
+    },
+    {
+      "id": "repair-remove-peak",
+      "character": "commander",
+      "text": "Leave this extra tool behind so we use less power at once."
+    },
+    {
+      "id": "flight-crewed-orbit-burn",
+      "character": "commander",
+      "text": "Crew spacecraft uncovered. Next stop: Earth orbit!"
+    },
+    {
+      "id": "flight-ready-guided",
+      "character": "commander",
+      "text": "All systems go! We\u2019ll pause when it\u2019s your turn."
+    },
+    {
+      "id": "flight-ready-challenge",
+      "character": "commander",
+      "text": "Release when the band turns green. Ready?"
+    },
+    {
+      "id": "flight-retry",
+      "character": "commander",
+      "text": "Missed it? Retry this stage. You\u2019ve got this!"
+    },
+    {
+      "id": "flight-paused",
+      "character": "commander",
+      "text": "Flight paused. Continue when you\u2019re ready."
+    },
+    {
+      "id": "flight-drop-booster",
+      "character": "commander",
+      "text": "Empty booster! Let\u2019s drop that extra weight."
+    },
+    {
+      "id": "flight-open-cover",
+      "character": "commander",
+      "text": "Clear of thick air. Open the cover!"
+    },
+    {
+      "id": "flight-green-booster",
+      "character": "commander",
+      "text": "Green! Separate the empty booster now."
+    },
+    {
+      "id": "flight-green-fairing",
+      "character": "commander",
+      "text": "Green! Release the fairing now."
+    },
+    {
+      "id": "flight-countdown",
+      "character": "commander",
+      "text": "Countdown started. Here we go!"
+    },
+    {
+      "id": "flight-orbit-burn",
+      "character": "commander",
+      "text": "Explorer uncovered. Next stop: Earth orbit!"
+    },
+    {
+      "id": "flight-upper-burn",
+      "character": "commander",
+      "text": "Clean release! Our upper stage is pushing."
+    },
+    {
+      "id": "flight-liftoff",
+      "character": "commander",
+      "text": "Liftoff! Watch Earth fall away."
+    },
+    {
+      "id": "flight-complete",
+      "character": "commander",
+      "text": "We made it! Earth orbit!"
+    },
+    {
+      "id": "flight-wrong-order",
+      "character": "commander",
+      "text": "Wrong order. Separate the booster first."
+    },
+    {
+      "id": "flight-too-soon-booster",
+      "character": "commander",
+      "text": "Too soon! The booster is still pushing. Wait for green."
+    },
+    {
+      "id": "flight-too-soon-fairing",
+      "character": "commander",
+      "text": "Too soon! Keep the fairing through the thick air."
+    },
+    {
+      "id": "flight-try-green",
+      "character": "commander",
+      "text": "Try again. Release while the band is green."
+    },
+    {
+      "id": "greeting-welcome",
+      "character": "chief",
+      "text": "Good to see you, Commander."
+    },
+    {
+      "id": "male-rover-run-intro-0",
+      "character": "commander-male",
+      "text": "We\u2019ll control the rover from here."
+    },
+    {
+      "id": "male-rover-run-setback-1",
+      "character": "commander-male",
+      "text": "New target marked. Let\u2019s try there."
+    },
+    {
+      "id": "male-rover-run-launch-1",
+      "character": "commander-male",
+      "text": "Ready for ascent."
+    },
+    {
+      "id": "male-rover-radio-first",
+      "character": "commander-male",
+      "text": "First sample delivered. Recharge at Solar Ridge."
+    },
+    {
+      "id": "male-rover-radio-second",
+      "character": "commander-male",
+      "text": "Both samples delivered. Park the rover inside."
+    },
+    {
+      "id": "male-rocket-intro",
+      "character": "commander-male",
+      "text": "Match each rocket part to its outline."
+    },
+    {
+      "id": "male-rocket-engines",
+      "character": "commander-male",
+      "text": "Engine cluster locked. Ready to push!"
+    },
+    {
+      "id": "male-rocket-core",
+      "character": "commander-male",
+      "text": "Main tank secured."
+    },
+    {
+      "id": "male-rocket-interstage",
+      "character": "commander-male",
+      "text": "Stage connector locked."
+    },
+    {
+      "id": "male-rocket-upper",
+      "character": "commander-male",
+      "text": "Upper stage secured. Next stop, orbit!"
+    },
+    {
+      "id": "male-rocket-adapter",
+      "character": "commander-male",
+      "text": "Payload mount ready for our spacecraft."
+    },
+    {
+      "id": "male-rocket-lander",
+      "character": "commander-male",
+      "text": "Lunar lander aboard."
+    },
+    {
+      "id": "male-rocket-rover",
+      "character": "commander-male",
+      "text": "Our rover is packed for the Moon."
+    },
+    {
+      "id": "male-rocket-capsule",
+      "character": "commander-male",
+      "text": "Crew capsule secured."
+    },
+    {
+      "id": "male-rocket-cover-left",
+      "character": "commander-male",
+      "text": "Left cover sealed."
+    },
+    {
+      "id": "male-rocket-cover-right",
+      "character": "commander-male",
+      "text": "Right cover sealed."
+    },
+    {
+      "id": "male-rocket-tower",
+      "character": "commander-male",
+      "text": "Escape tower locked."
+    },
+    {
+      "id": "male-rocket-blocked",
+      "character": "commander-male",
+      "text": "Open the cover before loading the cargo."
+    },
+    {
+      "id": "male-rocket-wrong",
+      "character": "commander-male",
+      "text": "Try the matching outline."
+    },
+    {
+      "id": "male-rocket-open",
+      "character": "commander-male",
+      "text": "Bay open. Load the cargo first."
+    },
+    {
+      "id": "male-rocket-complete",
+      "character": "commander-male",
+      "text": "Rocket complete! Ready for the launch pad."
+    },
+    {
+      "id": "male-rocket-removed",
+      "character": "commander-male",
+      "text": "Part removed. Try another fit."
+    },
+    {
+      "id": "male-geo-site-01",
+      "character": "commander-male",
+      "text": "Choose highlands for ancient crust, or an old crater for impact clues."
+    },
+    {
+      "id": "male-geo-scout",
+      "character": "commander-male",
+      "text": "Visit the rock patch, then return to Base."
+    },
+    {
+      "id": "male-geo-sensorSite",
+      "character": "commander-male",
+      "text": "Put the sensor on quiet ground, away from our wheels."
+    },
+    {
+      "id": "male-geo-sensorWrong",
+      "character": "commander-male",
+      "text": "Wheels shake the sensor. Place it on the ground instead."
+    },
+    {
+      "id": "male-geo-listening",
+      "character": "commander-male",
+      "text": "Listening to ground shakes. A signal is not a map of the Moon\u2019s inside."
+    },
+    {
+      "id": "male-geo-sampleLimit",
+      "character": "commander-male",
+      "text": "Sample box full. Keep the samples we already collected."
+    },
+    {
+      "id": "male-geo-plan",
+      "character": "commander-male",
+      "text": "Pick a rock site. Survey it, then collect and test a sample."
+    },
+    {
+      "id": "male-geo-travel",
+      "character": "commander-male",
+      "text": "Rover on its way. The return path is saved!"
+    },
+    {
+      "id": "male-geo-survey",
+      "character": "commander-male",
+      "text": "Camera and fitted radar are surveying this patch."
+    },
+    {
+      "id": "male-geo-drill",
+      "character": "commander-male",
+      "text": "Collecting a sample! A deeper drill uses more energy."
+    },
+    {
+      "id": "male-geo-analysis",
+      "character": "commander-male",
+      "text": "Testing the rock with the tools you packed."
+    },
+    {
+      "id": "male-geo-returning",
+      "character": "commander-male",
+      "text": "Measurements stored. Coming back to a radio link!"
+    },
+    {
+      "id": "male-geo-charge",
+      "character": "commander-male",
+      "text": "Sunlight is charging our rover. Save energy for science!"
+    },
+    {
+      "id": "male-geo-clue",
+      "character": "commander-male",
+      "text": "Picture saved. Collect and test a rock for stronger clues."
+    },
+    {
+      "id": "male-geo-report",
+      "character": "commander-male",
+      "text": "Match the rock type to the tool cards."
+    },
+    {
+      "id": "male-geo-wrong",
+      "character": "commander-male",
+      "text": "That answer needs more evidence. Check the tool cards."
+    },
+    {
+      "id": "male-geo-confirm",
+      "character": "commander-male",
+      "text": "The rock clues agree! Send this finding to our team."
+    },
+    {
+      "id": "male-geo-negative",
+      "character": "commander-male",
+      "text": "No water detected here. A useful result!"
+    },
+    {
+      "id": "male-geo-inconclusive",
+      "character": "commander-male",
+      "text": "Still unsure. Save the clues without guessing the rock type."
+    },
+    {
+      "id": "male-geo-transmit",
+      "character": "commander-male",
+      "text": "Sending our measurements to the mission team."
+    },
+    {
+      "id": "male-geo-delivered",
+      "character": "commander-male",
+      "text": "Data delivered! Bring the rover back to Base."
+    },
+    {
+      "id": "male-geo-complete",
+      "character": "commander-male",
+      "text": "Science safely stored. Our crew\u2019s return comes next!"
+    },
+    {
+      "id": "male-geo-reserve",
+      "character": "commander-male",
+      "text": "This trip needs more energy. Charge or choose a closer site."
+    },
+    {
+      "id": "male-geo-thermal",
+      "character": "commander-male",
+      "text": "Too cold for this kit. Try the light-rock patch."
+    },
+    {
+      "id": "male-geo-terrain",
+      "character": "commander-male",
+      "text": "No safe path with these wheels. Try a closer site."
+    },
+    {
+      "id": "male-geo-duplicate",
+      "character": "commander-male",
+      "text": "We already measured that. Try another site or depth."
+    },
+    {
+      "id": "male-geo-paused",
+      "character": "commander-male",
+      "text": "Science paused. Continue when you\u2019re ready."
+    },
+    {
+      "id": "male-geo-failed",
+      "character": "commander-male",
+      "text": "Rover stopped. Retry this expedition from its saved start."
+    },
+    {
+      "id": "male-geo-noLink",
+      "character": "commander-male",
+      "text": "Return to a linked waypoint before sending the data."
+    },
+    {
+      "id": "male-geo-sampleFirst",
+      "character": "commander-male",
+      "text": "Pictures alone cannot name a rock. Use a mineral or element tool."
+    },
+    {
+      "id": "male-geo-recovery",
+      "character": "commander-male",
+      "text": "Park, relay, seal samples, then check our crew."
+    },
+    {
+      "id": "male-geo-samplesStowed",
+      "character": "commander-male",
+      "text": "Samples sealed and labeled. Ready to bring them home!"
+    },
+    {
+      "id": "male-return-ready",
+      "character": "commander-male",
+      "text": "Rover parked. Data sent. Bring our two Moon explorers back to orbit!"
+    },
+    {
+      "id": "male-return-ascending",
+      "character": "commander-male",
+      "text": "Only the upper cabin lifts off. The legs and rover stay on the Moon."
+    },
+    {
+      "id": "male-return-rendezvous",
+      "character": "commander-male",
+      "text": "Line up the cabins. Slow down before you dock."
+    },
+    {
+      "id": "male-return-unsafeDock",
+      "character": "commander-male",
+      "text": "Too fast or off-center! Brake and line up. We\u2019re holding safely."
+    },
+    {
+      "id": "male-return-docked",
+      "character": "commander-male",
+      "text": "All three crew together! Leave the empty lander. Fire toward Earth."
+    },
+    {
+      "id": "male-return-burning",
+      "character": "commander-male",
+      "text": "Our service engine sends us home. Keep the cabin attached."
+    },
+    {
+      "id": "male-return-coast",
+      "character": "commander-male",
+      "text": "Three days home, sped up. Our crew still uses food and power."
+    },
+    {
+      "id": "male-return-entry-ready",
+      "character": "commander-male",
+      "text": "Earth ahead! Leave the service module. Turn the heat shield forward."
+    },
+    {
+      "id": "male-return-shield",
+      "character": "commander-male",
+      "text": "Heat shield first! Earth\u2019s air slows our capsule."
+    },
+    {
+      "id": "male-return-wrongShield",
+      "character": "commander-male",
+      "text": "That points the nose into the heat. Turn the broad shield forward."
+    },
+    {
+      "id": "male-return-chute-ready",
+      "character": "commander-male",
+      "text": "We\u2019re low and slow enough now. Open the Earth parachutes!"
+    },
+    {
+      "id": "male-return-chutes",
+      "character": "commander-male",
+      "text": "Parachutes slow us over the ocean. Nearly home!"
+    },
+    {
+      "id": "male-return-splashdown",
+      "character": "commander-male",
+      "text": "Splashdown! All three crew are home. Let\u2019s see what we learned!"
+    },
+    {
+      "id": "male-return-fuel",
+      "character": "commander-male",
+      "text": "Hold here. We need enough ascent and Earth-return fuel."
+    },
+    {
+      "id": "male-return-reserve",
+      "character": "commander-male",
+      "text": "Hold here. Protect food and cabin power for the whole trip."
+    },
+    {
+      "id": "male-return-assisted",
+      "character": "commander-male",
+      "text": "Nice alignment! Assistance is recorded. Now dock gently."
+    },
+    {
+      "id": "male-incident-dust",
+      "character": "commander-male",
+      "text": "Dust is coating our tools. Less sunlight and fuzzier readings!"
+    },
+    {
+      "id": "male-incident-radio",
+      "character": "commander-male",
+      "text": "The ridge blocks our radio. The saved route will bring us back."
+    },
+    {
+      "id": "male-incident-power",
+      "character": "commander-male",
+      "text": "Our return energy is tight. Save power before doing more science."
+    },
+    {
+      "id": "male-incident-radiation",
+      "character": "commander-male",
+      "text": "Space-weather alert! Keep our crew inside the shelter."
+    },
+    {
+      "id": "male-incident-brush",
+      "character": "commander-male",
+      "text": "Crew cleaning at Base. Some sticky dust will remain."
+    },
+    {
+      "id": "male-incident-calibration",
+      "character": "commander-male",
+      "text": "Our systems expert is checking the sensor. Dust stays on the panels."
+    },
+    {
+      "id": "male-incident-wait",
+      "character": "commander-male",
+      "text": "Crew sheltered. Waiting for the space-weather all-clear."
+    },
+    {
+      "id": "male-incident-partial",
+      "character": "commander-male",
+      "text": "Fieldwork stopped safely. We\u2019ll keep the data we already have."
+    },
+    {
+      "id": "male-incident-kit",
+      "character": "commander-male",
+      "text": "No care kit aboard. Save the clues and keep a safe return path."
+    },
+    {
+      "id": "male-incident-evaBlocked",
+      "character": "commander-male",
+      "text": "No Moon walk during this alert. Keep the crew sheltered."
+    },
+    {
+      "id": "male-incident-radioBlocked",
+      "character": "commander-male",
+      "text": "More radio power cannot see through this ridge. Follow the saved plan."
+    },
+    {
+      "id": "male-incident-remote",
+      "character": "commander-male",
+      "text": "No live link here. The rover uses its preplanned safe fallback."
+    },
+    {
+      "id": "male-incident-unsafe",
+      "character": "commander-male",
+      "text": "That action would spend our return reserve. Choose a safer option."
+    },
+    {
+      "id": "male-incident-cleaned",
+      "character": "commander-male",
+      "text": "View improved! Some dust remains. Check the new power reading."
+    },
+    {
+      "id": "male-incident-calibrated",
+      "character": "commander-male",
+      "text": "Sensor checked. The panel is still dusty."
+    },
+    {
+      "id": "male-incident-shed",
+      "character": "commander-male",
+      "text": "Gas tool off. Heaters and navigation stay on."
+    },
+    {
+      "id": "male-incident-shorter",
+      "character": "commander-male",
+      "text": "Shorter sample selected. Check its return-energy estimate."
+    },
+    {
+      "id": "male-incident-closer",
+      "character": "commander-male",
+      "text": "Closer science site selected. Check the new trip estimate."
+    },
+    {
+      "id": "male-incident-linked",
+      "character": "commander-male",
+      "text": "Radio reconnected. Our stored measurements are still safe."
+    },
+    {
+      "id": "male-incident-clear",
+      "character": "commander-male",
+      "text": "Space-weather all-clear. Surface work can resume."
+    },
+    {
+      "id": "male-incident-accepted",
+      "character": "commander-male",
+      "text": "Safe plan selected. Watch the rover carry it out."
+    },
+    {
+      "id": "male-incident-recovery",
+      "character": "commander-male",
+      "text": "Park the rover, relay all data, then check our crew."
+    },
+    {
+      "id": "male-incident-relay",
+      "character": "commander-male",
+      "text": "Sending all rover records to the mission team."
+    },
+    {
+      "id": "male-incident-parked",
+      "character": "commander-male",
+      "text": "Rover parked at Base. Its heaters stay on."
+    },
+    {
+      "id": "male-incident-archived",
+      "character": "commander-male",
+      "text": "All rover records relayed to the mission team."
+    },
+    {
+      "id": "male-incident-crew",
+      "character": "commander-male",
+      "text": "Two crew sheltered below. Our support specialist is safe in orbit."
+    },
+    {
+      "id": "male-incident-secured",
+      "character": "commander-male",
+      "text": "Surface secured! Crew ascent comes next."
+    },
+    {
+      "id": "male-science-sensorSite",
+      "character": "commander-male",
+      "text": "Put the sensor on quiet ground."
+    },
+    {
+      "id": "male-science-sensorWrong",
+      "character": "commander-male",
+      "text": "Wheels shake the sensor. Place it on the ground."
+    },
+    {
+      "id": "male-science-listening",
+      "character": "commander-male",
+      "text": "Listening for ground vibrations."
+    },
+    {
+      "id": "male-science-sampleLimit",
+      "character": "commander-male",
+      "text": "Sample box full. Keep what we collected."
+    },
+    {
+      "id": "male-science-plan",
+      "character": "commander-male",
+      "text": "Pick a site. Scan first, or plan a soil sample."
+    },
+    {
+      "id": "male-science-travel",
+      "character": "commander-male",
+      "text": "Rover on its way. The return path is saved!"
+    },
+    {
+      "id": "male-science-survey",
+      "character": "commander-male",
+      "text": "NSS is looking for hydrogen clues. That isn\u2019t proof of ice."
+    },
+    {
+      "id": "male-science-drill",
+      "character": "commander-male",
+      "text": "Drill turning! Deeper samples take more energy."
+    },
+    {
+      "id": "male-science-analysis",
+      "character": "commander-male",
+      "text": "Checking the soil with light. Gas tools help if fitted."
+    },
+    {
+      "id": "male-science-returning",
+      "character": "commander-male",
+      "text": "Measurements stored. Coming back to a radio link!"
+    },
+    {
+      "id": "male-science-charge",
+      "character": "commander-male",
+      "text": "Sunlight is charging our rover. Save energy for science!"
+    },
+    {
+      "id": "male-science-clue",
+      "character": "commander-male",
+      "text": "Hydrogen clue found. Check a soil sample next."
+    },
+    {
+      "id": "male-science-report",
+      "character": "commander-male",
+      "text": "Match your answer to the tools. Every result can teach us!"
+    },
+    {
+      "id": "male-science-wrong",
+      "character": "commander-male",
+      "text": "That answer needs more evidence. Check the tool cards."
+    },
+    {
+      "id": "male-science-confirm",
+      "character": "commander-male",
+      "text": "Two tools agree on water in this simulated sample!"
+    },
+    {
+      "id": "male-science-negative",
+      "character": "commander-male",
+      "text": "No water detected here. A useful result!"
+    },
+    {
+      "id": "male-science-inconclusive",
+      "character": "commander-male",
+      "text": "Still unsure. Save the clues without calling it ice."
+    },
+    {
+      "id": "male-science-transmit",
+      "character": "commander-male",
+      "text": "Sending our measurements to the mission team."
+    },
+    {
+      "id": "male-science-delivered",
+      "character": "commander-male",
+      "text": "Data delivered! Bring the rover back to Base."
+    },
+    {
+      "id": "male-science-complete",
+      "character": "commander-male",
+      "text": "Science safely stored. Our crew\u2019s return comes next!"
+    },
+    {
+      "id": "male-science-reserve",
+      "character": "commander-male",
+      "text": "This trip needs more energy. Charge or choose a closer site."
+    },
+    {
+      "id": "male-science-thermal",
+      "character": "commander-male",
+      "text": "Too cold for this kit. Try the sunlit lookout."
+    },
+    {
+      "id": "male-science-terrain",
+      "character": "commander-male",
+      "text": "No safe path with these wheels. Try a closer site."
+    },
+    {
+      "id": "male-science-duplicate",
+      "character": "commander-male",
+      "text": "We already measured that. Try another site or depth."
+    },
+    {
+      "id": "male-science-paused",
+      "character": "commander-male",
+      "text": "Science paused. Continue when you\u2019re ready."
+    },
+    {
+      "id": "male-science-failed",
+      "character": "commander-male",
+      "text": "Rover stopped. Retry this expedition from its saved start."
+    },
+    {
+      "id": "male-science-noLink",
+      "character": "commander-male",
+      "text": "Return to a linked waypoint before sending the data."
+    },
+    {
+      "id": "male-science-sampleFirst",
+      "character": "commander-male",
+      "text": "Scan clues alone don\u2019t prove water. Check a soil sample."
+    },
+    {
+      "id": "male-surface-stowed",
+      "character": "commander-male",
+      "text": "Deploy your rover. Let\u2019s check the path!"
+    },
+    {
+      "id": "male-surface-deploying",
+      "character": "commander-male",
+      "text": "Rover coming down. Our crew will return inside."
+    },
+    {
+      "id": "male-surface-ready",
+      "character": "commander-male",
+      "text": "Visit a lookout, then the shadow edge."
+    },
+    {
+      "id": "male-surface-drive",
+      "character": "commander-male",
+      "text": "Keep going. Save enough energy to come back!"
+    },
+    {
+      "id": "male-surface-hold",
+      "character": "commander-male",
+      "text": "Hold W to drive. Let go to pause."
+    },
+    {
+      "id": "male-surface-shade",
+      "character": "commander-male",
+      "text": "Solar is off here. Our battery keeps us moving."
+    },
+    {
+      "id": "male-surface-blocked",
+      "character": "commander-male",
+      "text": "Radio blocked. The rover is following its return plan."
+    },
+    {
+      "id": "male-surface-charge",
+      "character": "commander-male",
+      "text": "Sunlight is filling the battery. Nice parking spot!"
+    },
+    {
+      "id": "male-surface-pause",
+      "character": "commander-male",
+      "text": "Trip paused. Continue when you\u2019re ready."
+    },
+    {
+      "id": "male-surface-reserve",
+      "character": "commander-male",
+      "text": "Not enough for the return. Charge in sunlight first."
+    },
+    {
+      "id": "male-surface-terrain",
+      "character": "commander-male",
+      "text": "Take the smooth path. This shortcut needs better wheels and cameras."
+    },
+    {
+      "id": "male-surface-thermal",
+      "character": "commander-male",
+      "text": "That deep cold needs advanced thermal protection."
+    },
+    {
+      "id": "male-surface-autonomy",
+      "character": "commander-male",
+      "text": "Plan the return loop before going behind the ridge."
+    },
+    {
+      "id": "male-surface-full",
+      "character": "commander-male",
+      "text": "Battery full. Pick your next path!"
+    },
+    {
+      "id": "male-surface-dark",
+      "character": "commander-male",
+      "text": "No sunlight here. Go to the sunny ridge to charge."
+    },
+    {
+      "id": "male-surface-failed",
+      "character": "commander-male",
+      "text": "Rover stopped. Retry from the surface checkpoint."
+    },
+    {
+      "id": "male-surface-arrived",
+      "character": "commander-male",
+      "text": "Waypoint reached! Pick the next path."
+    },
+    {
+      "id": "male-surface-complete",
+      "character": "commander-male",
+      "text": "Route scouted! Ready for science."
+    },
+    {
+      "id": "male-landing-controls",
+      "character": "commander-male",
+      "text": "Steer with A and D. Hold Space to slow down. You have control."
+    },
+    {
+      "id": "male-landing-ready",
+      "character": "commander-male",
+      "text": "Two crew will land. One stays in orbit. Ready to separate?"
+    },
+    {
+      "id": "male-landing-separate",
+      "character": "commander-male",
+      "text": "Lander free! Start the braking burn."
+    },
+    {
+      "id": "male-landing-separating",
+      "character": "commander-male",
+      "text": "Releasing the lander. One teammate stays in orbit."
+    },
+    {
+      "id": "male-landing-scanning",
+      "character": "commander-male",
+      "text": "Scanning for a clear landing spot."
+    },
+    {
+      "id": "male-landing-braking",
+      "character": "commander-male",
+      "text": "Slowing down. Our landing radar is watching the ground."
+    },
+    {
+      "id": "male-landing-flying",
+      "character": "commander-male",
+      "text": "Aim for a clear patch. Keep both speeds in green."
+    },
+    {
+      "id": "male-landing-hazard",
+      "character": "commander-male",
+      "text": "Rocks ahead! Choose a clear patch, then continue."
+    },
+    {
+      "id": "male-landing-guided",
+      "character": "commander-male",
+      "text": "I\u2019ll help with thrust. You choose where we land."
+    },
+    {
+      "id": "male-landing-paused",
+      "character": "commander-male",
+      "text": "Descent paused. Ready when you are."
+    },
+    {
+      "id": "male-landing-landed",
+      "character": "commander-male",
+      "text": "Touchdown! Two crew on the Moon. One safe in orbit."
+    },
+    {
+      "id": "male-landing-fast",
+      "character": "commander-male",
+      "text": "Too fast! Retry and use more thrust sooner."
+    },
+    {
+      "id": "male-landing-sideways",
+      "character": "commander-male",
+      "text": "Too much sideways speed. Brake before touchdown."
+    },
+    {
+      "id": "male-landing-terrain",
+      "character": "commander-male",
+      "text": "Land inside A or B. Move over the clear circle before touching down."
+    },
+    {
+      "id": "male-landing-bounds",
+      "character": "commander-male",
+      "text": "Outside the landing zone! Retry and aim for a clear patch."
+    },
+    {
+      "id": "male-landing-fuel",
+      "character": "commander-male",
+      "text": "Fuel used up! Retry with less hovering."
+    },
+    {
+      "id": "male-landing-aborting",
+      "character": "commander-male",
+      "text": "Climbing to a safe orbit. Landing is cancelled."
+    },
+    {
+      "id": "male-landing-aborted",
+      "character": "commander-male",
+      "text": "Abort complete. Retry from lunar orbit."
+    },
+    {
+      "id": "male-landing-blocked",
+      "character": "commander-male",
+      "text": "Too low or too fast for this abort. Brake now!"
+    },
+    {
+      "id": "male-journey-ready",
+      "character": "commander-male",
+      "text": "Your departure plan is locked. Ready to launch!"
+    },
+    {
+      "id": "male-journey-route",
+      "character": "commander-male",
+      "text": "We\u2019re in Earth orbit! Pick our route to the Moon."
+    },
+    {
+      "id": "male-journey-tli",
+      "character": "commander-male",
+      "text": "Point forward. Fire the engine to leave Earth orbit."
+    },
+    {
+      "id": "male-journey-coast",
+      "character": "commander-male",
+      "text": "Moon-bound! Our upper stage is away. Enjoy the coast."
+    },
+    {
+      "id": "male-journey-loi",
+      "character": "commander-male",
+      "text": "Point backward. Slow down so the Moon can hold us."
+    },
+    {
+      "id": "male-journey-burn",
+      "character": "commander-male",
+      "text": "Engine firing. Watch the fuel and keep our return reserve."
+    },
+    {
+      "id": "male-journey-wrongForward",
+      "character": "commander-male",
+      "text": "Point forward to head for the Moon."
+    },
+    {
+      "id": "male-journey-wrongBackward",
+      "character": "commander-male",
+      "text": "Point backward to slow down at the Moon."
+    },
+    {
+      "id": "male-journey-early",
+      "character": "commander-male",
+      "text": "Wait for the green window. No fuel spent."
+    },
+    {
+      "id": "male-journey-missed",
+      "character": "commander-male",
+      "text": "Window missed. Retry this burn; no fuel spent."
+    },
+    {
+      "id": "male-journey-paused",
+      "character": "commander-male",
+      "text": "Journey paused. Continue when you\u2019re ready."
+    },
+    {
+      "id": "male-journey-arrived",
+      "character": "commander-male",
+      "text": "Lunar orbit reached! All three crew are safe. Landing comes next."
+    },
+    {
+      "id": "male-check-crewIntro",
+      "character": "commander-male",
+      "text": "The crew hatch is open. Close it to keep air inside, then pack day kits."
+    },
+    {
+      "id": "male-check-sealed",
+      "character": "commander-male",
+      "text": "Click! The hatch is locked and the cabin can hold air."
+    },
+    {
+      "id": "male-check-supplies",
+      "character": "commander-male",
+      "text": "Extra day kits give our crew enough supplies."
+    },
+    {
+      "id": "male-check-suppliesFail",
+      "character": "commander-male",
+      "text": "Not enough day kits. Pack the extended supplies."
+    },
+    {
+      "id": "male-check-crewPass",
+      "character": "commander-male",
+      "text": "Crew check passed. Let\u2019s test the equipment!"
+    },
+    {
+      "id": "male-check-returnIntro",
+      "character": "commander-male",
+      "text": "Let\u2019s put our spacecraft to work!"
+    },
+    {
+      "id": "male-check-ascentIntro",
+      "character": "commander-male",
+      "text": "Ready for a lift test?"
+    },
+    {
+      "id": "male-check-serviceIntro",
+      "character": "commander-male",
+      "text": "Can you send the capsule through the ring?"
+    },
+    {
+      "id": "male-check-shieldIntro",
+      "character": "commander-male",
+      "text": "Let\u2019s see the heat shield in action."
+    },
+    {
+      "id": "male-check-parachutesIntro",
+      "character": "commander-male",
+      "text": "Can you give the capsule a soft landing?"
+    },
+    {
+      "id": "male-check-returnRetry",
+      "character": "commander-male",
+      "text": "Almost! Adjust it and try again."
+    },
+    {
+      "id": "male-check-ascent",
+      "character": "commander-male",
+      "text": "Liftoff! The ascent engine works."
+    },
+    {
+      "id": "male-check-service",
+      "character": "commander-male",
+      "text": "On target! The return engine works."
+    },
+    {
+      "id": "male-check-shield",
+      "character": "commander-male",
+      "text": "The shield kept the cabin safe!"
+    },
+    {
+      "id": "male-check-parachutes",
+      "character": "commander-male",
+      "text": "Parachutes open! A soft landing on Earth."
+    },
+    {
+      "id": "male-check-returnPass",
+      "character": "commander-male",
+      "text": "Return systems passed. Time for a little Moon practice!"
+    },
+    {
+      "id": "male-check-mobilityIntro",
+      "character": "commander-male",
+      "text": "Quiz time! The rover has a choice. What would you do?"
+    },
+    {
+      "id": "male-check-mobilityPass",
+      "character": "commander-male",
+      "text": "Nice! That path is easier for the rover."
+    },
+    {
+      "id": "male-check-mobilityFail",
+      "character": "commander-male",
+      "text": "Oops, wrong route. Let\u2019s try the next one!"
+    },
+    {
+      "id": "male-check-dustIntro",
+      "character": "commander-male",
+      "text": "Moon dust is on the camera. What would you do?"
+    },
+    {
+      "id": "male-check-dustPass",
+      "character": "commander-male",
+      "text": "Nice! The view is clear again."
+    },
+    {
+      "id": "male-check-dustFail",
+      "character": "commander-male",
+      "text": "Oops, the camera still cannot see. Next question!"
+    },
+    {
+      "id": "male-check-communicationIntro",
+      "character": "commander-male",
+      "text": "The lander signal is gone. What would you do?"
+    },
+    {
+      "id": "male-check-communicationPass",
+      "character": "commander-male",
+      "text": "Nice! The signal is back."
+    },
+    {
+      "id": "male-check-communicationFail",
+      "character": "commander-male",
+      "text": "Oops, the hill still blocks us. Next question!"
+    },
+    {
+      "id": "male-check-radiationIntro",
+      "character": "commander-male",
+      "text": "A space-weather alert arrives. What would you do?"
+    },
+    {
+      "id": "male-check-radiationPass",
+      "character": "commander-male",
+      "text": "Nice! The crew is safe."
+    },
+    {
+      "id": "male-check-radiationFail",
+      "character": "commander-male",
+      "text": "Oops, the crew needs cover. Next question!"
+    },
+    {
+      "id": "male-check-practicePass",
+      "character": "commander-male",
+      "text": "Quiz complete! See your score."
+    },
+    {
+      "id": "male-check-quizRetry",
+      "character": "commander-male",
+      "text": "No points yet. Restart the quiz and try again!"
+    },
+    {
+      "id": "male-check-packIntro",
+      "character": "commander-male",
+      "text": "Secure the capsule, lander and crew supplies."
+    },
+    {
+      "id": "male-check-packcapsuleIntro",
+      "character": "commander-male",
+      "text": "Fit the capsule on the ring, then close both clamps."
+    },
+    {
+      "id": "male-check-packcapsulePass",
+      "character": "commander-male",
+      "text": "Click! Both clamps are locked."
+    },
+    {
+      "id": "male-check-packlanderIntro",
+      "character": "commander-male",
+      "text": "Line up the marks, then hold to lower the lander."
+    },
+    {
+      "id": "male-check-packlanderPass",
+      "character": "commander-male",
+      "text": "Perfect landing! The cargo mount is locked."
+    },
+    {
+      "id": "male-check-packsuppliesIntro",
+      "character": "commander-male",
+      "text": "Match the food, water and oxygen cases to their lockers."
+    },
+    {
+      "id": "male-check-packsuppliesPass",
+      "character": "commander-male",
+      "text": "All three cases are strapped in. Ready for launch!"
+    },
+    {
+      "id": "male-check-packed",
+      "character": "commander-male",
+      "text": "Everything is locked in. Great teamwork!"
+    },
+    {
+      "id": "male-check-ready",
+      "character": "commander-male",
+      "text": "Your departure plan is locked. Great teamwork!"
+    },
+    {
+      "id": "male-crew-briefing-4",
+      "character": "commander-male",
+      "text": "Two of us land. Our support expert stays in orbit."
+    },
+    {
+      "id": "male-crew-advice-intro",
+      "character": "commander-male",
+      "text": "Match a scientist and a support expert."
+    },
+    {
+      "id": "male-crew-advice-complete",
+      "character": "commander-male",
+      "text": "Great team! Our flight checks come next."
+    },
+    {
+      "id": "male-crew-advice-scienceSeat",
+      "character": "commander-male",
+      "text": "Now tap the science seat."
+    },
+    {
+      "id": "male-crew-advice-supportSeat",
+      "character": "commander-male",
+      "text": "Now tap the support seat."
+    },
+    {
+      "id": "male-crew-advice-wrongScience",
+      "character": "commander-male",
+      "text": "That job needs a scientist. Try a science expert!"
+    },
+    {
+      "id": "male-crew-advice-wrongSupport",
+      "character": "commander-male",
+      "text": "That job needs a support expert. Try the other seat!"
+    },
+    {
+      "id": "male-crew-advice-robotics",
+      "character": "commander-male",
+      "text": "Our robotics expert helps save drive energy."
+    },
+    {
+      "id": "male-crew-advice-systems",
+      "character": "commander-male",
+      "text": "Our engineer can help with power, heat and radio repairs."
+    },
+    {
+      "id": "male-crew-advice-geologist",
+      "character": "commander-male",
+      "text": "Our geologist will help read rock clues."
+    },
+    {
+      "id": "male-crew-advice-astrobiologist",
+      "character": "commander-male",
+      "text": "Our astrobiologist will help read water clues."
+    },
+    {
+      "id": "male-crew-advice-open",
+      "character": "commander-male",
+      "text": "Seat open. Try another expert."
+    },
+    {
+      "id": "male-appointment-02",
+      "character": "commander-male",
+      "text": "Thank you, Chief."
+    },
+    {
+      "id": "male-appointment-04",
+      "character": "commander-male",
+      "text": "My own mission?"
+    },
+    {
+      "id": "male-appointment-06",
+      "character": "commander-male",
+      "text": "That\u2019s a big responsibility."
+    },
+    {
+      "id": "male-companionIntro-01",
+      "character": "commander-male",
+      "text": "Hey there, little learner! As you can see, I have just received a huge responsibility. I must succeed no matter what!!"
+    },
+    {
+      "id": "male-companionIntro-02",
+      "character": "commander-male",
+      "text": "As one of my closest friends, I want you to help me complete the mission. Don\u2019t worry. I am always here to guide you. Now let\u2019s start with the planet selection!"
+    },
+    {
+      "id": "male-objectiveBriefing-01",
+      "character": "commander-male",
+      "text": "What exactly will we be looking for? Great! Now lets decide what exactly we will be looking for."
+    },
+    {
+      "id": "male-objectiveBriefing-03",
+      "character": "commander-male",
+      "text": "It depends on our mission objective. Think carefully. Our objective will determine what location is best, what kind of spacecraft, instruments, rover, power system, and other equipment we\u2019ll need."
+    },
+    {
+      "id": "male-siteBriefing-01",
+      "character": "commander-male",
+      "text": "Now that our mission is fixed, we will choose the landing site."
+    },
+    {
+      "id": "male-resourceBriefing-02",
+      "character": "commander-male",
+      "text": "Then I\u2019d better choose wisely."
+    },
+    {
+      "id": "male-resourceBriefing-04",
+      "character": "commander-male",
+      "text": "We must remember that we\u2019ll have limited budget, mass, and power supply. Every choice we make, comes with a trade-off."
+    },
+    {
+      "id": "male-resourceBriefing-05",
+      "character": "commander-male",
+      "text": "Now I thing we are good to go. Let\u2019s dive into the mission, mate!"
+    },
+    {
+      "id": "male-short-appointment-02",
+      "character": "commander-male",
+      "text": "Thank you, Chief!"
+    },
+    {
+      "id": "male-short-appointment-04",
+      "character": "commander-male",
+      "text": "My own mission?"
+    },
+    {
+      "id": "male-short-appointment-06",
+      "character": "commander-male",
+      "text": "I\u2019m ready for the challenge!"
+    },
+    {
+      "id": "male-short-companionIntro-01",
+      "character": "commander-male",
+      "text": "Hey, Explorer! Will you help me?"
+    },
+    {
+      "id": "male-short-companionIntro-02",
+      "character": "commander-male",
+      "text": "Let\u2019s choose where to go!"
+    },
+    {
+      "id": "male-short-objectiveBriefing-01",
+      "character": "commander-male",
+      "text": "What shall we discover?"
+    },
+    {
+      "id": "male-short-objectiveBriefing-03",
+      "character": "commander-male",
+      "text": "Ice clues or Moon rocks? You decide!"
+    },
+    {
+      "id": "male-short-siteBriefing-01",
+      "character": "commander-male",
+      "text": "Pick a place to land!"
+    },
+    {
+      "id": "male-short-resourceBriefing-02",
+      "character": "commander-male",
+      "text": "I\u2019ll choose wisely!"
+    },
+    {
+      "id": "male-short-resourceBriefing-04",
+      "character": "commander-male",
+      "text": "Let\u2019s keep our explorer light and ready."
+    },
+    {
+      "id": "male-short-resourceBriefing-05",
+      "character": "commander-male",
+      "text": "Time to build, Explorer!"
+    },
+    {
+      "id": "male-engineer-lander",
+      "character": "commander-male",
+      "text": "Nice fit! Our lander is coming together."
+    },
+    {
+      "id": "male-engineer-lander-1",
+      "character": "commander-male",
+      "text": "Great work! Another piece of our lander is ready."
+    },
+    {
+      "id": "male-engineer-lander-2",
+      "character": "commander-male",
+      "text": "Locked in! Let\u2019s keep building."
+    },
+    {
+      "id": "male-engineer-lander-3",
+      "character": "commander-male",
+      "text": "Perfect! Our lander is taking shape."
+    },
+    {
+      "id": "male-engineer-lander-4",
+      "character": "commander-male",
+      "text": "You\u2019ve got it! That part is secure."
+    },
+    {
+      "id": "male-engineer-lander-5",
+      "character": "commander-male",
+      "text": "Looking good, Explorer! What comes next?"
+    },
+    {
+      "id": "male-engineer-rover",
+      "character": "commander-male",
+      "text": "Rover ready! Its power use changes our battery time."
+    },
+    {
+      "id": "male-engineer-rover-1",
+      "character": "commander-male",
+      "text": "Wheels ready! Let\u2019s explore."
+    },
+    {
+      "id": "male-engineer-rover-2",
+      "character": "commander-male",
+      "text": "Good pick! Our rover is ready to roll."
+    },
+    {
+      "id": "male-engineer-rover-3",
+      "character": "commander-male",
+      "text": "Explorer on board! Let\u2019s pack its tools."
+    },
+    {
+      "id": "male-engineer-science",
+      "character": "commander-male",
+      "text": "Tool secured! Choose how deep we should drill."
+    },
+    {
+      "id": "male-engineer-science-1",
+      "character": "commander-male",
+      "text": "Science gear ready! Keep building."
+    },
+    {
+      "id": "male-engineer-science-2",
+      "character": "commander-male",
+      "text": "Tool locked in! Great work, Explorer."
+    },
+    {
+      "id": "male-engineer-science-3",
+      "character": "commander-male",
+      "text": "Another tool ready for discovery!"
+    },
+    {
+      "id": "male-engineer-power",
+      "character": "commander-male",
+      "text": "Power connected! Watch our time in shadow."
+    },
+    {
+      "id": "male-engineer-power-1",
+      "character": "commander-male",
+      "text": "Connected! Our explorer has more power."
+    },
+    {
+      "id": "male-engineer-power-2",
+      "character": "commander-male",
+      "text": "Power ready! Keep an eye on the battery."
+    },
+    {
+      "id": "male-engineer-power-3",
+      "character": "commander-male",
+      "text": "Good work! Let\u2019s keep our explorer running."
+    },
+    {
+      "id": "male-engineer-survival",
+      "character": "commander-male",
+      "text": "Good choice! Your explorer is better protected."
+    },
+    {
+      "id": "male-engineer-survival-1",
+      "character": "commander-male",
+      "text": "Protected! Ready for the next challenge."
+    },
+    {
+      "id": "male-engineer-survival-2",
+      "character": "commander-male",
+      "text": "System secure! Great planning."
+    },
+    {
+      "id": "male-engineer-survival-3",
+      "character": "commander-male",
+      "text": "Good pick! One step closer to launch."
+    },
+    {
+      "id": "male-engineer-complete",
+      "character": "commander-male",
+      "text": "You did it! This system is ready."
+    },
+    {
+      "id": "male-engineer-complete-1",
+      "character": "commander-male",
+      "text": "Mission step complete! You\u2019re doing great."
+    },
+    {
+      "id": "male-engineer-complete-2",
+      "character": "commander-male",
+      "text": "All set! Let\u2019s tackle the next step."
+    },
+    {
+      "id": "male-engineer-complete-3",
+      "character": "commander-male",
+      "text": "Brilliant work! This system is ready to go."
+    },
+    {
+      "id": "male-engineer-warning",
+      "character": "commander-male",
+      "text": "Over budget! Swap an upgrade before launch."
+    },
+    {
+      "id": "male-engineer-depth",
+      "character": "commander-male",
+      "text": "Deeper drilling uses more energy. Save enough to come back."
+    },
+    {
+      "id": "male-engineer-intro",
+      "character": "commander-male",
+      "text": "Let\u2019s build! Pick a part and drag it into the bay."
+    },
+    {
+      "id": "male-engineer-trialPass",
+      "character": "commander-male",
+      "text": "We made it back with energy to spare. Great planning!"
+    },
+    {
+      "id": "male-engineer-trialFail",
+      "character": "commander-male",
+      "text": "Our test found a problem. Change the equipment and try again."
+    },
+    {
+      "id": "male-word-ascent",
+      "character": "commander-male",
+      "text": "Ascent. Going up from the Moon. The upper cabin takes two explorers back to their friend in orbit."
+    },
+    {
+      "id": "male-word-docking",
+      "character": "commander-male",
+      "text": "Docking. Joining two spacecraft gently. Line them up and move slowly, like joining two toy blocks."
+    },
+    {
+      "id": "male-word-heatshield",
+      "character": "commander-male",
+      "text": "Heat shield. A special layer that protects the cabin from very hot air. Point the wide shield forward when coming back to Earth."
+    },
+    {
+      "id": "male-word-reentry",
+      "character": "commander-male",
+      "text": "Re-entry. Coming back into the air around Earth. Earth\u2019s air slows our cabin. The shield keeps the heat outside."
+    },
+    {
+      "id": "male-word-parachutes",
+      "character": "commander-male",
+      "text": "Parachutes. Big cloth shapes that catch air and slow a falling cabin. They open near Earth. The Moon has no thick air, so we use engines there."
+    },
+    {
+      "id": "male-word-mineral",
+      "character": "commander-male",
+      "text": "Mineral. A natural solid that can be an ingredient of a rock. One rock can contain several minerals. Matching tools help us find which ones."
+    },
+    {
+      "id": "male-word-plagioclase",
+      "character": "commander-male",
+      "text": "Plagioclase. A mineral often found in pale Moon rocks. It can be in other rock types too. Check a second kind of clue before naming the rock."
+    },
+    {
+      "id": "male-word-elements",
+      "character": "commander-male",
+      "text": "Elements. Tiny kinds of building pieces that make up rocks and other things. Calcium and aluminium are two kinds. A scanner checks which pieces a rock contains."
+    },
+    {
+      "id": "male-word-anorthosite",
+      "character": "commander-male",
+      "text": "Ancient crust rock. A rock rich in pale minerals called plagioclase. Many Moon highland rocks are like this. Light and element clues help us check."
+    },
+    {
+      "id": "male-word-basalt",
+      "character": "commander-male",
+      "text": "Lava rock. Rock made when hot melted rock cools. We look for matching mineral and element clues before naming it."
+    },
+    {
+      "id": "male-word-breccia",
+      "character": "commander-male",
+      "text": "Impact-mixed rock. Different broken rock pieces joined together. A big space-rock crash can break and mix Moon rocks. A mixed soil sample alone is not proof."
+    },
+    {
+      "id": "male-word-xrf",
+      "character": "commander-male",
+      "text": "Element scanner. A tool that checks which tiny building pieces are in a rock. Elements are like ingredients. This tool checks them, not how the crystals are arranged."
+    },
+    {
+      "id": "male-word-xrd",
+      "character": "commander-male",
+      "text": "Crystal lab. A tool that finds minerals by how their tiny pieces are arranged. First collect a sample. Then the lab checks its crystal pattern."
+    },
+    {
+      "id": "male-word-gpr",
+      "character": "commander-male",
+      "text": "Layer radar. A tool that listens for radio echoes from under the ground. An echo can show a boundary. It cannot name a rock\u2019s ingredients."
+    },
+    {
+      "id": "male-word-seismometer",
+      "character": "commander-male",
+      "text": "Moonquake sensor. A tool that records tiny shakes in the ground. Put it away from moving wheels. One short reading cannot tell us everything inside the Moon."
+    },
+    {
+      "id": "male-word-sample",
+      "character": "commander-male",
+      "text": "Rock sample. A small piece of rock or soil saved for testing. A scoop takes a surface piece. A drill can take deeper material. Keep its place and depth label."
+    },
+    {
+      "id": "male-word-mission",
+      "character": "commander-male",
+      "text": "Mission. A job to do in space. Our job: look for clues of ice on the Moon."
+    },
+    {
+      "id": "male-word-objective",
+      "character": "commander-male",
+      "text": "Objective. The thing you want to find or do. Like a treasure hunt: your goal is to find ice clues."
+    },
+    {
+      "id": "male-word-lander",
+      "character": "commander-male",
+      "text": "Lander. A spacecraft that lands on the ground. It carries our rover safely down to the Moon."
+    },
+    {
+      "id": "male-word-rover",
+      "character": "commander-male",
+      "text": "Rover. A robot with wheels that explores the ground. Like a little car that can work on the Moon!"
+    },
+    {
+      "id": "male-word-mass",
+      "character": "commander-male",
+      "text": "Mass. How much stuff is in something. We count it in kilograms (kg). More parts add more mass. Our rocket can only carry so much."
+    },
+    {
+      "id": "male-word-budget",
+      "character": "commander-male",
+      "text": "Budget. How many game coins you can spend. Your mission shows a coin limit. Keep your choices under it."
+    },
+    {
+      "id": "male-word-credits",
+      "character": "commander-male",
+      "text": "Credits. The pretend coins we use to buy game parts. 100 credits means 100 game coins. It is not a real price."
+    },
+    {
+      "id": "male-word-power",
+      "character": "commander-male",
+      "text": "Power. How fast something uses energy. A busy drill uses energy faster than a small camera."
+    },
+    {
+      "id": "male-word-peak",
+      "character": "commander-male",
+      "text": "Peak load. The most power your equipment needs at one time. When the drill starts, it may need a big burst of power."
+    },
+    {
+      "id": "male-word-energy",
+      "character": "commander-male",
+      "text": "Energy. The stored supply that helps things work. A full battery holds more energy than an empty one."
+    },
+    {
+      "id": "male-word-battery",
+      "character": "commander-male",
+      "text": "Battery. A box that stores energy to run your robot. In a dark crater, the battery keeps the rover moving."
+    },
+    {
+      "id": "male-word-watts",
+      "character": "commander-male",
+      "text": "W \u00b7 Watts. A number that tells us how fast energy is used or made. A 100 W robot uses energy faster than a 50 W robot."
+    },
+    {
+      "id": "male-word-wh",
+      "character": "commander-male",
+      "text": "Wh \u00b7 Watt-hours. A number that tells us how much energy a battery holds. For the same robot, a bigger Wh number means the battery lasts longer."
+    },
+    {
+      "id": "male-word-reserve",
+      "character": "commander-male",
+      "text": "Reserve. Energy you save for later. We leave 20% in the battery, like saving a snack for the trip home."
+    },
+    {
+      "id": "male-word-solar",
+      "character": "commander-male",
+      "text": "Solar array. Panels that turn sunlight into electricity. They need sunlight. In dark shadow, they cannot charge our battery."
+    },
+    {
+      "id": "male-word-shadow",
+      "character": "commander-male",
+      "text": "Permanent shadow. A place where sunlight never reaches the ground. Some deep Moon craters stay dark and very cold."
+    },
+    {
+      "id": "male-word-thermal",
+      "character": "commander-male",
+      "text": "Thermal protection. Layers and heaters that help keep the robot at a safe temperature. Like a warm coat and a heater for our rover."
+    },
+    {
+      "id": "male-word-navigation",
+      "character": "commander-male",
+      "text": "Navigation. Finding the way to a place. Cameras help our rover spot rocks and choose a safe path."
+    },
+    {
+      "id": "male-word-communication",
+      "character": "commander-male",
+      "text": "Communication. Sending messages to someone far away. The rover uses a radio to send its discoveries to the lander."
+    },
+    {
+      "id": "male-word-radar",
+      "character": "commander-male",
+      "text": "Radar. A tool that sends out radio waves and listens for them to bounce back. It helps the lander tell how close the ground is."
+    },
+    {
+      "id": "male-word-antenna",
+      "character": "commander-male",
+      "text": "Antenna. A part that sends and catches radio messages. Like ears for the robot\u2019s radio."
+    },
+    {
+      "id": "male-word-drill",
+      "character": "commander-male",
+      "text": "Drill depth. How far your tool digs into the ground. A deeper hole takes more time and battery energy."
+    },
+    {
+      "id": "male-word-reliability",
+      "character": "commander-male",
+      "text": "Reliability. How often something works without trouble. A higher game rating means a better chance of working well."
+    },
+    {
+      "id": "male-word-geology",
+      "character": "commander-male",
+      "text": "Geology. Learning about rocks and the ground. Moon rocks can tell us what happened there long ago."
+    },
+    {
+      "id": "male-word-crater",
+      "character": "commander-male",
+      "text": "Crater rim. The edge of a big bowl-shaped hole in the ground. A Moon crater\u2019s edge can get light while its deep floor stays dark."
+    },
+    {
+      "id": "male-word-payload",
+      "character": "commander-male",
+      "text": "Payload. The things a rocket is carrying to space. Our lander, rover and tools travel inside the rocket."
+    },
+    {
+      "id": "male-word-adapter",
+      "character": "commander-male",
+      "text": "Adapter. A joining piece that holds two things together. It holds our explorer firmly inside the rocket."
+    },
+    {
+      "id": "male-word-fairing",
+      "character": "commander-male",
+      "text": "Fairing. The rocket\u2019s protective cover. It protects our explorer from fast-moving air during launch."
+    },
+    {
+      "id": "male-word-booster",
+      "character": "commander-male",
+      "text": "Booster. A rocket part that gives a big push at launch. When its fuel is used up, we let it go to carry less mass."
+    },
+    {
+      "id": "male-word-eva",
+      "character": "commander-male",
+      "text": "Suit time \u00b7 EVA. Time astronauts spend outside their spacecraft. Their suits carry a limited supply. They go back inside before it runs low."
+    },
+    {
+      "id": "male-word-thrust",
+      "character": "commander-male",
+      "text": "Thrust. The push made by a rocket engine. More upward push helps our lander slow down."
+    },
+    {
+      "id": "male-word-gravity",
+      "character": "commander-male",
+      "text": "Gravity. The pull that brings things toward a moon or planet. Moon gravity pulls our lander down. The engine helps it land softly."
+    },
+    {
+      "id": "male-word-abort",
+      "character": "commander-male",
+      "text": "Abort. Stop the landing when it is unsafe. With enough fuel and height, our crew can climb back toward orbit."
+    },
+    {
+      "id": "male-word-orbit",
+      "character": "commander-male",
+      "text": "Orbit. Moving around a planet while gravity pulls you toward it. Our spacecraft moves sideways fast enough to keep going around Earth."
+    },
+    {
+      "id": "male-word-rehearsal",
+      "character": "commander-male",
+      "text": "Rehearsal. A practice run before the real adventure. Try driving and drilling here. Practice samples earn no science points."
+    },
+    {
+      "id": "male-word-dust",
+      "character": "commander-male",
+      "text": "Moon dust. Tiny, sharp bits of Moon soil that stick to tools. Digging can put dust on a camera or solar panel. The Moon has no wind like Earth."
+    },
+    {
+      "id": "male-word-radiation",
+      "character": "commander-male",
+      "text": "Space radiation. Tiny fast particles and energy from space that can hurt people. During a space-weather alert, our crew stays inside a protective shelter."
+    },
+    {
+      "id": "male-word-care",
+      "character": "commander-male",
+      "text": "Care kit. Cleaning tools packed before launch. Our crew can use one cleaning kit at Base. It improves the view, but some sticky dust stays."
+    },
+    {
+      "id": "male-word-hydrogen",
+      "character": "commander-male",
+      "text": "Hydrogen. A tiny building piece of many things, including water. Finding it is a clue. It does not always mean there is ice."
+    },
+    {
+      "id": "male-word-hydroxyl",
+      "character": "commander-male",
+      "text": "Hydroxyl. A small oxygen-and-hydrogen piece that can be attached to a mineral. It is not a whole water molecule. We need more clues before saying there is water."
+    },
+    {
+      "id": "male-word-evidence",
+      "character": "commander-male",
+      "text": "Evidence. Clues that help us check an answer. Two tools agreeing gives us a stronger clue than guessing."
+    },
+    {
+      "id": "male-word-confidence",
+      "character": "commander-male",
+      "text": "Confidence. How sure we are about what a clue means. A faint or mixed clue means we should say we are not sure yet."
+    },
+    {
+      "id": "male-word-nss",
+      "character": "commander-male",
+      "text": "NSS. A tool that looks for tiny particle clues called neutrons. It can find hydrogen clues. More tools must check whether there is water ice."
+    },
+    {
+      "id": "male-word-nirvss",
+      "character": "commander-male",
+      "text": "NIRVSS. A tool that studies the ground using light our eyes cannot see. The light can give clues about water and minerals."
+    },
+    {
+      "id": "male-word-trident",
+      "character": "commander-male",
+      "text": "TRIDENT. A drill that brings little pieces of Moon soil up to the surface. Other tools can study the pieces it digs up."
+    },
+    {
+      "id": "male-word-msolo",
+      "character": "commander-male",
+      "text": "MSOLO. A tool that checks gases coming from the soil. It helps scientists look for clues of water and other gases."
+    },
+    {
+      "id": "male-repair-science-mass",
+      "character": "commander-male",
+      "text": "Choose a lighter science tool or leave an extra one behind."
+    },
+    {
+      "id": "male-repair-thermal",
+      "character": "commander-male",
+      "text": "Advanced protection keeps us warm in cold shadows."
+    },
+    {
+      "id": "male-repair-energy",
+      "character": "commander-male",
+      "text": "A bigger battery saves enough energy to get home."
+    },
+    {
+      "id": "male-repair-depth",
+      "character": "commander-male",
+      "text": "A shorter drill uses less energy. Save enough for the trip home."
+    },
+    {
+      "id": "male-repair-peak",
+      "character": "commander-male",
+      "text": "This part needs less power at once. Our battery can handle it better."
+    },
+    {
+      "id": "male-repair-mass",
+      "character": "commander-male",
+      "text": "This lighter part saves weight so our rocket can carry everything."
+    },
+    {
+      "id": "male-repair-budget",
+      "character": "commander-male",
+      "text": "This part costs less. Keep our mission within budget."
+    },
+    {
+      "id": "male-repair-remove-mass",
+      "character": "commander-male",
+      "text": "Leave this extra tool behind to save weight."
+    },
+    {
+      "id": "male-repair-remove-budget",
+      "character": "commander-male",
+      "text": "Leave this extra tool behind to save credits."
+    },
+    {
+      "id": "male-repair-remove-peak",
+      "character": "commander-male",
+      "text": "Leave this extra tool behind so we use less power at once."
+    },
+    {
+      "id": "male-flight-crewed-orbit-burn",
+      "character": "commander-male",
+      "text": "Crew spacecraft uncovered. Next stop: Earth orbit!"
+    },
+    {
+      "id": "male-flight-ready-guided",
+      "character": "commander-male",
+      "text": "All systems go! We\u2019ll pause when it\u2019s your turn."
+    },
+    {
+      "id": "male-flight-ready-challenge",
+      "character": "commander-male",
+      "text": "Release when the band turns green. Ready?"
+    },
+    {
+      "id": "male-flight-retry",
+      "character": "commander-male",
+      "text": "Missed it? Retry this stage. You\u2019ve got this!"
+    },
+    {
+      "id": "male-flight-paused",
+      "character": "commander-male",
+      "text": "Flight paused. Continue when you\u2019re ready."
+    },
+    {
+      "id": "male-flight-drop-booster",
+      "character": "commander-male",
+      "text": "Empty booster! Let\u2019s drop that extra weight."
+    },
+    {
+      "id": "male-flight-open-cover",
+      "character": "commander-male",
+      "text": "Clear of thick air. Open the cover!"
+    },
+    {
+      "id": "male-flight-green-booster",
+      "character": "commander-male",
+      "text": "Green! Separate the empty booster now."
+    },
+    {
+      "id": "male-flight-green-fairing",
+      "character": "commander-male",
+      "text": "Green! Release the fairing now."
+    },
+    {
+      "id": "male-flight-countdown",
+      "character": "commander-male",
+      "text": "Countdown started. Here we go!"
+    },
+    {
+      "id": "male-flight-orbit-burn",
+      "character": "commander-male",
+      "text": "Explorer uncovered. Next stop: Earth orbit!"
+    },
+    {
+      "id": "male-flight-upper-burn",
+      "character": "commander-male",
+      "text": "Clean release! Our upper stage is pushing."
+    },
+    {
+      "id": "male-flight-liftoff",
+      "character": "commander-male",
+      "text": "Liftoff! Watch Earth fall away."
+    },
+    {
+      "id": "male-flight-complete",
+      "character": "commander-male",
+      "text": "We made it! Earth orbit!"
+    },
+    {
+      "id": "male-flight-wrong-order",
+      "character": "commander-male",
+      "text": "Wrong order. Separate the booster first."
+    },
+    {
+      "id": "male-flight-too-soon-booster",
+      "character": "commander-male",
+      "text": "Too soon! The booster is still pushing. Wait for green."
+    },
+    {
+      "id": "male-flight-too-soon-fairing",
+      "character": "commander-male",
+      "text": "Too soon! Keep the fairing through the thick air."
+    },
+    {
+      "id": "male-flight-try-green",
+      "character": "commander-male",
+      "text": "Try again. Release while the band is green."
+    }
+  ]
+}

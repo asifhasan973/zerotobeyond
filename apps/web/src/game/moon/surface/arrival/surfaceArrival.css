@@ -1,0 +1,168 @@
+.arrival-main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.5vh, 16px);
+  overflow: hidden;
+}
+.arrival-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+.arrival-heading h1 {
+  margin: 0;
+  color: var(--cream);
+  font-size: clamp(23px, 3vw, 38px);
+  line-height: 1.1;
+}
+.arrival-heading button {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--lavender);
+  font: inherit;
+  cursor: pointer;
+}
+.arrival-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
+  gap: clamp(10px, 1.5vw, 22px);
+  flex: 1;
+  min-height: 0;
+}
+.arrival-scene {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #060a15;
+}
+.arrival-scene-caption {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 7px 10px;
+  border-radius: 9px;
+  background: #0b1021d9;
+  color: var(--lavender);
+  font-size: 12px;
+}
+.arrival-panel {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  padding: clamp(14px, 2vw, 25px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vh, 22px);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #2a1d39;
+  scrollbar-color: var(--mint) transparent;
+  scrollbar-width: thin;
+}
+.arrival-progress {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+  color: var(--lavender);
+  font-size: 12px;
+}
+.arrival-progress li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.arrival-progress .is-done {
+  color: var(--mint);
+}
+.arrival-crew-places {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+  font-size: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.arrival-crew-places strong {
+  color: var(--cream);
+  font-weight: 500;
+}
+.arrival-crew-places span {
+  color: var(--mint);
+}
+.arrival-copy h2 {
+  font-size: clamp(19px, 2vw, 27px);
+  line-height: 1.15;
+  margin: 0 0 15px;
+  color: var(--cream);
+}
+.arrival-copy p {
+  font-size: clamp(13px, 1.2vw, 16px);
+  line-height: 1.45;
+  margin: 9px 0;
+  color: var(--lavender);
+}
+.arrival-copy progress {
+  width: 100%;
+  height: 7px;
+  accent-color: var(--mint);
+  margin-top: 10px;
+}
+.arrival-outside-note {
+  margin: 0;
+  font-size: 13px;
+  color: var(--mint);
+}
+.arrival-heading button:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+@media (max-height: 450px) {
+  .arrival-heading h1 {
+    font-size: 22px;
+  }
+  .arrival-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 9px;
+  }
+  .arrival-panel {
+    padding: 11px;
+    gap: 10px;
+    border-radius: 16px;
+  }
+  .arrival-crew-places {
+    padding-bottom: 8px;
+    font-size: 11px;
+    gap: 5px;
+  }
+  .arrival-progress {
+    gap: 6px;
+    font-size: 11px;
+  }
+  .arrival-copy h2 {
+    font-size: 19px;
+    margin-bottom: 8px;
+  }
+  .arrival-copy p {
+    font-size: 12px;
+    margin: 6px 0;
+  }
+  .arrival-scene-caption {
+    font-size: 10px;
+    bottom: 8px;
+    left: 8px;
+    max-width: calc(100% - 16px);
+  }
+}

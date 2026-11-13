@@ -1,0 +1,289 @@
+.crew-radio-exchange {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.crew-radio-caption {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--mint);
+  font-size: 12px;
+}
+.crew-radio-line {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+.crew-radio-line img {
+  width: 48px;
+  height: 56px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 10px;
+  background: var(--ink);
+}
+.crew-radio-line strong {
+  display: block;
+  color: var(--cream);
+  font-size: 15px;
+}
+.crew-radio-line small {
+  display: block;
+  color: var(--mint);
+  font-size: 11px;
+  margin: 2px 0 5px;
+}
+.crew-radio-line p {
+  margin: 0;
+  color: var(--lavender);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.crew-radio-context {
+  font-size: 12px;
+  color: var(--lavender);
+}
+.crew-radio-context summary {
+  cursor: pointer;
+  padding: 8px 0;
+}
+.crew-radio-context p {
+  margin: 5px 0;
+}
+.crew-radio-listen {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+  width: fit-content;
+  padding: 8px 12px;
+  color: var(--lavender);
+  background: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.crew-handoff {
+  display: grid;
+  gap: 14px;
+}
+.crew-handoff h2 {
+  margin: 0;
+  font-size: clamp(20px, 2.4vw, 32px);
+  color: var(--cream);
+  line-height: 1.12;
+}
+.crew-handoff-roster {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.crew-handoff-roster article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  text-align: center;
+}
+.crew-handoff-roster img {
+  width: clamp(45px, 6vw, 78px);
+  height: clamp(56px, 7vw, 90px);
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 12px;
+  background: var(--ink);
+}
+.crew-handoff-roster strong {
+  font-size: 13px;
+  color: var(--cream);
+}
+.crew-handoff-roster small {
+  font-size: 11px;
+  color: var(--lavender);
+}
+.crew-handoff-roster span {
+  font-size: 11px;
+  color: var(--mint);
+}
+.crew-radio-pocket {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 7;
+}
+.crew-radio-pocket > button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 8px 12px;
+  color: var(--cream);
+  background: #140f27f2;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.crew-radio-pocket-body {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: min(330px, 70vw);
+  max-height: min(360px, 55vh);
+  overflow: auto;
+  padding: 16px;
+  border-radius: 14px;
+  background: #140f27f5;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 30px #0008;
+  color: var(--lavender);
+}
+.crew-radio-pocket-body > strong {
+  color: var(--yellow);
+}
+.crew-radio-pocket-body > p {
+  font-size: 13px;
+  margin: 6px 0 14px;
+}
+.crew-radio-pocket button:focus-visible,
+.crew-radio-listen:focus-visible,
+.crew-radio-context summary:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+@media (max-height: 450px) {
+  .crew-handoff {
+    gap: 8px;
+  }
+  .crew-handoff-roster img {
+    width: 38px;
+    height: 44px;
+  }
+  .crew-handoff-roster article {
+    gap: 2px;
+  }
+  .crew-handoff-roster small {
+    display: none;
+  }
+  .crew-radio-line {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 7px;
+  }
+  .crew-radio-line img {
+    width: 32px;
+    height: 38px;
+  }
+  .crew-radio-line strong {
+    font-size: 13px;
+  }
+  .crew-radio-line small {
+    font-size: 10px;
+    margin-bottom: 3px;
+  }
+  .crew-radio-line p {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  .crew-radio-exchange {
+    gap: 7px;
+  }
+  .crew-radio-pocket {
+    right: 8px;
+    top: 8px;
+  }
+}
+
+.rover-toolbar .crew-radio-pocket {
+  position: relative;
+  top: auto;
+  right: auto;
+}
+.rover-toolbar .crew-radio-pocket > button {
+  width: auto;
+  min-height: 42px;
+  padding: 8px 10px;
+}
+.return-radio-preparation h2 {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 2.3vw, 32px);
+  color: var(--cream);
+  line-height: 1.15;
+}
+.return-radio-preparation > p {
+  color: var(--lavender);
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+@media (max-height: 450px) {
+  .return-radio-preparation h2 {
+    font-size: 20px;
+  }
+  .return-radio-preparation > p {
+    display: none;
+  }
+}
+.return-radio-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 15px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+@media (max-height: 450px) {
+  .return-radio-action {
+    min-height: 42px;
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 13px;
+  }
+}
+.return-radio-preparation {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+.return-radio-preparation .crew-radio-exchange {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  align-content: start;
+  scrollbar-color: var(--mint) transparent;
+  scrollbar-width: thin;
+}
+.return-radio-action {
+  flex: 0 0 auto;
+}
+@media (max-height: 450px) {
+  .return-radio-preparation .crew-radio-caption,
+  .return-radio-preparation .crew-radio-context {
+    display: none;
+  }
+  .return-radio-preparation h2 {
+    margin-bottom: 6px;
+    font-size: 19px;
+  }
+  .crew-handoff .crew-radio-caption,
+  .crew-handoff .crew-radio-context,
+  .crew-handoff .crew-radio-line img,
+  .crew-handoff .crew-radio-line small,
+  .crew-handoff .crew-radio-listen {
+    display: none;
+  }
+  .crew-handoff .crew-radio-line {
+    display: block;
+  }
+}
