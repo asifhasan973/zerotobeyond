@@ -1,0 +1,164 @@
+{
+  "engines": {
+    "src": "story/parts/engines.webp",
+    "source": "https://images.nasa.gov/details/RS-25_nozzle_24AR-00040-045-RS-25_Nozzle-6002-T",
+    "id": "RS-25_nozzle_24AR-00040-045-RS-25_Nozzle-6002-T",
+    "title": "NASA Marks Halfway Point for Artemis Moon Rocket Engine Certification Series"
+  },
+  "core": {
+    "src": "story/parts/core.webp",
+    "source": "https://images.nasa.gov/details/DSC_7623",
+    "id": "DSC_7623",
+    "title": "SLS Core Stage Installed (Flame Trench View)"
+  },
+  "interstage": {
+    "src": "story/parts/interstage.webp",
+    "source": "https://images.nasa.gov/details/MSFC-1601496",
+    "id": "MSFC-1601496",
+    "title": "LAUNCH VEHICLE STAGE ADAPTER MOVE TO TEST FACILITY"
+  },
+  "upper": {
+    "src": "story/parts/upper.webp",
+    "source": "https://images.nasa.gov/details/MSFC-1600851",
+    "id": "MSFC-1600851",
+    "title": "INTERIM CRYOGENIC PROPULSION STAGE TEST ARTICLE"
+  },
+  "adapter": {
+    "src": "story/parts/adapter.webp",
+    "source": "https://images.nasa.gov/details/MSFC-1700820",
+    "id": "MSFC-1700820",
+    "title": "MSFC-1700820"
+  },
+  "lander": {
+    "src": "story/parts/lander.webp",
+    "source": "https://images.nasa.gov/details/624073main_1969-04-04_full",
+    "id": "624073main_1969-04-04_full",
+    "title": "Apollo 11 Lunar Module"
+  },
+  "capsule": {
+    "src": "story/parts/capsule.webp",
+    "source": "https://images.nasa.gov/details/LRC-2013-00340",
+    "id": "LRC-2013-00340",
+    "title": "Orion Crew Module KSC Ground Ops Pathfinder"
+  },
+  "cover": {
+    "src": "story/parts/cover.webp",
+    "source": "https://images.nasa.gov/details/KSC-20200806-PH-KLS01_0030",
+    "id": "KSC-20200806-PH-KLS01_0030",
+    "title": "Orion Spacecraft Adapter (SA) Panels"
+  },
+  "tower": {
+    "src": "story/parts/tower.webp",
+    "source": "https://images.nasa.gov/details/KSC-20250910-PH-CSH02-0003",
+    "id": "KSC-20250910-PH-CSH02-0003",
+    "title": "Orion Launch Abort System Integration"
+  },
+  "solar": {
+    "src": "story/parts/solar.webp",
+    "source": "https://images.nasa.gov/details/PIA15114",
+    "id": "PIA15114",
+    "title": "Opportunity Rover Self-Portrait From 2007"
+  },
+  "antenna": {
+    "src": "story/parts/antenna.webp",
+    "source": "https://images.nasa.gov/details/PIA23193",
+    "id": "PIA23193",
+    "title": "Now Mars 2020 Can Phone Home"
+  },
+  "wheel": {
+    "src": "story/parts/wheel.webp",
+    "source": "https://images.nasa.gov/details/PIA11427",
+    "id": "PIA11427",
+    "title": "Wheel for Mars Science Laboratory Rover"
+  },
+  "nss": {
+    "src": "story/parts/nss.webp",
+    "source": "https://images.nasa.gov/details/ACD20-0040-029",
+    "id": "ACD20-0040-029",
+    "title": "NSS Vibe Test at the EEL Lab"
+  },
+  "nirvss": {
+    "src": "story/parts/nirvss.webp",
+    "source": "https://images.nasa.gov/details/ACD20-0037-021",
+    "id": "ACD20-0037-021",
+    "title": "NIRVSS N-213 Laboratory"
+  },
+  "rover": {
+    "src": "story/parts/rover.webp",
+    "source": "https://images.nasa.gov/details/GRC-2019-C-09947",
+    "id": "GRC-2019-C-09947",
+    "title": "Virtual Intelligent Planetary Exploration Rover, VIPER Mobili..."
+  },
+  "basic": {
+    "src": "story/parts/basic.webp",
+    "source": "https://images.nasa.gov/details/PIA01551",
+    "id": "PIA01551",
+    "title": "Newly Deployed Sojourner Rover"
+  },
+  "heavy": {
+    "src": "story/parts/heavy.webp",
+    "source": "https://images.nasa.gov/details/PIA13306",
+    "id": "PIA13306",
+    "title": "Next Mars Rover Starts Rolling"
+  },
+  "battery": {
+    "src": "story/parts/battery.webp",
+    "source": "https://images.nasa.gov/details/iss056e150242",
+    "id": "iss056e150242",
+    "title": "Zero G Battery Testing"
+  },
+  "drill": {
+    "src": "story/parts/drill.webp",
+    "title": "TRIDENT drill arrival and inspection",
+    "source": "https://www.nasa.gov/general/all-together-now-drill-joins-other-moon-rover-science-instruments/",
+    "id": "jsc2023e053794"
+  },
+  "thermal": {
+    "src": "story/parts/thermal.webp",
+    "source": "https://images.nasa.gov/details/ACD22-0007-288",
+    "id": "ACD22-0007-288",
+    "title": "Cislunar Autonomous Positioning System Technology Operations and"
+  },
+  "msolo": {
+    "src": "story/parts/msolo.webp",
+    "source": "https://images.nasa.gov/details/KSC-20200925-PH-GEB01_0004",
+    "id": "KSC-20200925-PH-GEB01_0004",
+    "title": "MSolo Instrument Work"
+  },
+  "camera": {
+    "src": "story/parts/camera.webp",
+    "source": "https://images.nasa.gov/details/PIA23266",
+    "id": "PIA23266",
+    "title": "NASA's Mars 2020 Gets HD Eyes"
+  },
+  "xrf": {
+    "src": "story/parts/xrf.webp",
+    "source": "https://images.nasa.gov/details/PIA16160",
+    "id": "PIA16160",
+    "title": "Portrait of APXS on Mars"
+  },
+  "xrd": {
+    "src": "story/parts/xrd.webp",
+    "source": "https://images.nasa.gov/details/PIA16171",
+    "id": "PIA16171",
+    "title": "Detector for CheMin"
+  },
+  "seismometer": {
+    "src": "story/parts/seismometer.webp",
+    "source": "https://images.nasa.gov/details/PIA21846",
+    "id": "PIA21846",
+    "title": "Bench Checkout of InSight's Seismometer Instrument"
+  },
+  "sample": {
+    "src": "story/parts/sample.webp",
+    "source": "https://images.nasa.gov/details/s70-20272",
+    "id": "s70-20272",
+    "title": "Astronauts James Lovell uses scoop from ALHT during simulation"
+  },
+  "gpr": {
+    "src": "story/parts/gpr.webp",
+    "source": "https://images.nasa.gov/details/PIA24205",
+    "id": "PIA24205",
+    "title": "This Gold Box to Searches for Buried Treasure"
+  }
+}

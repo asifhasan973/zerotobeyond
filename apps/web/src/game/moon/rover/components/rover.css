@@ -1027,3 +1027,47 @@
     bottom: 185px;
   }
 }
+
+.free-rover-world .rover-sample-result {
+  width: min(280px, 32%);
+  top: 72px;
+  right: 14px;
+  bottom: auto;
+  padding: 16px;
+  gap: 8px;
+  border: 1px solid #8ce2c26b;
+  border-radius: 16px;
+  background: #102832f2;
+}
+.rover-sample-result .rover-sample-icon {
+  display: none;
+}
+.free-rover-world .rover-sample-result h2 {
+  font-size: 22px;
+  margin: 0;
+}
+.free-rover-world .rover-sample-result p {
+  font-size: 13px;
+  margin: 0;
+}
+.rover-evidence-readings summary {
+  cursor: pointer;
+  color: var(--mint);
+  font-size: 12px;
+  padding: 8px 0;
+}
+@media (max-height: 450px) {
+  .free-rover-world .rover-sample-result {
+    top: 48px;
+    padding: 10px;
+  }
+  .free-rover-world .rover-sample-result h2 {
+    font-size: 18px;
+  }
+}
+
+.free-rover-world .rover-sample-result {
+  transform: none;
+  max-height: calc(100% - 86px);
+  overflow-y: auto;
+}

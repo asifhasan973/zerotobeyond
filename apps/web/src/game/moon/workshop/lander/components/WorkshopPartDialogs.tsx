@@ -1,3 +1,4 @@
+import { workshopPhoto, photoUrl } from "../../partPhotos";
 import React, { useEffect, useRef } from "react";
 import { GameInfo } from "@exo/ui";
 import { Term } from "@/game/moon/core/learning/Learning";
@@ -15,12 +16,27 @@ export function PartDetails({
   onClose(): void;
   onRemove(): void;
 }) {
+  const photo = workshopPhoto(part.id, part.category);
   return (
     <GameInfo
       title={part.name}
       onClose={onClose}
       pages={[
         <div key="overview">
+          {photo && (
+            <figure className="part-reference-photo">
+              <img src={photoUrl(photo)} alt={photo.title} />
+              <figcaption>
+                <a href={photo.source} target="_blank" rel="noreferrer">
+                  {photo.title} · NASA ↗
+                </a>
+                <p>
+                  Real hardware reference. Game sizes and ratings are
+                  illustrative.
+                </p>
+              </figcaption>
+            </figure>
+          )}
           <div className="learning-part-intro">
             <span aria-hidden="true">
               {PART_TERMS[part.id] ? GLOSSARY[PART_TERMS[part.id]].icon : "🔬"}

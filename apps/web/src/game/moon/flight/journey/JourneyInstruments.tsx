@@ -1,3 +1,4 @@
+import { Hand } from "lucide-react";
 import type { JourneyState, JourneyEvent } from "./journey";
 
 export function JourneyInstruments({
@@ -20,18 +21,26 @@ export function JourneyInstruments({
         <span>
           Alignment <output>{j.angle ?? 0}° · target 0°</output>
         </span>
-        <input
-          aria-label="Burn alignment"
-          type="range"
-          min="-90"
-          max="90"
-          step="1"
-          value={j.angle ?? 0}
-          disabled={disabled}
-          onChange={(e) =>
-            dispatch({ type: "journey-pilot", angle: Number(e.target.value) })
-          }
-        />
+        <div className="burn-alignment-track">
+          <span className="burn-zero-target" aria-hidden="true" />
+          <input
+            aria-describedby="burn-alignment-help"
+            aria-label="Burn alignment"
+            type="range"
+            min="-90"
+            max="90"
+            step="1"
+            value={j.angle ?? 0}
+            disabled={disabled}
+            onChange={(e) =>
+              dispatch({ type: "journey-pilot", angle: Number(e.target.value) })
+            }
+          />
+        </div>
+        <small id="burn-alignment-help" className="burn-alignment-help">
+          <Hand size={15} aria-hidden="true" />
+          Slide to the green 0° marker
+        </small>
       </label>
       <label className="journey-instrument">
         <span>

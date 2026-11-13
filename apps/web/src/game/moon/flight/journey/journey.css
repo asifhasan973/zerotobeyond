@@ -669,3 +669,47 @@
   border-radius: 6px;
   background: #160f26ed;
 }
+
+.burn-alignment-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+}
+.burn-alignment-track input {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+.burn-zero-target {
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  bottom: 2px;
+  width: 12px;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  background: #5df2b24d;
+  border: 1px solid #5df2b2;
+  pointer-events: none;
+}
+.burn-alignment-help {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--mint);
+  font-size: 12px;
+}
+.burn-alignment-help svg {
+  animation: burn-slide-hint 1.6s ease-in-out 3;
+}
+@keyframes burn-slide-hint {
+  50% {
+    transform: translateX(7px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .burn-alignment-help svg {
+    animation: none;
+  }
+}

@@ -1,3 +1,4 @@
+import { SourcesButton } from "../core/learning/MissionSources";
 import React from "react";
 import { StorySaveBadge } from "@/shared/shell/StorySaveBadge";
 
@@ -17,6 +18,7 @@ export function StoryHeaderExtra({
 }: StoryHeaderExtraProps) {
   return (
     <>
+      <SourcesButton />
       {showSaveStatus ? (
         <StorySaveBadge
           storageAvailable={storageAvailable}

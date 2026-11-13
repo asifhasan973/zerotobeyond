@@ -1,6 +1,54 @@
 /** Capability references, not a claim that our balancing numbers are NASA specs. */
 export const MISSION_SOURCES = [
   {
+    id: "maturity",
+    title: "JPL: concept maturity levels",
+    url: "https://dataverse.jpl.nasa.gov/dataset.xhtml?persistentId=hdl:2014/44299",
+    use: "Challenge resource and further reading: how space mission concepts develop. Game progression is authored, not a formal maturity assessment.",
+  },
+  {
+    id: "mission-lab",
+    title: "NASA Goddard Mission Design Lab",
+    url: "https://etd.gsfc.nasa.gov/capabilities/integrated-design-center/mission-design-lab/",
+    use: "Challenge resource: multidisciplinary mission design and engineering tradeoffs.",
+  },
+  {
+    id: "cubesat",
+    title: "NASA CubeSat 101",
+    url: "https://www3.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf",
+    use: "Challenge resource and further reading for spacecraft power, communications and mission planning. Our game is a fictional lunar mission, not a CubeSat design.",
+  },
+  {
+    id: "challenge",
+    title: "Space Apps: Space Mission Design Game",
+    url: "https://www.spaceappschallenge.org/2026/challenges/space-mission-design-game/?tab=resources",
+    use: "Challenge inspiration: trade mission objectives against budget, mass, power and communications.",
+  },
+  {
+    id: "mission-design",
+    title: "NASA: Design and Develop Science Missions",
+    url: "https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf",
+    use: "Mission planning and design tradeoffs. Our credits, part tiers and upgrade prices are game values.",
+  },
+  {
+    id: "horizons",
+    title: "NASA/JPL Horizons: orbital data",
+    url: "https://ssd.jpl.nasa.gov/horizons/manual.html",
+    use: "Outbound transfer uses precomputed Moon and Sun state vectors from Horizons (DE441), Earth-centred ICRF, TDB, km/s, sampled every six hours for November 1–December 16, 2026. Spacecraft trajectories are calculated by our teaching model, not flown NASA spacecraft tracks or live forecasts.",
+  },
+  {
+    id: "gmat",
+    title: "NASA General Mission Analysis Tool",
+    url: "https://software.nasa.gov/software/GSC-19468-1",
+    use: "Further reading on mission trajectory design. GMAT is a reference tool; this game does not run GMAT.",
+  },
+  {
+    id: "lro",
+    title: "NASA Lunar Reconnaissance Orbiter",
+    url: "https://science.nasa.gov/mission/lro/",
+    use: "Real Moon mapping context. Reference map locations are separate from the illustrative mission landing region.",
+  },
+  {
     id: "crew-radio",
     title: "Apollo lunar module communications",
     url: "https://ntrs.nasa.gov/citations/19720023255",

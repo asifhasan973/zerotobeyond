@@ -855,18 +855,18 @@ export function RoverScreen({
                 <h2>
                   {r.sampleResult === "hard"
                     ? "Try a different site"
-                    : "+1 sample in your cargo box"}
+                    : "+1 sample aboard"}
                 </h2>
                 <p>
                   {r.sampleResult === "hard"
-                    ? "The ground is too hard for this tool. Your other samples are safe."
+                    ? "Hard ground. Try another site."
                     : r.version >= 3
-                      ? "Sample sealed aboard. Bring it back to the base for delivery."
+                      ? "Return to base to deliver."
                       : `${r.cargo.length} aboard · ${r.deposited.length} delivered. Find one more, then return to base.`}
                 </p>
                 {r.version === 4 && r.sampleResult === "success" ? (
-                  <div className="rover-evidence-readings">
-                    <strong>Instrument readings · awaiting delivery</strong>
+                  <details className="rover-evidence-readings">
+                    <summary>Readings · not delivered</summary>
                     <ul>
                       {session.moon.science.records
                         .filter(
@@ -895,12 +895,12 @@ export function RoverScreen({
                     ) ? (
                       <p>Sample collected. No analytical readings available.</p>
                     ) : null}
-                  </div>
+                  </details>
                 ) : null}
                 <button onClick={() => act({ type: "rover-continue" })}>
                   {r.sampleResult === "hard" && r.version >= 3
                     ? "E · Open crew comms"
-                    : "E · Back to driving"}
+                    : "E · Continue"}
                 </button>
               </div>
             ) : null}

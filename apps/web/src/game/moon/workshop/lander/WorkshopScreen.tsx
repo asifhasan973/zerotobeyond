@@ -467,6 +467,37 @@ export function WorkshopScreen({
       {...frame}
       controls={
         <StoryControls
+          extraActions={
+            <div className="workshop-stage-row">
+              <button
+                className={`workshop-drawer-toggle ${shelfOpen ? "is-open" : ""}`}
+                onClick={toggleShelf}
+                aria-label={
+                  shelfOpen ? "Close inventory drawer" : "Open inventory drawer"
+                }
+                title={
+                  shelfOpen ? "Close inventory drawer" : "Open inventory drawer"
+                }
+              >
+                <span>
+                  Inventory (
+                  {parts.filter((part) => ids.includes(part.id)).length}/
+                  {parts.length})
+                </span>
+              </button>
+              <button
+                className="workshop-quick"
+                aria-label={autoBuilding ? "Stop auto build" : "Auto build"}
+                title={autoBuilding ? "Stop auto build" : "Auto build"}
+                onClick={() =>
+                  autoBuilding ? onStopAutoBuild() : setQuickConfirm(true)
+                }
+              >
+                <WandSparkles size={15} />
+                <span>{autoBuilding ? "Stop" : "Auto build"}</span>
+              </button>
+            </div>
+          }
           keepProgress
           onBack={autoBuilding ? onStopAutoBuild : repair ? onBack : back}
           onNext={
@@ -522,33 +553,6 @@ export function WorkshopScreen({
                 voiceEnabled={!autoBuilding && (frame.voiceEnabled ?? true)}
               />
             </div>
-          </div>
-          <div className="workshop-stage-row">
-            <button
-              className={`workshop-drawer-toggle ${shelfOpen ? "is-open" : ""}`}
-              onClick={toggleShelf}
-              aria-label={
-                shelfOpen ? "Close inventory drawer" : "Open inventory drawer"
-              }
-              title={
-                shelfOpen ? "Close inventory drawer" : "Open inventory drawer"
-              }
-            >
-              <span>
-                Inventory (
-                {parts.filter((part) => ids.includes(part.id)).length}/
-                {parts.length})
-              </span>
-            </button>
-            <button
-              className="workshop-quick"
-              onClick={() =>
-                autoBuilding ? onStopAutoBuild() : setQuickConfirm(true)
-              }
-            >
-              <WandSparkles size={15} />
-              <span>{autoBuilding ? "Stop" : "Auto build"}</span>
-            </button>
           </div>
         </header>
 

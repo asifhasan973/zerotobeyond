@@ -1,3 +1,4 @@
+import { workshopPhoto } from "../../partPhotos";
 import React from "react";
 import { Info, PackageCheck, Trash2 } from "lucide-react";
 import type { WorkshopPart } from "@/game/moon/core/preparation";
@@ -67,6 +68,7 @@ export function WorkshopPartCard({
   setInfoId,
 }: WorkshopPartCardProps) {
   const installed = ids.includes(part.id);
+  const photo = workshopPhoto(part.id, part.category);
   const comparison = comparePart(
     session.preparation,
     part.id,
@@ -106,18 +108,20 @@ export function WorkshopPartCard({
             <Trash2 size={13} />
           </button>
         ) : null}
-        <button
-          type="button"
-          className="workshop-info"
-          aria-label={`Details for ${part.name}`}
-          title={`Details for ${part.name}`}
-          onClick={(event) => {
-            event.stopPropagation();
-            setInfoId(part.id);
-          }}
-        >
-          <Info size={14} />
-        </button>
+        {photo && (
+          <button
+            type="button"
+            className="workshop-info"
+            aria-label={`Details for ${part.name}`}
+            title={`Details for ${part.name}`}
+            onClick={(event) => {
+              event.stopPropagation();
+              setInfoId(part.id);
+            }}
+          >
+            <Info size={14} />
+          </button>
+        )}
       </div>
       <button
         type="button"

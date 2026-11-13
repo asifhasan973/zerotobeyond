@@ -1,3 +1,4 @@
+import { LearningStepContext } from "./learningScene";
 import { usePlayerGender } from "@/game/moon/narrative/hooks/playerCharacterContext";
 import {
   createContext,
@@ -39,6 +40,7 @@ const LearningContext = createContext<{
   open(term: KeywordView): void;
   registerText(id: string, text: string): () => void;
   hasKeywords: boolean;
+  stepId?: string;
 } | null>(null);
 
 export function LearningProvider({
@@ -49,7 +51,37 @@ export function LearningProvider({
   activity,
 }: { children: ReactNode } & KeywordScene) {
   const [fixed, setFixed] = useState(true);
-  const [view, setView] = useState<KeywordView | null>(null);
+  const [panelWidth, setPanelWidth] = useState<number | null>(() => {
+    try {
+      return Number(localStorage.getItem("keyword-panel-width")) || null;
+    } catch {
+      return null;
+    }
+  });
+  const resizePanel = (width: number) => {
+    const next = Math.round(Math.max(220, Math.min(innerWidth * 0.6, width)));
+    setPanelWidth(next);
+    try {
+      localStorage.setItem("keyword-panel-width", String(next));
+    } catch {
+      /* Optional preference. */
+    }
+  };
+  useLayoutEffect(() => {
+    if (panelWidth)
+      document.body.style.setProperty(
+        "--keyword-panel-width",
+        `${Math.min(panelWidth, innerWidth * 0.6)}px`,
+      );
+    window.dispatchEvent(new Event("resize"));
+    return () => {
+      document.body.style.removeProperty("--keyword-panel-width");
+    };
+  }, [panelWidth]);
+  const [selection, setSelection] = useState<{
+    value: KeywordView;
+    scene: string;
+  } | null>(null);
   const [prose, setProse] = useState<Record<string, string>>({});
   const [playing, setPlaying] = useState<{
     term: LearningTerm;
@@ -67,6 +99,7 @@ export function LearningProvider({
     stopMedia();
   }, [voice, stopMedia]);
   const sceneKey = `${stepId ?? ""}:${activity ?? ""}:${text ?? ""}`;
+  const view = selection?.scene === sceneKey ? selection.value : null;
   useEffect(() => () => voice.stop(), [voice, sceneKey]);
   const open = useCallback(
     (value: KeywordView) => {
@@ -74,9 +107,9 @@ export function LearningProvider({
         opener.current = document.activeElement as HTMLElement | null;
       }
       stop();
-      setView(value);
+      setSelection({ value, scene: sceneKey });
     },
-    [stop],
+    [stop, sceneKey],
   );
   const registerText = useCallback((id: string, value: string) => {
     setProse((previous) => ({ ...previous, [id]: value }));
@@ -99,8 +132,8 @@ export function LearningProvider({
     return () => document.body.classList.remove("keyword-scene-available");
   }, [hasKeywords]);
   const context = useMemo(
-    () => ({ open, registerText, hasKeywords }),
-    [open, registerText, hasKeywords],
+    () => ({ open, registerText, hasKeywords, stepId }),
+    [open, registerText, hasKeywords, stepId],
   );
   useLayoutEffect(() => {
     document.body.classList.toggle(
@@ -113,14 +146,18 @@ export function LearningProvider({
       window.dispatchEvent(new Event("resize"));
     };
   }, [view, fixed]);
-  const terms = relevant;
+  const terms =
+    view && view !== "context" && KEYWORD_MEDIA[view]?.length
+      ? Array.from(new Set([view, ...relevant]))
+      : relevant;
+
   useEffect(() => {
     if (view && view !== "context")
       content.current?.querySelector<HTMLElement>("h3")?.focus();
   }, [view]);
   const close = () => {
     stop();
-    setView(null);
+    setSelection(null);
     requestAnimationFrame(() => {
       const previous = opener.current;
       const target =
@@ -134,64 +171,96 @@ export function LearningProvider({
   };
 
   return (
-    <LearningContext.Provider value={context}>
-      {children}
-      {view ? (
-        <GameInfo
-          modal={false}
-          title="Space keywords"
-          className="game-info learning-drawer keyword-drawer"
-          onClose={close}
-          headerActions={
-            <button
-              className="conversation-icon"
-              aria-label={fixed ? "Switch to overlay" : "Switch to split view"}
-              title={fixed ? "Switch to overlay" : "Switch to split view"}
-              aria-pressed={fixed}
-              onClick={() => setFixed((value) => !value)}
-            >
-              {fixed ? (
-                <PanelRightClose size={20} />
-              ) : (
-                <PanelRightOpen size={20} />
-              )}
-            </button>
-          }
-          pages={[
-            <div className="keyword-browser" ref={content} key="keywords">
-              {!terms.length ? (
-                <p>No pictures or videos for this page yet.</p>
-              ) : null}
-              <div className="keyword-card-list">
-                {terms.map((term) => (
-                  <KeywordCard
-                    key={term}
-                    term={term}
-                    playing={
-                      playing?.term === term && playing.scene === sceneKey
-                    }
-                    onStop={stopMedia}
-                    onPlay={() => {
-                      voice.stop();
-                      setPlaying({ term, scene: sceneKey });
-                    }}
-                    onRead={() => {
-                      stopMedia();
-                      voice.speak(
-                        `${GLOSSARY[term].name}. ${GLOSSARY[term].text}`,
-                        "commander",
-                        undefined,
-                        gender,
+    <LearningStepContext.Provider value={stepId}>
+      <LearningContext.Provider value={context}>
+        {children}
+        {view ? (
+          <GameInfo
+            modal={false}
+            title="Space keywords"
+            className="game-info learning-drawer keyword-drawer"
+            onClose={close}
+            headerActions={
+              <button
+                className="conversation-icon"
+                aria-label={
+                  fixed ? "Switch to overlay" : "Switch to split view"
+                }
+                title={fixed ? "Switch to overlay" : "Switch to split view"}
+                aria-pressed={fixed}
+                onClick={() => setFixed((value) => !value)}
+              >
+                {fixed ? (
+                  <PanelRightClose size={20} />
+                ) : (
+                  <PanelRightOpen size={20} />
+                )}
+              </button>
+            }
+            pages={[
+              <div className="keyword-browser" ref={content} key="keywords">
+                <div
+                  className="keyword-resizer"
+                  role="separator"
+                  aria-label="Resize space keywords"
+                  aria-orientation="vertical"
+                  aria-valuemin={220}
+                  aria-valuemax={Math.round(innerWidth * 0.6)}
+                  aria-valuenow={panelWidth ?? 294}
+                  tabIndex={0}
+                  onPointerDown={(e) => {
+                    e.currentTarget.setPointerCapture(e.pointerId);
+                    e.preventDefault();
+                  }}
+                  onPointerMove={(e) => {
+                    if (e.currentTarget.hasPointerCapture(e.pointerId))
+                      resizePanel(innerWidth - e.clientX);
+                  }}
+                  onPointerUp={(e) => {
+                    if (e.currentTarget.hasPointerCapture(e.pointerId))
+                      e.currentTarget.releasePointerCapture(e.pointerId);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+                      e.preventDefault();
+                      resizePanel(
+                        (panelWidth ?? 294) +
+                          (e.key === "ArrowLeft" ? 20 : -20),
                       );
-                    }}
-                  />
-                ))}
-              </div>
-            </div>,
-          ]}
-        />
-      ) : null}
-    </LearningContext.Provider>
+                    }
+                  }}
+                />
+                <div className="keyword-card-list">
+                  {terms.map((term) => (
+                    <KeywordCard
+                      key={term}
+                      term={term}
+                      playing={
+                        playing?.term === term && playing.scene === sceneKey
+                      }
+                      onStop={stopMedia}
+                      onPlay={() => {
+                        voice.stop();
+                        setPlaying({ term, scene: sceneKey });
+                      }}
+                      onRead={() => {
+                        stopMedia();
+                        voice.speak(
+                          `${GLOSSARY[term].name}. ${GLOSSARY[term].text}`,
+                          "commander",
+                          undefined,
+                          gender,
+                        );
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>,
+            ]}
+          />
+        ) : null}
+      </LearningContext.Provider>
+    </LearningStepContext.Provider>
   );
 }
 
@@ -233,7 +302,7 @@ export function Term({
 
 export function LearningControls({ onOpen }: { onOpen?: () => void } = {}) {
   const context = useContext(LearningContext);
-  if (!context) return null;
+  if (!context?.hasKeywords) return null;
   return (
     <button
       className="conversation-icon labeled-control"

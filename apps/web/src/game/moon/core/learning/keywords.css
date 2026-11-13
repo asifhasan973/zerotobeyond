@@ -188,7 +188,7 @@
 }
 
 :root {
-  --keyword-panel-width: min(420px, 42vw);
+  --keyword-panel-width: min(294px, 29.4vw);
 }
 .game-info.learning-drawer.keyword-drawer {
   position: fixed;
@@ -263,4 +263,28 @@ html[data-gentle-motion="true"]
 .keyword-drawer .game-info-header-actions {
   display: flex;
   flex-shrink: 0;
+}
+
+.game-info.learning-drawer.keyword-drawer {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.keyword-resizer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: calc(var(--keyword-panel-width) - 5px);
+  width: 10px;
+  cursor: ew-resize;
+  touch-action: none;
+  z-index: 1002;
+}
+.keyword-resizer:hover,
+.keyword-resizer:focus-visible {
+  background: #8ce2c270;
+  outline: none;
+}
+
+.mobile-game-tools [aria-label="NASA sources and game rules"] span {
+  display: none;
 }
