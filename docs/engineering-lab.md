@@ -8,7 +8,7 @@ Define a science objective → select instruments and resource allocations → t
 
 The default scenario selects LROC and LOLA, a 260 Wh battery, 280 W sunlit array, 12 Gbit storage and a 20 W electrical transmitter. The authored orbit lasts 120 minutes: the first 75 are sunlit, observation starts each orbit (24 minutes by default), and downlink occupies the last 15 minutes. These are educational conditions, not actual LRO ephemeris, eclipse or ground-station access predictions.
 
-Browser drafts and comparison snapshots use `zero_to_beyond_engineering_blueprint_v1`. Save is explicit. Baseline pinning also saves both designs when storage is available; on storage failure they remain usable in memory. Invalid/corrupt stored drafts fall back to the bundled reference. No existing game or legacy power-study save is migrated or deleted.
+Browser drafts and comparison snapshots use `zero_to_beyond_engineering_blueprint_v1`. Save is explicit. Baseline pinning also saves both designs when storage is available; on storage failure they remain usable in memory. Invalid/corrupt stored drafts fall back to the bundled reference. No existing game or legacy power-study save is migrated or deleted. Switching between Blueprint Studio and the rover study preserves both mounted studies, including unsaved edits and session-only baselines; a browser reload still requires Save or Export.
 
 ## NASA API: exact inputs and uses
 

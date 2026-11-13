@@ -1180,3 +1180,12 @@
     display: none;
   }
 }
+
+.bp-study-view {
+  height: 100%;
+  min-height: 0;
+}
+.bp-study-view[hidden],
+.bp-legacy[hidden] {
+  display: none;
+}

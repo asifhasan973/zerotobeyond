@@ -34,7 +34,7 @@ function readDraft(): Experiment {
 }
 const number = (v: number) =>
   v.toLocaleString("en", { maximumFractionDigits: 1 });
-export default function EngineeringLab({
+export default function PowerStudy({
   preparation,
 }: {
   preparation: PreparationSelection;
@@ -180,7 +180,7 @@ export default function EngineeringLab({
     : [];
   return (
     <div className="engineering-lab">
-      <main id="engineering-content">
+      <main id="engineering-power-content">
         <section className="eng-intro">
           <div>
             <span className="eng-eyebrow">
