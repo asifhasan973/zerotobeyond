@@ -60,3 +60,5 @@ export function matchesCosmicFilter(
   );
 }
 export { orbitGuide } from "./orbits";
+export { solarCoordinates, solarTravel, solarDateBounds } from "./solar";
+export { advanceSolarClock } from "./solar";

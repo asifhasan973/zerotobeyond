@@ -1,3 +1,4 @@
+import { useLocation } from "react-router";
 import { SpaceTutor } from "@/shared/tutor/SpaceTutor";
 import { lazy, Suspense, useEffect } from "react";
 import {
@@ -26,7 +27,8 @@ const ExactStory = lazy(() => import("./game/moon/stages/ExactStory"));
 
 export default function App() {
   const isLoading = useLoadingStore((state) => state.isLoading);
-  const query = new URLSearchParams(window.location.search);
+  const route = useLocation();
+  const query = new URLSearchParams(route.search);
 
   useEffect(() => {
     const cleanRetiredURLs = () => {

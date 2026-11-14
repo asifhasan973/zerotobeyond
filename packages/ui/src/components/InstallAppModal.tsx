@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Monitor,
   Smartphone,
@@ -17,6 +17,7 @@ import { PwaPerksBox } from "./install-modal/PwaPerksBox";
 import "./installAppModal.css";
 
 export const InstallAppModal: React.FC = () => {
+  const dialog = useRef<HTMLDivElement>(null);
   const {
     isModalOpen,
     closeInstallModal,
@@ -32,7 +33,25 @@ export const InstallAppModal: React.FC = () => {
   useEffect(() => {
     if (!isModalOpen) return;
 
+    const previousFocus = document.activeElement;
+    dialog.current?.querySelector<HTMLButtonElement>("button")?.focus();
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Tab") {
+        const controls = dialog.current?.querySelectorAll<HTMLElement>(
+          "button:not(:disabled), a[href], [tabindex='0']",
+        );
+        if (controls?.length) {
+          const first = controls[0],
+            last = controls[controls.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
       if (e.key === "Escape") {
         sound.playClick();
         closeInstallModal();
@@ -40,7 +59,10 @@ export const InstallAppModal: React.FC = () => {
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      if (previousFocus instanceof HTMLElement) previousFocus.focus();
+    };
   }, [isModalOpen, closeInstallModal]);
 
   if (!isModalOpen || isInstalled) return null;
@@ -62,6 +84,7 @@ export const InstallAppModal: React.FC = () => {
 
   return (
     <div
+      ref={dialog}
       className="pwa-modal-backdrop"
       role="dialog"
       aria-modal="true"

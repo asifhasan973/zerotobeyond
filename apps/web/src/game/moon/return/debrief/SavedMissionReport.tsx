@@ -10,10 +10,11 @@ import {
 import { GameInfo, isEngineFrozen } from "@exo/ui";
 import { GameSettingsProvider } from "@/shared/shell/settings";
 import { SiteNavbar } from "@/shared/site/SiteNavbar";
-import { navigatePage } from "@/shared/site/siteNavigation";
+import { useSiteNavigation } from "@/shared/site/siteNavigation";
 import { MissionDebrief } from "./MissionDebrief.tsx";
 import { completedMission } from "./missionReport";
 export default function SavedMissionReport() {
+  const navigatePage = useSiteNavigation();
   const [retry, setRetry] = useState(false);
   const [saveError, setSaveError] = useState("");
   const [saved] = useState(readBrowserSelectionSession);

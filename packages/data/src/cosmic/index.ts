@@ -26,3 +26,5 @@ export interface CosmicData {
   sources: { name: string; url: string; query: string; sha256: string }[];
   limits: string[];
 }
+export { SOLAR_DETAILS, FEATURED_SPACECRAFT } from "./solar";
+export { SOLAR_SEARCH_ALIASES } from "./solar";

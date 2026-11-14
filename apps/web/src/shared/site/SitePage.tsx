@@ -1,4 +1,4 @@
-import { navigatePage } from "./siteNavigation";
+import { useSiteNavigation } from "./siteNavigation";
 import { lazy, Suspense, useState } from "react";
 import { GameSettingsProvider } from "@/shared/shell/settings";
 import { readBrowserSelectionSession } from "@/game/moon/crew/selectionSession";
@@ -23,12 +23,12 @@ const Archive = lazy(() =>
   })),
 );
 export default function SitePage({
-  page: initialPage,
+  page,
 }: {
   page: Exclude<Page, "home" | "mission">;
 }) {
-  const [page, setPage] = useState(initialPage);
-  const officialSolar =
+  const navigatePage = useSiteNavigation();
+  const fullscreenSolar =
     page === "cosmic" &&
     new URLSearchParams(location.search).get("mode") !== "catalogue";
   const [preparation] = useState(
@@ -39,15 +39,13 @@ export default function SitePage({
       onRestart={() => window.location.assign("/?restart=1")}
     >
       <div className="site-page-frame">
-        {!officialSolar && (
-          <SiteNavbar activePage={page} onNavigate={navigatePage} />
-        )}
+        <SiteNavbar activePage={page} onNavigate={navigatePage} />
         <div className="site-page-content">
           <Suspense fallback={<p role="status">Opening NASA exploration…</p>}>
             {page === "roadmap" ? (
               <RoadmapPage />
             ) : page === "cosmic" ? (
-              officialSolar ? (
+              fullscreenSolar ? (
                 <SolarSystem />
               ) : (
                 <CosmicExplorer />
@@ -60,10 +58,10 @@ export default function SitePage({
               <EngineeringLab preparation={preparation} />
             ) : (
               <Exploration
+                key={page}
                 initialPage={page}
                 onPageChange={(next) => {
-                  history.replaceState(null, "", `/?explore=${next}`);
-                  setPage(next);
+                  navigatePage(next);
                 }}
               />
             )}

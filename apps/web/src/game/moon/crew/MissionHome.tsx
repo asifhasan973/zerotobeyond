@@ -1,5 +1,5 @@
 import "./homeHero.css";
-import { navigatePage } from "@/shared/site/siteNavigation";
+import { useSiteNavigation } from "@/shared/site/siteNavigation";
 import "@/features/exploration/exploration.css";
 import { SiteNavbar } from "@/shared/site/SiteNavbar";
 import { useOrientationLifecycleStore } from "@exo/ui";
@@ -33,6 +33,7 @@ export function MissionHome({
   frame: SelectionFrame;
   onOpenArchive?: () => void;
 }) {
+  const navigatePage = useSiteNavigation();
   const completed = !!session && !session.review && completedMission(session);
   const lastMission = completed ? missionReport(session) : null;
   const hasProgress = completed || !!progress.playerName;
@@ -63,6 +64,11 @@ export function MissionHome({
       pageHeader={
         <SiteNavbar
           activePage="home"
+          onResume={() => {
+            mobileGame.start();
+            onContinue();
+          }}
+          onNewGame={onRestart}
           onNavigate={(page) => {
             if (page === "mission") {
               mobileGame.start();

@@ -19,10 +19,7 @@ export function SizeComparison({ objects }: { objects: CosmicObject[] }) {
         />
         Include Sun
       </label>
-      <p>
-        Diameters share one linear scale. Distances are omitted. Stellar radii
-        are unavailable.
-      </p>
+      <p>Diameters share one linear scale. Distances are omitted.</p>
       <div className="cosmic-size-row">
         {bodies.map((o) => (
           <figure

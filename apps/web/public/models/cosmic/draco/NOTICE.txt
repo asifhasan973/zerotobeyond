@@ -1,0 +1,3 @@
+Draco decoder files are distributed unchanged from the installed Three.js package.
+Source: https://github.com/mrdoob/three.js/tree/dev/examples/jsm/libs/draco
+Draco: https://github.com/google/draco (Apache License 2.0).

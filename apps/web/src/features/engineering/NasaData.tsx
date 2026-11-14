@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useRef, useState } from "react";
 import reference from "./nasaReference.json";
 import {
@@ -133,7 +134,7 @@ export default function NasaData({
           {sourceLink(reference.thermal.source, "LRO Diviner data product")} ·{" "}
           {sourceLink(reference.thermal.reference, "Diviner publication")}
         </details>
-        <a href="/?explore=atlas">Open the Moon Atlas maps ↗</a>
+        <Link to="/?explore=atlas">Open the Moon Atlas maps ↗</Link>
       </article>
       <article className="eng-data-card">
         <div className="eng-data-heading">
@@ -175,7 +176,10 @@ export default function NasaData({
           reference.geometry.source,
           "NASA SVS geometry & hourly JSON",
         )}{" "}
-        · <a href="/?explore=signal">Test contact, storage & transmission ↗</a>
+        ·{" "}
+        <Link to="/?explore=signal">
+          Test contact, storage & transmission ↗
+        </Link>
       </article>
       <article className="eng-data-card">
         <div className="eng-data-heading">

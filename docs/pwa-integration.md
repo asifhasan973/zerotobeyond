@@ -97,3 +97,11 @@ The PWA store (`packages/ui/src/state/pwaStore.ts`, exported via `@exo/ui`) prov
        - _Toolbar Reveal_: Tap screen edge to reveal bottom toolbar.
        - _Walkthrough_: Tap Share (`⎋`), scroll down to "Add to Home Screen" (`[+]`), tap "Add".
    - Highlights key PWA advantages: **Zero UI Clutter**, **Visuals Cached**, and **Instant Launch**.
+
+## Install prompt retries
+
+A captured `beforeinstallprompt` event is consumed before calling `prompt()`.
+After dismissal, another Install App click opens the platform guide until the
+browser supplies a fresh event. The guide traps keyboard focus, closes with
+Escape, and restores focus to the invoking control. Run `node scripts/check-pwa.mjs`
+to check fallback, dismissal, retry and installed-state guards.

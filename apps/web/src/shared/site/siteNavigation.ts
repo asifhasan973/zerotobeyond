@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router";
+
 export type SitePage =
   | "home"
   | "mission"
@@ -8,12 +10,10 @@ export type SitePage =
   | "cosmic"
   | "roadmap";
 
-export function navigatePage(page: SitePage) {
-  window.location.assign(
-    page === "home"
-      ? "/"
-      : page === "mission"
-        ? "/?play=1"
-        : `/?explore=${page}`,
-  );
+export function useSiteNavigation() {
+  const navigate = useNavigate();
+  return (page: SitePage) => {
+    if (page === "mission") window.location.assign("/?play=1");
+    else void navigate(page === "home" ? "/" : `/?explore=${page}`);
+  };
 }

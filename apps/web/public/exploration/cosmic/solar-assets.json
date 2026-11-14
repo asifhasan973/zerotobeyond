@@ -1,0 +1,110 @@
+{
+  "cards": [
+    {
+      "name": "voyager",
+      "image": "/textures/cosmic/cards/voyager.webp",
+      "source": "https://images-assets.nasa.gov/image/PIA21839/PIA21839~small.jpg",
+      "nasaId": "PIA21839",
+      "credit": "JPL",
+      "title": "Voyager in Deep Space (Artist Concept)"
+    },
+    {
+      "name": "webb",
+      "image": "/textures/cosmic/cards/webb.webp",
+      "source": "https://science.nasa.gov/wp-content/uploads/2024/05/jwst_artist_concept_0.png",
+      "nasaId": null,
+      "credit": "GSFC",
+      "title": "NASA mission page preview"
+    },
+    {
+      "name": "juno",
+      "image": "/textures/cosmic/cards/juno.webp",
+      "source": "https://images-assets.nasa.gov/image/KSC-2011-3993/KSC-2011-3993~medium.jpg",
+      "nasaId": "KSC-2011-3993",
+      "credit": "KSC",
+      "title": "KSC-2011-3993"
+    },
+    {
+      "name": "parker",
+      "image": "/textures/cosmic/cards/parker.webp",
+      "source": "https://assets.science.nasa.gov/content/dam/science/psd/solar/internal_resources/3509/17-03445-6184.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+      "nasaId": null,
+      "credit": "KSC",
+      "title": "NASA mission page preview"
+    },
+    {
+      "name": "new-horizons",
+      "image": "/textures/cosmic/cards/new-horizons.webp",
+      "source": "https://images-assets.nasa.gov/image/PIA21589/PIA21589~medium.jpg",
+      "nasaId": "PIA21589",
+      "credit": "JPL",
+      "title": "Nap Time for New Horizons: NASA Spacecraft Enters Hibernation"
+    }
+  ],
+  "models": [
+    {
+      "name": "voyager",
+      "path": "/models/cosmic/voyager.glb",
+      "source": "https://science.nasa.gov/resource/voyager-3d-model/",
+      "credit": "NASA / Visualization Technology Applications and Development (VTAD)"
+    },
+    {
+      "name": "juno",
+      "path": "/models/cosmic/juno.glb",
+      "source": "https://science.nasa.gov/resource/juno-3d-model/",
+      "credit": "NASA / Visualization Technology Applications and Development (VTAD)"
+    },
+    {
+      "name": "parker",
+      "path": "/models/cosmic/parker.glb",
+      "source": "https://science.nasa.gov/resource/parker-solar-probe-3d-model/",
+      "credit": "NASA / Visualization Technology Applications and Development (VTAD)"
+    },
+    {
+      "name": "new-horizons",
+      "path": "/models/cosmic/new-horizons.glb",
+      "source": "https://science.nasa.gov/resource/new-horizons-3d-model/",
+      "credit": "NASA / Visualization Technology Applications and Development (VTAD)"
+    },
+    {
+      "name": "webb",
+      "path": "/models/cosmic/webb.glb",
+      "source": "https://science.nasa.gov/3d-resources/james-webb-space-telescope-b/",
+      "credit": "NASA 3D Resources"
+    }
+  ],
+  "photos": [
+    {
+      "name": "voyager",
+      "image": "/textures/cosmic/cards/voyager-photo.webp",
+      "source": "https://images.nasa.gov/details/PIA21729",
+      "nasaId": "PIA21729",
+      "credit": "NASA",
+      "type": "Ground testing photograph"
+    },
+    {
+      "name": "webb",
+      "image": "/textures/cosmic/cards/webb-photo.webp",
+      "source": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000493",
+      "nasaId": "GSFC_20171208_Archive_e000493",
+      "credit": "NASA",
+      "type": "Ground testing photograph"
+    },
+    {
+      "name": "parker",
+      "image": "/textures/cosmic/cards/parker-photo.webp",
+      "source": "https://images.nasa.gov/details/KSC-20180419-PH_KLS01_0050",
+      "nasaId": "KSC-20180419-PH_KLS01_0050",
+      "credit": "NASA",
+      "type": "Ground testing photograph"
+    },
+    {
+      "name": "new-horizons",
+      "image": "/textures/cosmic/cards/new-horizons-photo.webp",
+      "source": "https://images.nasa.gov/details/KSC-05pd2495",
+      "nasaId": "KSC-05pd2495",
+      "credit": "NASA",
+      "type": "Ground testing photograph"
+    }
+  ]
+}

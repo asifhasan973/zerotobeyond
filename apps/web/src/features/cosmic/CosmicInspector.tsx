@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useState } from "react";
 import type { CosmicData, CosmicObject } from "@exo/data/cosmic";
 import {
@@ -209,7 +210,7 @@ export function CosmicInspector(p: Props) {
         )}
       </div>
       <div className="cosmic-desk-actions">
-        <a href="/?explore=engineering">Plan a mission ↗</a>
+        <Link to="/?explore=engineering">Plan a mission ↗</Link>
         <button onClick={p.onBookmark}>{p.saved ? "★ Saved" : "☆ Save"}</button>
         <button onClick={p.onShare}>Share ↗</button>
       </div>

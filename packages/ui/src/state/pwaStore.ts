@@ -83,6 +83,8 @@ export const usePwaStore = create<PwaState>((set, get) => ({
     if (isInstalled) return;
 
     if (deferredPrompt) {
+      // A browser install event can only be used once, including dismissal.
+      set({ deferredPrompt: null, isModalOpen: false });
       try {
         await deferredPrompt.prompt();
         const choice = await deferredPrompt.userChoice;

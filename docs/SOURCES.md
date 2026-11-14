@@ -45,3 +45,7 @@ React, TypeScript, Vite, Three.js, Motion, Zustand, Lucide, Vite PWA and Turbore
 ### Recorded narration repairs
 
 New Flight Test/Packing, glossary, crew-radio, journey and Moon-arrival recordings were synthesized using Microsoft Edge text-to-speech via `edge-tts` 7.3.1 (Sonia female / Andrew male). Existing audio assets were retained. `apps/web/public/story/audio/voice-repairs.json` records each added clip's text, voice and checksum; see `docs/audio.md` for reproducibility and playback behavior.
+
+### Native Solar System explorer
+
+The local Three.js viewer uses the project's bounded [JPL Horizons](https://ssd.jpl.nasa.gov/horizons/) ephemeris snapshot and planet radii. The scene interaction was informed by [NASA Eyes](https://eyes.nasa.gov/apps/solar-system/), linked as design inspiration in the welcome screen, viewer footer and Sources dialog. Its renderer and application bundle are not embedded. The interface reuses the website’s Fredoka/Outfit typography and purple theme; the welcome astronaut is an original SVG illustration. NASA spacecraft image credits and source URLs are recorded in `apps/web/public/exploration/cosmic/solar-assets.json`. Three.js spacecraft models are original schematic geometry. Existing planet-texture attribution remains applicable.
