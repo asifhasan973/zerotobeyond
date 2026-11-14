@@ -10,6 +10,8 @@ An educational Moon mission game by **ExoVisionaries**, built for the NASA Space
 
 ## Explore the project
 
+- **Cosmic Explorer:** Explore measured Solar System, spacecraft, star and galaxy catalogue objects with a guided tour, distance comparisons and source notes. Open `/?explore=cosmic`; see [data and limits](docs/cosmic-explorer.md).
+
 - **Moon mission:** Choose Ice or Geology, build a lander and rover, select instruments and crew, pack supplies, assemble a rocket, launch, fly the transfer, land, explore and return through splashdown.
 - **Solar radiation challenge:** A two-scene illustrated warning leads into a playable cabin shelter. Position supplies, shelter the crew, monitor an illustrative 3D particle scene, then complete the all-clear checks. Skipping the preceding journey brings the player to the emergency instead of passing over it.
 - **Engineering Lab:** Design a lunar survey spacecraft, balance payload mass, power, storage and downlink, compare designs and export a mission blueprint. A separate Power Study explores rover resources.

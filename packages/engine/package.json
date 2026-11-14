@@ -13,6 +13,10 @@
     "./engineering": {
       "types": "./src/engineering/index.ts",
       "import": "./src/engineering/index.ts"
+    },
+    "./cosmic": {
+      "types": "./src/cosmic/index.ts",
+      "import": "./src/cosmic/index.ts"
     }
   },
   "scripts": {

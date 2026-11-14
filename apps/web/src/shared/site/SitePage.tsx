@@ -5,6 +5,9 @@ import { readBrowserSelectionSession } from "@/game/moon/crew/selectionSession";
 import { SiteNavbar } from "./SiteNavbar";
 import type { SitePage as Page } from "./SiteNavbar";
 
+const RoadmapPage = lazy(() => import("@/features/roadmap/RoadmapPage"));
+const SolarSystem = lazy(() => import("@/features/cosmic/SolarSystem"));
+const CosmicExplorer = lazy(() => import("@/features/cosmic/CosmicExplorer"));
 const Exploration = lazy(() => import("@/features/exploration/Exploration"));
 const AtlasCompatibility = lazy(() =>
   import("@/features/exploration/reference/AtlasCompatibility").then((m) => ({
@@ -25,6 +28,9 @@ export default function SitePage({
   page: Exclude<Page, "home" | "mission">;
 }) {
   const [page, setPage] = useState(initialPage);
+  const officialSolar =
+    page === "cosmic" &&
+    new URLSearchParams(location.search).get("mode") !== "catalogue";
   const [preparation] = useState(
     () => readBrowserSelectionSession().preparation,
   );
@@ -33,10 +39,20 @@ export default function SitePage({
       onRestart={() => window.location.assign("/?restart=1")}
     >
       <div className="site-page-frame">
-        <SiteNavbar activePage={page} onNavigate={navigatePage} />
+        {!officialSolar && (
+          <SiteNavbar activePage={page} onNavigate={navigatePage} />
+        )}
         <div className="site-page-content">
           <Suspense fallback={<p role="status">Opening NASA exploration…</p>}>
-            {page === "atlas" ? (
+            {page === "roadmap" ? (
+              <RoadmapPage />
+            ) : page === "cosmic" ? (
+              officialSolar ? (
+                <SolarSystem />
+              ) : (
+                <CosmicExplorer />
+              )
+            ) : page === "atlas" ? (
               <AtlasCompatibility />
             ) : page === "archive" ? (
               <Archive />

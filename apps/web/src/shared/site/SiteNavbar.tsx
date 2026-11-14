@@ -8,6 +8,7 @@ import type { SitePage } from "./siteNavigation";
 export type { SitePage } from "./siteNavigation";
 
 const pages: { id: SitePage; label: string; href: string }[] = [
+  { id: "roadmap", label: "Space Roadmaps", href: "/?explore=roadmap" },
   { id: "home", label: "Home", href: "/" },
   { id: "archive", label: "NASA Archive", href: "/?explore=archive" },
   {
@@ -16,6 +17,7 @@ const pages: { id: SitePage; label: string; href: string }[] = [
     href: "/?explore=engineering",
   },
   { id: "signal", label: "Orbit & Signal Lab", href: "/?explore=signal" },
+  { id: "cosmic", label: "Cosmic Explorer", href: "/?explore=cosmic" },
 ];
 
 /** Shared page navigation outside the active mission. */

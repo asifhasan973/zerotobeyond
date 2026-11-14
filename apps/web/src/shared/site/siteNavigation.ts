@@ -1,5 +1,12 @@
 export type SitePage =
-  "home" | "mission" | "archive" | "engineering" | "atlas" | "signal";
+  | "home"
+  | "mission"
+  | "archive"
+  | "engineering"
+  | "atlas"
+  | "signal"
+  | "cosmic"
+  | "roadmap";
 
 export function navigatePage(page: SitePage) {
   window.location.assign(

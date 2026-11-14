@@ -68,7 +68,9 @@ export default function App() {
     site === "atlas" ||
     site === "signal" ||
     site === "engineering" ||
-    site === "archive"
+    site === "archive" ||
+    site === "cosmic" ||
+    site === "roadmap"
   ) {
     content = <SitePage page={site} />;
   } else {

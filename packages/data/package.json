@@ -25,6 +25,18 @@
     "./engineering": {
       "types": "./src/engineering/index.ts",
       "import": "./src/engineering/index.ts"
+    },
+    "./cosmic": {
+      "types": "./src/cosmic/index.ts",
+      "import": "./src/cosmic/index.ts"
+    },
+    "./roadmap": {
+      "types": "./src/roadmap/index.ts",
+      "import": "./src/roadmap/index.ts"
+    },
+    "./roadmap/journeys": {
+      "types": "./src/roadmap/journeys.ts",
+      "import": "./src/roadmap/journeys.ts"
     }
   },
   "scripts": {
