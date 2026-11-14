@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Radio, Volume2 } from "lucide-react";
 import { isEngineFrozen, useLoadingStore } from "@exo/ui";
 import {
@@ -12,18 +12,11 @@ import {
   type CrewRadioMoment,
   type RadioCrewMember,
 } from "./crewIdentity";
+import { useStoryNavigation } from "../../core/storyNavigationContext";
 import "./crewRadio.css";
 
 export type { CrewRadioMoment } from "./crewIdentity";
-const exchanges = {
-  handoff: ["We are moving into the lander.", "I will stay in lunar orbit."],
-  touchdown: ["We landed safely.", "I will keep our spacecraft ready."],
-  departure: [
-    "We are ready to return.",
-    "I am ready to meet your ascent cabin.",
-  ],
-} as const;
-
+import { CREW_RADIO_EXCHANGES } from "./crewRadioCopy";
 export function CrewPortrait({ member }: { member: RadioCrewMember }) {
   return (
     <img
@@ -51,29 +44,49 @@ export function CrewRadioExchange({
     () => new NarrationController(browserNarrationEnvironment()),
   );
   const [line, setLine] = useState(0);
-  useEffect(() => () => controller.stop(), [controller]);
+  const queuedLine = useRef<ReturnType<typeof setTimeout> | undefined>(
+    undefined,
+  );
+  const navigation = useStoryNavigation();
+  const autoplay = navigation?.autoplay !== false && !navigation?.reviewing;
   const paused = crewRadioPaused(session, moment);
+  const messages = CREW_RADIO_EXCHANGES[moment];
+  const playerGender = session.progress.playerGender;
+  const orbitGender =
+    session.moon.crew.support === "robotics-specialist" ? "female" : "male";
+  const hasOrbitPilot = !!crew.orbit;
+  const playLine = useCallback(
+    (index: number, onComplete?: () => void) => {
+      controller.speak(
+        messages[index],
+        "commander",
+        `crew-exchange-${moment}-${index}`,
+        index === 0 ? playerGender : orbitGender,
+        onComplete,
+      );
+      setLine(1 - index);
+    },
+    [controller, messages, moment, playerGender, orbitGender],
+  );
   useEffect(() => {
-    if (!voiceEnabled) controller.stop();
-    else if (paused) controller.pause();
-    else controller.resume();
-  }, [controller, paused, voiceEnabled]);
-  useEffect(() => {
-    const stop = () => controller.stop();
-    const hide = () => {
-      if (document.hidden) stop();
-    };
-    window.addEventListener("game-help-open", stop);
-    window.addEventListener("blur", stop);
-    document.addEventListener("visibilitychange", hide);
+    if (voiceEnabled && autoplay && !paused) {
+      queuedLine.current = setTimeout(() => {
+        playLine(0, () => {
+          if (hasOrbitPilot) playLine(1);
+        });
+      }, 0);
+    }
     return () => {
-      window.removeEventListener("game-help-open", stop);
-      window.removeEventListener("blur", stop);
-      document.removeEventListener("visibilitychange", hide);
+      clearTimeout(queuedLine.current);
+      controller.stop();
     };
+  }, [controller, playLine, voiceEnabled, autoplay, paused, hasOrbitPilot]);
+  useEffect(() => {
+    const pause = () => controller.pause();
+    window.addEventListener("game-help-open", pause);
+    return () => window.removeEventListener("game-help-open", pause);
   }, [controller]);
   const speaker = line === 0 ? crew.commander : crew.orbit;
-  const messages = exchanges[moment];
   const commanderPortrait = crew.commander.portrait,
     scientistPortrait = crew.scientist?.portrait,
     orbitPortrait = crew.orbit?.portrait;
@@ -125,17 +138,8 @@ export function CrewRadioExchange({
           disabled={paused}
           onClick={() => {
             if (isEngineFrozen() || paused) return;
-            controller.speak(
-              messages[line],
-              line === 0 ? "commander" : "chief",
-              undefined,
-              line === 0
-                ? session.progress.playerGender
-                : session.moon.crew.support === "robotics-specialist"
-                  ? "female"
-                  : "male",
-            );
-            setLine((value) => 1 - value);
+            clearTimeout(queuedLine.current);
+            playLine(line);
           }}
         >
           <Volume2 size={15} />

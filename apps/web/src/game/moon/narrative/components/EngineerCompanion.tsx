@@ -44,9 +44,13 @@ export function EngineerCompanion({
   const celebrate = reaction === "complete" || reaction === "trialPass";
   const cue = engineerCue(reaction, scriptedReply?.id);
   const chosen = scriptedReply ?? reply;
-  const lastSpoken = useRef<{ id: string; text: string; token: number } | null>(
-    null,
-  );
+  const hasScript = scriptedReply !== undefined;
+  const lastSpoken = useRef<{
+    id: string;
+    text: string;
+    token: number;
+    gender: string;
+  } | null>(null);
 
   useEffect(() => {
     return () => {
@@ -70,34 +74,34 @@ export function EngineerCompanion({
   }, [reaction, token]);
 
   useEffect(() => {
-    if (
-      !autoplay ||
-      (!token && !scriptedReply) ||
-      !voiceEnabled ||
-      !!statusText
-    )
+    if (!voiceEnabled || !!statusText) {
+      controller.stop();
+      lastSpoken.current = null;
       return;
+    }
+    if (!autoplay) return;
     if (
       lastSpoken.current &&
       lastSpoken.current.id === chosen.id &&
       lastSpoken.current.text === chosen.text &&
-      lastSpoken.current.token === token
+      lastSpoken.current.token === token &&
+      lastSpoken.current.gender === gender
     )
       return;
-    lastSpoken.current = { id: chosen.id, text: chosen.text, token };
 
     const timer = setTimeout(() => {
-      if (!document.hidden)
-        controller.speak(chosen.text, "commander", chosen.id, gender);
+      lastSpoken.current = { id: chosen.id, text: chosen.text, token, gender };
+      controller.speak(chosen.text, "commander", chosen.id, gender);
     }, 0);
     const hide = () => {
-      if (document.hidden) controller.pause();
+      if (document.hidden) controller.pause(true);
     };
     document.addEventListener("visibilitychange", hide);
     const pause = () => controller.pause();
     window.addEventListener("game-help-open", pause);
     return () => {
       clearTimeout(timer);
+      controller.stop();
       document.removeEventListener("visibilitychange", hide);
       window.removeEventListener("game-help-open", pause);
     };
@@ -110,7 +114,7 @@ export function EngineerCompanion({
     chosen.text,
     statusText,
     autoplay,
-    scriptedReply,
+    hasScript,
   ]);
 
   return (

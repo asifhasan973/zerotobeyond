@@ -1,5 +1,12 @@
 /** Authored short continuation prompts; no discovery is awarded by scouting. */
 export const SURFACE_LINES = {
+  arrivalRadio:
+    "First, a radio check. Tell our orbit pilot we landed safely. Both explorers stay inside for this check.",
+  arrivalEgress: "One explorer at a time. Use the ladder to reach the ground.",
+  arrivalOutside: "Plant our mission flag beside the lander.",
+  arrivalPlanting: "We are planting our mission flag beside the lander.",
+  arrivalReady:
+    "Our mission flag is planted. Begin exploring when you are ready.",
   stowed: "Deploy your rover. Let’s check the path!",
   deploying: "Rover coming down. Our crew will return inside.",
   ready: "Visit a lookout, then the shadow edge.",

@@ -1,4 +1,3 @@
-export { ScienceScreen } from "./ScienceScreen";
 export * from "./science";
 export * from "./scienceCopy";
 export * from "./scienceSession";

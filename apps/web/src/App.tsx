@@ -56,7 +56,17 @@ export default function App() {
 
   useEffect(() => {
     // Trigger loading screen upon landing into the project
-    useLoadingStore.getState().startLoading("landing");
+    const params = new URLSearchParams(window.location.search);
+    const page =
+      [
+        "atlas",
+        "signal",
+        "engineering",
+        "archive",
+        "cosmic",
+        "roadmap",
+      ].includes(params.get("explore") ?? "") || params.get("report") === "1";
+    useLoadingStore.getState().startLoading(page ? "page" : "landing");
   }, []);
 
   // Determine active view to render

@@ -24,7 +24,8 @@ registerHooks({
       );
     } else if (
       specifier.startsWith(".") &&
-      context.parentURL?.startsWith("file:")
+      context.parentURL?.startsWith("file:") &&
+      !context.parentURL.includes("/node_modules/")
     )
       path = resolve(dirname(fileURLToPath(context.parentURL)), specifier);
     if (path) {

@@ -3,7 +3,6 @@ import {
   preloadImage,
   maintainBrowserAssetCache,
   cacheAssetInBrowser,
-  getAllBubbleThumbnailUrls,
 } from "@exo/engine";
 import { LOADING_CONFIG } from "@exo/ui";
 
@@ -19,14 +18,7 @@ const paceMilestone = async () => {
   }
 };
 
-/**
- * Preload all entry-level subsystems and assets up until the start mission screen.
- * Progress is weighted by real workload:
- * - 40% Dynamic Code Modules (Home & Selection screens, catalogs)
- * - 30% 3D Home Moon Geometry & Lighting
- * - 20% High-Resolution Character Art & Carousel Imagery
- * - 10% Audio Engine & Session Hydration
- */
+/** Warm home modules and local artwork; archive data loads on its own page. */
 export async function preloadEntrySubsystems(
   onProgress: (progress: number, message: string) => void,
 ): Promise<void> {
@@ -50,25 +42,7 @@ export async function preloadEntrySubsystems(
     onProgress(40, "Story controllers compiled");
     await paceMilestone();
 
-    // 2. 3D Home Moon geometry and shader preparation (30% milestone target: 40% -> 70%)
-    onProgress(50, "Compiling lunar orbital shaders and 3D preview…");
-    try {
-      const THREE = await import("three");
-      const sphere = new THREE.SphereGeometry(1.2, 32, 32);
-      const material = new THREE.MeshStandardMaterial({
-        color: 0x8892b0,
-        roughness: 0.85,
-        metalness: 0.1,
-      });
-      sphere.dispose();
-      material.dispose();
-    } catch (err) {
-      console.warn("3D Moon shader preload notice:", err);
-    }
-    onProgress(70, "3D orbital environment ready");
-    await paceMilestone();
-
-    // 3. High-resolution entry art & carousel slides (20% milestone target: 70% -> 90%)
+    // Entry art and loader carousel images.
     onProgress(75, "Decoding mission deep space imagery…");
     const entryImages = [
       "/story/moon-mission-hero.webp",
@@ -82,36 +56,15 @@ export async function preloadEntrySubsystems(
     onProgress(85, "Imagery textures cached");
     await paceMilestone();
 
-    // 3b. NASA Mission Archive Subsystems & Timeline Thumbnail Bubbles
-    onProgress(88, "Preloading NASA Mission Archive timeline & bubble assets…");
-    try {
-      const bubbleThumbnails = getAllBubbleThumbnailUrls();
-      await Promise.allSettled([
-        import("@/features/archive/NasaMissionArchive"),
-        ...bubbleThumbnails.map((src) => preloadImage(src)),
-      ]);
-    } catch (archivePreloadErr) {
-      console.warn("NASA archive preload notice:", archivePreloadErr);
-    }
-    onProgress(92, "NASA timeline bubbles primed");
-    await paceMilestone();
-
-    // 4. Audio synthesizer & session state (10% milestone target: 92% -> 100%)
-    onProgress(96, "Synchronizing audio synthesizer and flight telemetry…");
+    // Finish entry preparation.
+    onProgress(96, "Entry assets ready…");
     await paceMilestone();
   } finally {
     onProgress(100, "All entry subsystems verified");
   }
 }
 
-/**
- * Preload all heavy simulation subsystems and assets prior to entering the mission.
- * Progress is weighted by real workload:
- * - 40% Heavy Simulation Modules (Workshop 3D, Flight, Moon screens)
- * - 30% 3D Rocket Part Geometries & Physics Shaders
- * - 20% Mission Heavy Crew Textures & Character Assets
- * - 10% Audio Synthesizer Flight Buffers & Launch Sound Synthesis
- */
+/** Warm mission modules and shared art before the player enters the game. */
 export async function preloadMissionSubsystems(
   onProgress: (progress: number, message: string) => void,
 ): Promise<void> {
@@ -136,8 +89,8 @@ export async function preloadMissionSubsystems(
         import("@/game/moon/workshop/rocket/MainRocketViewport"),
         import("@/game/moon/flight/journey/JourneyScreen"),
         import("@/game/moon/landing/LandingScreen"),
-        import("@/game/moon/surface/SurfaceScreen"),
-        import("@/game/moon/science/ScienceScreen"),
+        import("@/game/moon/surface/arrival/SurfaceArrivalScreen"),
+        import("@/game/moon/rover/components/RoverScreen"),
         import("@/game/moon/return/debrief/RecoveryScreen"),
         import("@/game/moon/return/ReturnScreen"),
         import("@/game/moon/workshop/packing/PackingViewport"),
@@ -148,23 +101,7 @@ export async function preloadMissionSubsystems(
     onProgress(40, "Simulation engines assembled");
     await paceMilestone();
 
-    // 2. 3D Rocket procedural meshes & shaders (30% milestone target: 40% -> 70%)
-    onProgress(55, "Generating 3D rocket stage geometries & PBR materials…");
-    try {
-      const THREE = await import("three");
-      const cylinder = new THREE.CylinderGeometry(0.8, 0.8, 3, 24);
-      const cone = new THREE.ConeGeometry(0.8, 1.5, 24);
-      const bell = new THREE.CylinderGeometry(0.2, 0.6, 0.8, 16);
-      cylinder.dispose();
-      cone.dispose();
-      bell.dispose();
-    } catch (err) {
-      console.warn("3D rocket mesh preload notice:", err);
-    }
-    onProgress(70, "3D rocket builder primed");
-    await paceMilestone();
-
-    // 3. Heavy mission visuals, celestial textures & character rig atlases (20% milestone target: 70% -> 90%)
+    // Shared mission textures and character atlases.
     onProgress(75, "Decoding astronaut dossiers & lunar surface maps…");
     const missionVisualAssets = [
       ...STORM_STORY.map((scene) => scene.src),
@@ -201,8 +138,8 @@ export async function preloadMissionSubsystems(
     onProgress(90, "Visual textures & character rigs cached");
     await paceMilestone();
 
-    // 4. Mission flight audio synthesis buffers (10% milestone target: 90% -> 100%)
-    onProgress(95, "Synthesizing launch rumble and telemetry acoustics…");
+    // Finish mission preparation.
+    onProgress(95, "Mission assets ready…");
     await paceMilestone();
   } finally {
     onProgress(100, "Flight authorization granted · Systems nominal");

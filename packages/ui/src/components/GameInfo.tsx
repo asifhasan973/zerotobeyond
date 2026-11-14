@@ -34,6 +34,7 @@ export function GameInfo({
     window.dispatchEvent(new Event("game-help-open"));
     return () => {
       el?.close();
+      window.dispatchEvent(new Event("game-help-close"));
       if (previous?.isConnected) previous.focus({ preventScroll: true });
     };
   }, [modal]);

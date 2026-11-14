@@ -35,6 +35,7 @@ import {
   getLoiRequiredDv,
 } from "./journey.ts";
 import { LearningText } from "@/game/moon/core/learning/Learning";
+import { usePageNarration } from "../../narrative/hooks/usePageNarration";
 import { JOURNEY_LINES } from "./journeyCopy.ts";
 import "./journey.css";
 import { JourneyViewport } from "./JourneyViewport";
@@ -112,11 +113,20 @@ export function JourneyScreen({
               : j.stage === "loi-window"
                 ? "loi"
                 : "tli";
-  const advice = pilotBurn
-    ? j.stage === "loi-burn"
-      ? "Align to 0° for retrograde braking. Reduce throttle near the target, then check trajectory."
-      : "Align with the marker. Hold Space to fire. Cut the engine at the target delta-v."
-    : JOURNEY_LINES[adviceId as keyof typeof JOURNEY_LINES];
+  const spokenAdviceId = stormActive
+    ? "shelter"
+    : pilotBurn
+      ? j.stage === "loi-burn"
+        ? "pilotLoi"
+        : "pilotTli"
+      : adviceId;
+  const advice = JOURNEY_LINES[spokenAdviceId as keyof typeof JOURNEY_LINES];
+  usePageNarration(
+    advice,
+    `journey-${spokenAdviceId}`,
+    !!frame.voiceEnabled && !(complete && endpoint),
+    !!panel,
+  );
   useEffect(() => {
     if (
       panel ||
@@ -531,13 +541,7 @@ export function JourneyScreen({
             ) : null}
           </div>
           <p className="journey-advice">
-            <LearningText
-              text={
-                stormActive
-                  ? "Commander: Prepare the cabin shelter. Keep everyone inside until the all-clear."
-                  : advice
-              }
-            />
+            <LearningText text={advice} />
           </p>
         </div>
         <div className="journey-layout">

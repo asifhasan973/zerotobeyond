@@ -246,9 +246,9 @@ export function LearningProvider({
                       onRead={() => {
                         stopMedia();
                         voice.speak(
-                          `${GLOSSARY[term].name}. ${GLOSSARY[term].text}`,
+                          `${GLOSSARY[term].name}. ${GLOSSARY[term].text} ${GLOSSARY[term].example}`,
                           "commander",
-                          undefined,
+                          `word-${term}`,
                           gender,
                         );
                       }}

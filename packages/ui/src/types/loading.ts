@@ -7,7 +7,7 @@ export interface LoadingSlide {
   tag?: string;
 }
 
-export type LoadingContext = "landing" | "mission_start" | "custom";
+export type LoadingContext = "landing" | "mission_start" | "custom" | "page";
 
 export interface LoadingState {
   isLoading: boolean;

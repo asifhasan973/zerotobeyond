@@ -53,6 +53,7 @@ export class NarrationController {
   private environment: NarrationEnvironment | null;
   private isPaused = false;
   private pausedByEngine = false;
+  private needsGesture = false;
   private pausedAt: number | null = null;
   private totalPausedTime = 0;
   private lastSpokenParams: {
@@ -60,6 +61,7 @@ export class NarrationController {
     character: StoryCharacterId;
     clipId?: string;
     gender: "male" | "female";
+    onComplete?: () => void;
   } | null = null;
 
   constructor(environment: NarrationEnvironment | null) {
@@ -109,17 +111,23 @@ export class NarrationController {
     this.update("starting", params.character);
   };
 
+  retryBlocked = () => {
+    if (this.needsGesture && !isEngineFrozen()) this.resume();
+  };
+
   resume = (byEngine = false) => {
     if (!this.isPaused || (byEngine && !this.pausedByEngine)) return;
     this.isPaused = false;
+    this.needsGesture = false;
     this.pausedByEngine = false;
     this.pausedAt = null;
     this.totalPausedTime = 0;
 
     // Replay from start of dialogue when unfreezing to ensure the player hears full context
     if (this.lastSpokenParams) {
-      const { text, character, clipId, gender } = this.lastSpokenParams;
-      this.speak(text, character, clipId, gender);
+      const { text, character, clipId, gender, onComplete } =
+        this.lastSpokenParams;
+      this.speak(text, character, clipId, gender, onComplete);
     }
   };
 
@@ -139,6 +147,7 @@ export class NarrationController {
     this.generation++;
     this.clearTimer();
     this.isPaused = false;
+    this.needsGesture = false;
     this.pausedByEngine = false;
     this.pausedAt = null;
     this.totalPausedTime = 0;
@@ -164,6 +173,7 @@ export class NarrationController {
     character: StoryCharacterId,
     clipId?: string,
     gender: "male" | "female" = "female",
+    onComplete?: () => void,
   ) {
     this.stop();
     const audio = useAudioStore.getState();
@@ -172,11 +182,14 @@ export class NarrationController {
     if (!environment) return;
     activeNarrator?.stop();
     setActiveNarrator(this);
-    this.lastSpokenParams = { text, character, clipId, gender };
+    this.lastSpokenParams = { text, character, clipId, gender, onComplete };
 
     // If game engine is currently suspended by orientation lock or loading screen,
     // defer playback until engine resume
-    if (isEngineFrozen()) {
+    if (
+      isEngineFrozen() ||
+      (typeof document !== "undefined" && document.hidden)
+    ) {
       this.isPaused = true;
       this.pausedByEngine = true;
       this.update("starting", character);
@@ -205,7 +218,10 @@ export class NarrationController {
       }
       this.lastSpokenParams = null;
       this.isPaused = false;
+      const finishedGeneration = this.generation;
       this.update(status);
+      if (status === "idle" && this.generation === finishedGeneration)
+        onComplete?.();
     };
     const speech = (voiceWait = 0) => {
       try {
@@ -280,6 +296,7 @@ export class NarrationController {
     }
     try {
       const audio = environment.createRecording!(recordingURL);
+      audio.preload = "auto";
       audio.playbackRate = NARRATION_SPEED;
       audio.preservesPitch = true;
       this.recording = audio;
@@ -321,8 +338,19 @@ export class NarrationController {
           speech();
         }
       }, 10000);
-      void audio.play().catch(() => {
-        if (current()) finish("error");
+      void audio.play().catch((error: unknown) => {
+        if (!current()) return;
+        if (error instanceof Error && error.name === "NotAllowedError") {
+          this.clearTimer();
+          audio.onpause = null;
+          audio.pause();
+          this.recording = null;
+          this.isPaused = true;
+          this.needsGesture = true;
+          this.update("starting", character);
+        } else {
+          audio.onerror?.(new Event("error"));
+        }
       });
     } catch {
       speech();
@@ -339,12 +367,27 @@ export function resumeActiveNarration() {
 }
 
 if (typeof window !== "undefined") {
+  const unlock = () => activeNarrator?.retryBlocked();
+  window.addEventListener("pointerdown", unlock, { capture: true });
+  window.addEventListener("keydown", unlock, { capture: true });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) activeNarrator?.pause(true);
+    else if (!isEngineFrozen()) activeNarrator?.resume(true);
+  });
   window.addEventListener("game-orientation-pause", pauseActiveNarration);
   window.addEventListener("game-orientation-resume", resumeActiveNarration);
   const syncVoiceMute = () => {
     const audio = useAudioStore.getState();
     if (audio.isMuted || !audio.voicesEnabled) activeNarrator?.stop();
   };
+  window.addEventListener("game-help-close", () => {
+    if (
+      !document.hidden &&
+      !isEngineFrozen() &&
+      !document.querySelector("dialog[open]")
+    )
+      activeNarrator?.resume();
+  });
   window.addEventListener("game-audio-mute-change", syncVoiceMute);
   window.addEventListener("game-audio-voices-change", syncVoiceMute);
 }

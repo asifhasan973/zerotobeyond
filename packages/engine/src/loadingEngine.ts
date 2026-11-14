@@ -7,6 +7,7 @@ const CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
 
 /** In-memory cache holding preloaded HTMLImageElements to guarantee instant slide switching */
 const memoryImageCache = new Map<string, HTMLImageElement>();
+const pendingImages = new Map<string, Promise<HTMLImageElement>>();
 
 /**
  * Initializes and manages the browser Cache Storage lifecycle,
@@ -64,37 +65,36 @@ export function preloadImage(src: string): Promise<HTMLImageElement> {
     return Promise.resolve(cached);
   }
 
-  // Pre-cache in browser Cache API in the background
-  cacheAssetInBrowser(src).catch(() => {});
-
-  return new Promise((resolve) => {
+  const pending = pendingImages.get(src);
+  if (pending) return pending;
+  const task = new Promise<HTMLImageElement>((resolve) => {
     const img = new Image();
     img.crossOrigin = "anonymous";
-
     let settled = false;
-    const finalize = () => {
+    const finish = () => {
       if (settled) return;
       settled = true;
-      memoryImageCache.set(src, img);
-      // If decode is supported, warmup texture decoding
-      if (typeof img.decode === "function") {
-        img
-          .decode()
-          .catch(() => {})
-          .finally(() => resolve(img));
-      } else {
-        resolve(img);
+      clearTimeout(deadline);
+      img.onload = null;
+      img.onerror = null;
+      if (img.complete && img.naturalWidth > 0) {
+        memoryImageCache.set(src, img);
+        void cacheAssetInBrowser(src).catch(() => {});
       }
+      resolve(img);
     };
-
-    img.onload = finalize;
-    img.onerror = finalize;
-
-    // Safety fallback timeout: guarantee resolution within 4s so carousel never hangs
-    setTimeout(finalize, 4000);
-
+    const deadline = setTimeout(finish, 4000);
+    img.onload = () => {
+      if (typeof img.decode === "function")
+        void img.decode().then(finish, finish);
+      else finish();
+    };
+    img.onerror = finish;
     img.src = src;
   });
+  pendingImages.set(src, task);
+  void task.then(() => pendingImages.delete(src));
+  return task;
 }
 
 /**

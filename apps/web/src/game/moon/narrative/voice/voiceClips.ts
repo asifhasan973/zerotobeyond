@@ -1,3 +1,4 @@
+import { CREW_RADIO_EXCHANGES } from "../../crew/operations/crewRadioCopy";
 import {
   GEOLOGY_LINES,
   GEOLOGY_SITE_BRIEFING,
@@ -139,6 +140,12 @@ export const VOICE_CLIPS: Record<
   string,
   { text: string; character: StoryCharacterId }
 > = Object.fromEntries([
+  ...Object.entries(CREW_RADIO_EXCHANGES).flatMap(([moment, lines]) =>
+    lines.map((text, index) => [
+      `crew-exchange-${moment}-${index}`,
+      { text, character: "commander" as const },
+    ]),
+  ),
   ...Object.entries(ROVER_TALKS).flatMap(([talk, lines]) =>
     lines.map((line, index) => [
       `rover-run-${talk}-${index}`,

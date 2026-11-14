@@ -1,0 +1,950 @@
+{
+  "provider": "Microsoft Edge online text-to-speech via edge-tts 7.3.1",
+  "scope": "Recorded Flight Test/Packing, glossary, crew-radio, journey and Moon-arrival narration repairs. Existing recordings are retained.",
+  "clips": [
+    {
+      "id": "check-ascentIntro",
+      "text": "Ready for a lift test?",
+      "gender": "female",
+      "url": "/story/audio/checks/check-ascentIntro.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "88e5bed3f00e55301831c7c406d2a8f14d3084c3cea0efd5b88ea77a79410b9f"
+    },
+    {
+      "id": "check-packcapsuleIntro",
+      "text": "Fit the capsule on the ring, then close both clamps.",
+      "gender": "female",
+      "url": "/story/audio/checks/check-packcapsuleIntro.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "8a5da2f9e4aa1969e598b6fdf8fa01fcf9659e4c13d182894f4497b9b16ae5a8"
+    },
+    {
+      "id": "check-packcapsulePass",
+      "text": "Click! Both clamps are locked.",
+      "gender": "female",
+      "url": "/story/audio/checks/check-packcapsulePass.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "1fafee3a205127f491a3e5a77ccfbe5c670df657d546d38ef75b1e4eda39de4b"
+    },
+    {
+      "id": "check-packlanderIntro",
+      "text": "Line up the marks, then hold to lower the lander.",
+      "gender": "female",
+      "url": "/story/audio/checks/check-packlanderIntro.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "2ac9e6fec2d46f205a7964a40aa2b1eddb166d177b78f8b353b65926f3abd4c8"
+    },
+    {
+      "id": "check-packlanderPass",
+      "text": "Perfect landing! The cargo mount is locked.",
+      "gender": "female",
+      "url": "/story/audio/checks/check-packlanderPass.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "ac248b095febc3a1f9fe8f9a8a4d806e11e65faeb6c769a52624cc48b6da49f5"
+    },
+    {
+      "id": "check-packsuppliesIntro",
+      "text": "Match the food, water and oxygen cases to their lockers.",
+      "gender": "female",
+      "url": "/story/audio/checks/check-packsuppliesIntro.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "8d3fd60ecc36408308619de67847f349e2b58ee97bf26fcf939bf1cc08554a69"
+    },
+    {
+      "id": "check-packsuppliesPass",
+      "text": "All three cases are strapped in. Ready for launch!",
+      "gender": "female",
+      "url": "/story/audio/checks/check-packsuppliesPass.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "bd8ec8cbf8d141256cd8d8242dd79aa83eb1d295716764cd758af147501accb8"
+    },
+    {
+      "id": "check-parachutesIntro",
+      "text": "Can you give the capsule a soft landing?",
+      "gender": "female",
+      "url": "/story/audio/checks/check-parachutesIntro.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "a38177c42eaec8ab44e49eb131b2ed7c236999c754f3a8afc094594a829b41ee"
+    },
+    {
+      "id": "check-quizRetry",
+      "text": "No points yet. Restart the quiz and try again!",
+      "gender": "female",
+      "url": "/story/audio/checks/check-quizRetry.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "a5eb69855a1c348f7051801592004f998abfc599718c6c7cd4967091ba175e82"
+    },
+    {
+      "id": "check-returnRetry",
+      "text": "Almost! Adjust it and try again.",
+      "gender": "female",
+      "url": "/story/audio/checks/check-returnRetry.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "333c7b7ba4fd39e18e86a1e655f5f0e1a1de35f2b023da35eec5f190b446d733"
+    },
+    {
+      "id": "check-serviceIntro",
+      "text": "Can you send the capsule through the ring?",
+      "gender": "female",
+      "url": "/story/audio/checks/check-serviceIntro.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "67bcf71895c7a6eeee604f7ef5fc3846f55bf9c03024126c4974c396fd68f5f7"
+    },
+    {
+      "id": "check-shieldIntro",
+      "text": "Let\u2019s see the heat shield in action.",
+      "gender": "female",
+      "url": "/story/audio/checks/check-shieldIntro.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "7d295eb76f4a107b7b91b20cbbeb573d508483e9ba6d9460e4fe8392ac199d07"
+    },
+    {
+      "id": "word-astrobiologist",
+      "text": "Astrobiologist. A scientist who looks for signs of life beyond Earth. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-astrobiologist.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "8e6eba35928015c342764f3f84e12afd9487ac46c4adfbea7c55b351d2dc7dea"
+    },
+    {
+      "id": "word-braking",
+      "text": "Braking burn. An engine push that slows a spacecraft down. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-braking.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "40602647865489f90000f8e191e1e182d944bcbf94a3ea2316054b148d4d135e"
+    },
+    {
+      "id": "word-burnwindow",
+      "text": "Burn window. The right time to fire a spacecraft\u2019s engine. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-burnwindow.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "85e5c0e85364f6e669444d318f405295fb8c8be802ece2dbdde68ee5b0da2903"
+    },
+    {
+      "id": "word-calibration",
+      "text": "Calibration. Checking a tool so its readings are right. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-calibration.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "8dc1d0635c88ac52dfacc741fb4ff8dc79661265cc275b2dd3738e1560ac722d"
+    },
+    {
+      "id": "word-coasting",
+      "text": "Coasting. Moving through space with the engines turned off. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-coasting.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "aee57b3481a8140e94424c508e0a5eceb56594705ea6585c554e574c587c3d45"
+    },
+    {
+      "id": "word-contingency",
+      "text": "Contingency. A backup plan for when something goes wrong. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-contingency.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "3848c6a18703a7601ba5f061f031db3f19c54dbca227ee3240b1b450f82224b3"
+    },
+    {
+      "id": "word-crewdays",
+      "text": "Crew-days. A way to count supplies, where one person for one day uses one crew-day. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-crewdays.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "340bda1e3a5d929f493315c4ecd51e5f8a0885106ca2540c385f7ad424ad27ee"
+    },
+    {
+      "id": "word-crystalpattern",
+      "text": "Crystal pattern. The repeating way tiny pieces fit together inside a crystal. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-crystalpattern.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "51fdf2770043ae57dd0b0d28864246d53d7cdb9834564540bb0c7af5e2665ce1"
+    },
+    {
+      "id": "word-deltav",
+      "text": "Delta-v \u00b7 Change in speed. How much a spacecraft can change its speed or direction. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-deltav.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "730d7c5bc58fcc72a9a517a5ae7dabe047e46a37e1a0f8c136c264a6602b5649"
+    },
+    {
+      "id": "word-descent",
+      "text": "Descent. Moving down toward the ground. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-descent.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "8aaeb9b64d18e9685abc2a0b96eaedb734306e5fd917f6da0a4c1f885522a294"
+    },
+    {
+      "id": "word-drymass",
+      "text": "Dry mass. How much a spacecraft and its cargo weigh without fuel. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-drymass.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "a75c789e2bf2fdccf19e3241b90b247ca073abe37f195a24ef714316d8cce823"
+    },
+    {
+      "id": "word-ejecta",
+      "text": "Crater ejecta. Rock and dust thrown out when something crashes into the ground. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-ejecta.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "ee494b8298c04823322825d43744f6ef3af75d4fd6d246fde1bf8d8ea93187f1"
+    },
+    {
+      "id": "word-ephemeris",
+      "text": "Ephemeris. A timetable showing where planets and moons will be. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-ephemeris.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "4d95b990b03f9f483b1e33a354b5bbef2bb09be79c8839dc5ff3f21238f47b06"
+    },
+    {
+      "id": "word-escapetower",
+      "text": "Escape tower. A small rocket that pulls the crew\u2019s cabin away from danger at launch. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-escapetower.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "e5b1aca4b3835f11564ea0698191123809604f624c866db37f5be171a98621a2"
+    },
+    {
+      "id": "word-flyby",
+      "text": "Flyby. Flying past a planet or moon without landing or staying there. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-flyby.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "14aabbb48fe3ba4f02b557618d5ab2f08628a6f92880ce5349fa5342c32c5caa"
+    },
+    {
+      "id": "word-highgain",
+      "text": "High-gain communication. Sending a radio message in a narrow beam to reach far away. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-highgain.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "3ea230bdb083a436e03a82f5e7bc8c844860a14b832a1e8e81cd8ca7a083f7d2"
+    },
+    {
+      "id": "word-interpretation",
+      "text": "Mineral interpretation. Using rock clues to work out what a rock is made of. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-interpretation.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "f826ba0d1f2244bc5bcbeb17d6a072c1a8401bb8ae6687e9222d94c6cd920ce5"
+    },
+    {
+      "id": "word-isp",
+      "text": "Isp \u00b7 Specific impulse. A measure of how much push an engine gets from its fuel. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-isp.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "c401be7f9d8637403bb1a24db751756e703ec8cde5aa3f498db73729e6672fbb"
+    },
+    {
+      "id": "word-lunarcapture",
+      "text": "Lunar capture. Slowing down near the Moon so the spacecraft stays around it. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-lunarcapture.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "17d9ca010572887125bad0086065cbcb40416b5db3a71709c3508781d5135484"
+    },
+    {
+      "id": "word-lunarorbit",
+      "text": "Lunar orbit. A path that goes around the Moon. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-lunarorbit.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "8b8d0afa7abc1e11777a38956dc40f044b66b6232b776dd3140dae263de60ec2"
+    },
+    {
+      "id": "word-moontransfer",
+      "text": "Moon transfer. The trip from a path around Earth to the Moon. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-moontransfer.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "5266d53d548202be38f8afe6b227d3a612e261340c68708fde9a8e84c8e96271"
+    },
+    {
+      "id": "word-neutrons",
+      "text": "Neutrons. Tiny pieces inside most atoms that can help us look for water clues. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-neutrons.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "0bdda3637ac7e8b3d325218a1cc3a26b11b804e4c8d68d57bed162de8503a6c8"
+    },
+    {
+      "id": "word-parkingorbit",
+      "text": "Earth parking orbit. A path around Earth where a spacecraft waits before flying farther. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-parkingorbit.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "cd8bfea7bfed8cf9783d1004be86a59075ce34b99ad728e9e0bfad4c8d0c8f1b"
+    },
+    {
+      "id": "word-propellant",
+      "text": "Propellant. The material a rocket throws out to push itself along. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-propellant.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "d166ffca15c4fb8b813fbb88c5839d91da82510a908553fb4d6751ab87e20136"
+    },
+    {
+      "id": "word-rendezvous",
+      "text": "Rendezvous. Bringing two spacecraft close together in the same part of space. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-rendezvous.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "bd393e64513967e8642285d93164e5a40dbe67df9ac64e99e9784291dec7013a"
+    },
+    {
+      "id": "word-rocketequation",
+      "text": "Ideal rocket equation. A rule that links a rocket\u2019s fuel and mass to how much it can change speed. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-rocketequation.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "e7408c3258ccb1acf71ae583da2b29535d6d669931886a3fe22ce1599507f21d"
+    },
+    {
+      "id": "word-spaceweather",
+      "text": "Space weather. Changes from the Sun that can affect people and machines in space. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-spaceweather.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "6215d6123271925e31c550ff9efaf4c606ca175cf486d3dbdbfe68421bff1b5c"
+    },
+    {
+      "id": "word-stereocamera",
+      "text": "Stereo hazard camera. Two cameras that work together to spot bumps and holes ahead. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-stereocamera.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "71b0c61329e386c08af685f1c1ca4cabfd7f426a6e671cd772422aab13f51ce5"
+    },
+    {
+      "id": "word-tdb",
+      "text": "TDB \u00b7 Barycentric Dynamical Time. A shared space clock used to work out where planets and moons will be. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-tdb.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "72f790239f2ede3da20894f4c1f3bd31e2fe28e5d36c42abc4b63873a6627f08"
+    },
+    {
+      "id": "word-throttle",
+      "text": "Throttle. The control that makes an engine push more or less. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-throttle.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "559c0e4431b090813300b6dbab66d4cab90b9658ab2e28b52278f140fdf65f97"
+    },
+    {
+      "id": "word-trajectory",
+      "text": "Trajectory. The path a spacecraft follows as it moves. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-trajectory.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "a9ac85354c9a64f5a84b6536d72d5d5b4a898edc5399f48a0371a71cfc90ff4f"
+    },
+    {
+      "id": "word-upperstage",
+      "text": "Upper stage. The top rocket section that keeps pushing after the lower sections fall away. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-upperstage.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "37aab56213c6da6a06f42461f92f7c3021cd18192d65929dad40c7c67756abc5"
+    },
+    {
+      "id": "word-volatiles",
+      "text": "Volatiles. Materials such as water that can turn into gas when warmed. ",
+      "gender": "female",
+      "url": "/story/audio/glossary/word-volatiles.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "90d03cc149a48326e85f62b4d881b82591847ee9576f28afc025910dc57ceb2b"
+    },
+    {
+      "id": "check-ascentIntro",
+      "text": "Ready for a lift test?",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-ascentIntro.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "d91f23a36393e5eb7a51d812e208ac063506c40069d6ef3147c2369b84c4f530"
+    },
+    {
+      "id": "check-packcapsuleIntro",
+      "text": "Fit the capsule on the ring, then close both clamps.",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-packcapsuleIntro.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "0fac7948abe6ffe0054ac489dd74921e2d919d6d431ba0b6df99ff72897bffc3"
+    },
+    {
+      "id": "check-packcapsulePass",
+      "text": "Click! Both clamps are locked.",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-packcapsulePass.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "fe3ea4e83aeb7ace8f4fcee9e00585e39aa6a0f482afb294b3080bb8ab9169a3"
+    },
+    {
+      "id": "check-packlanderIntro",
+      "text": "Line up the marks, then hold to lower the lander.",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-packlanderIntro.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "6d8ecb573d588771e70831df02772d06c06e0830b44478de125f0b3102f433f0"
+    },
+    {
+      "id": "check-packlanderPass",
+      "text": "Perfect landing! The cargo mount is locked.",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-packlanderPass.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "dbd32391b987e2b7dcec579771fa5a10ab0c70f37919f34ae6f7e3bb526d16d4"
+    },
+    {
+      "id": "check-packsuppliesIntro",
+      "text": "Match the food, water and oxygen cases to their lockers.",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-packsuppliesIntro.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "bdbda5f7d4b211929af7f0bbbf82a992710faa1cb8b37a81f03dc091d95121dd"
+    },
+    {
+      "id": "check-packsuppliesPass",
+      "text": "All three cases are strapped in. Ready for launch!",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-packsuppliesPass.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "8718dd04e67aa54588894588e39df3c2d3e2ec67eb52ea1c4c9185fdd1ff3204"
+    },
+    {
+      "id": "check-parachutesIntro",
+      "text": "Can you give the capsule a soft landing?",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-parachutesIntro.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "e697009ade44fb3cf31909cbcef82e0456ad26281a21c701dc7718d41b1eb4c1"
+    },
+    {
+      "id": "check-quizRetry",
+      "text": "No points yet. Restart the quiz and try again!",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-quizRetry.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "c5a9f1156a5632877d48befb9e0ee3a599e368c6a3f178706aef73b363351318"
+    },
+    {
+      "id": "check-returnRetry",
+      "text": "Almost! Adjust it and try again.",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-returnRetry.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "82a8d4129d660946c827e0160cb6f79c512d07b224818e71e4528ccd198a8979"
+    },
+    {
+      "id": "check-serviceIntro",
+      "text": "Can you send the capsule through the ring?",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-serviceIntro.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "1f34ad4d026a4b8cfba7d1827590054df4bb1e149dd9ffd2910a9b76094c9eb0"
+    },
+    {
+      "id": "check-shieldIntro",
+      "text": "Let\u2019s see the heat shield in action.",
+      "gender": "male",
+      "url": "/story/audio/male/checks/male-check-shieldIntro.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "1016cba3cea0f5fd285aeaa39ff67efc4e4d441bbf47ce245324da9691487011"
+    },
+    {
+      "id": "word-astrobiologist",
+      "text": "Astrobiologist. A scientist who looks for signs of life beyond Earth. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-astrobiologist.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "69a88107ab94ed54fb59f1be2d6c988ec416f01cf111129e538e9c02657308e1"
+    },
+    {
+      "id": "word-braking",
+      "text": "Braking burn. An engine push that slows a spacecraft down. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-braking.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "743d4362eccd6563dcba5d483f93d776035105c1c5cbf2249a1630d0c73a6943"
+    },
+    {
+      "id": "word-burnwindow",
+      "text": "Burn window. The right time to fire a spacecraft\u2019s engine. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-burnwindow.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "99b59eb186c12c108a419f5e485434dd61175af903130c3cf50cc49acdbfbce4"
+    },
+    {
+      "id": "word-calibration",
+      "text": "Calibration. Checking a tool so its readings are right. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-calibration.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "5c62030c4e137490d61dce5c509d64aaa8ca450b1c4411bdff423f1ff9f44986"
+    },
+    {
+      "id": "word-coasting",
+      "text": "Coasting. Moving through space with the engines turned off. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-coasting.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "3a8d3da27d0d96e1780e6c7ff1e9cd0cda26648bf3bbc270ef9e84f48f3468a5"
+    },
+    {
+      "id": "word-contingency",
+      "text": "Contingency. A backup plan for when something goes wrong. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-contingency.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "c557fb5e52436646b91df2214e037ab4e5915cdf524445891454cfc84a77901c"
+    },
+    {
+      "id": "word-crewdays",
+      "text": "Crew-days. A way to count supplies, where one person for one day uses one crew-day. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-crewdays.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "34e7d404c7e6f36f582d34283658f19a84b02efcba5985c98c4cd100e601f79f"
+    },
+    {
+      "id": "word-crystalpattern",
+      "text": "Crystal pattern. The repeating way tiny pieces fit together inside a crystal. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-crystalpattern.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "24e6b336f4f7ab423a6b5dbcf7f800d651b744af44944e817bc78ee97a054b48"
+    },
+    {
+      "id": "word-deltav",
+      "text": "Delta-v \u00b7 Change in speed. How much a spacecraft can change its speed or direction. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-deltav.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "2d8f457df7f0448e35d88d9faaa0ecf0b8c9e67abb00c576a05b7fa4a0698561"
+    },
+    {
+      "id": "word-descent",
+      "text": "Descent. Moving down toward the ground. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-descent.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "20d45f67c4e1c3623d2f54f7b231e12e69fbfba8aea1b209cf5c48d5c0dfe42a"
+    },
+    {
+      "id": "word-drymass",
+      "text": "Dry mass. How much a spacecraft and its cargo weigh without fuel. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-drymass.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "7ee0e082878e5060018d3e9a6a4073aa3a604aa99466999be9c47a43466f781c"
+    },
+    {
+      "id": "word-ejecta",
+      "text": "Crater ejecta. Rock and dust thrown out when something crashes into the ground. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-ejecta.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "44a1ca1109686bbe50ba4a9ec725f002e0d2eaabd8346e8ac68229e1b7b4f74b"
+    },
+    {
+      "id": "word-ephemeris",
+      "text": "Ephemeris. A timetable showing where planets and moons will be. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-ephemeris.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "b378ca270ed58d084624fdb97409954bf9d5ec88cab9688e062eef24d34b0246"
+    },
+    {
+      "id": "word-escapetower",
+      "text": "Escape tower. A small rocket that pulls the crew\u2019s cabin away from danger at launch. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-escapetower.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "b570f382bd3f1cd5975bff31392c404e34f4aacb5778ea6aaf3aa9c1924804a6"
+    },
+    {
+      "id": "word-flyby",
+      "text": "Flyby. Flying past a planet or moon without landing or staying there. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-flyby.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "9d17d50e1c0c107b4d039c7bcd1dad2bf88701ba43bfb7bd9dbd82cc8bf0bec7"
+    },
+    {
+      "id": "word-highgain",
+      "text": "High-gain communication. Sending a radio message in a narrow beam to reach far away. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-highgain.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "1158d7fc01a5340623515e57de463e5c0f00475005061d7f9dc0ab08248269b8"
+    },
+    {
+      "id": "word-interpretation",
+      "text": "Mineral interpretation. Using rock clues to work out what a rock is made of. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-interpretation.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "31f4ebb8234042f4b9e04bcdc55f0e1f44c9a8b3f478ab2d7c938029698b50a1"
+    },
+    {
+      "id": "word-isp",
+      "text": "Isp \u00b7 Specific impulse. A measure of how much push an engine gets from its fuel. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-isp.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "84c1769e62637b8fab57fe9985d2a798bd2f853d36c27010d6ec8e060d5dc55b"
+    },
+    {
+      "id": "word-lunarcapture",
+      "text": "Lunar capture. Slowing down near the Moon so the spacecraft stays around it. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-lunarcapture.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "4df3f7c1077ef815f3fe995954a89ed0eee6c8c5ec20653ac1df2d041ae210cd"
+    },
+    {
+      "id": "word-lunarorbit",
+      "text": "Lunar orbit. A path that goes around the Moon. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-lunarorbit.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "5fb19e89ea5bccd571af2d4df5a3766e5ad4aa1b77827cbe7ae663121a8e9f76"
+    },
+    {
+      "id": "word-moontransfer",
+      "text": "Moon transfer. The trip from a path around Earth to the Moon. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-moontransfer.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "edb2fdbea9c47bb282ee250eb00da615c063922b6e528bfe3370503a5d474e99"
+    },
+    {
+      "id": "word-neutrons",
+      "text": "Neutrons. Tiny pieces inside most atoms that can help us look for water clues. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-neutrons.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "68cd04110be885fee4301f3c534672926b641d96001ebba979e2f48884c7afed"
+    },
+    {
+      "id": "word-parkingorbit",
+      "text": "Earth parking orbit. A path around Earth where a spacecraft waits before flying farther. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-parkingorbit.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "17e7c23a445bcfcaa12ed2edbbdf177b8c6ddd5d7a639fdef427fee364669005"
+    },
+    {
+      "id": "word-propellant",
+      "text": "Propellant. The material a rocket throws out to push itself along. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-propellant.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "5bca683507a9e0b7345a04d9c2cf46f7990e5bbfd90af6f5c944ded98e62b9f0"
+    },
+    {
+      "id": "word-rendezvous",
+      "text": "Rendezvous. Bringing two spacecraft close together in the same part of space. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-rendezvous.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "7820e5843eea9f4f12d4c5004a2a5992eee9c10b7219ef2eb2f22668125c981a"
+    },
+    {
+      "id": "word-rocketequation",
+      "text": "Ideal rocket equation. A rule that links a rocket\u2019s fuel and mass to how much it can change speed. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-rocketequation.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "103a46847b629acea74b52859f219d5d06bf55e4a0ed283e4c8d589e741d9c7b"
+    },
+    {
+      "id": "word-spaceweather",
+      "text": "Space weather. Changes from the Sun that can affect people and machines in space. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-spaceweather.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "e7909e6da83a439e642ce93230eac662934de584a7c625933207658c6d6f0e0e"
+    },
+    {
+      "id": "word-stereocamera",
+      "text": "Stereo hazard camera. Two cameras that work together to spot bumps and holes ahead. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-stereocamera.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "82b1f2da0e479298bb3df42f992e0df8cf985008801542b8c56fea7a5aaaef32"
+    },
+    {
+      "id": "word-tdb",
+      "text": "TDB \u00b7 Barycentric Dynamical Time. A shared space clock used to work out where planets and moons will be. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-tdb.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "edc9a2640fdd612f6e671473359c321cc8a819100f9d84298de19c480a182e0d"
+    },
+    {
+      "id": "word-throttle",
+      "text": "Throttle. The control that makes an engine push more or less. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-throttle.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "529c1ae7c3f7f70062ecf9a97bf04062825fba2c097c385da251ede07a2f804c"
+    },
+    {
+      "id": "word-trajectory",
+      "text": "Trajectory. The path a spacecraft follows as it moves. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-trajectory.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "0009427b2711c1b5d2a4182d6e4f547ad3b3d6d60fd93ee1ba5c6ecccd33ad60"
+    },
+    {
+      "id": "word-upperstage",
+      "text": "Upper stage. The top rocket section that keeps pushing after the lower sections fall away. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-upperstage.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "e59d5502dd9e2d73ecfd5ee198ab11080a2e5d4b4f05172513100bb6a6d6dce7"
+    },
+    {
+      "id": "word-volatiles",
+      "text": "Volatiles. Materials such as water that can turn into gas when warmed. ",
+      "gender": "male",
+      "url": "/story/audio/male/glossary/male-word-volatiles.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "76f85ed712191f3a4fb4d2bebbf852d261934e13c94c13c6cd091434256e6bc9"
+    },
+    {
+      "id": "crew-exchange-handoff-0",
+      "gender": "female",
+      "text": "We are moving into the lander.",
+      "url": "/story/audio/crew/crew-exchange-handoff-0.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "ce592a70d78c0e9e732d6110a62cc1e40fdaa99b21a48063229e39bae523ac2a"
+    },
+    {
+      "id": "crew-exchange-handoff-0",
+      "gender": "male",
+      "text": "We are moving into the lander.",
+      "url": "/story/audio/male/crew/male-crew-exchange-handoff-0.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "cb08b2af081334b3df7d26110d2809f15f06418125d1f2a41c37f3a7f1b3974d"
+    },
+    {
+      "id": "crew-exchange-handoff-1",
+      "gender": "female",
+      "text": "I will stay in lunar orbit.",
+      "url": "/story/audio/crew/crew-exchange-handoff-1.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "a73da275ecd7ccc0e4337a267c798a084dfa7137f531e48508e83b4be74679df"
+    },
+    {
+      "id": "crew-exchange-handoff-1",
+      "gender": "male",
+      "text": "I will stay in lunar orbit.",
+      "url": "/story/audio/male/crew/male-crew-exchange-handoff-1.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "5c09d992db29a3cc79fc52e4ccb56db0889f48a0e3b3e3667b021394c251dd4d"
+    },
+    {
+      "id": "crew-exchange-touchdown-0",
+      "gender": "female",
+      "text": "We landed safely.",
+      "url": "/story/audio/crew/crew-exchange-touchdown-0.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "79cd4adc743439d82df1b1efb9c332631b5c54bdfd16768517234666dade0c2b"
+    },
+    {
+      "id": "crew-exchange-touchdown-0",
+      "gender": "male",
+      "text": "We landed safely.",
+      "url": "/story/audio/male/crew/male-crew-exchange-touchdown-0.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "26e51238a3885ed89b59d05b32543269c6dd0fd201b847ee9a065cde61ee93a1"
+    },
+    {
+      "id": "crew-exchange-touchdown-1",
+      "gender": "female",
+      "text": "I will keep our spacecraft ready.",
+      "url": "/story/audio/crew/crew-exchange-touchdown-1.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "69a965c61916b8f81e06689e0050b27c4e32f59c31f295a6cddc223096a68860"
+    },
+    {
+      "id": "crew-exchange-touchdown-1",
+      "gender": "male",
+      "text": "I will keep our spacecraft ready.",
+      "url": "/story/audio/male/crew/male-crew-exchange-touchdown-1.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "a4c488e53860d39269ffc76166a60648abff1cb473ff77ec45e9cde00ec95f56"
+    },
+    {
+      "id": "crew-exchange-departure-0",
+      "gender": "female",
+      "text": "We are ready to return.",
+      "url": "/story/audio/crew/crew-exchange-departure-0.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "80d75131dde9374b2fb51ba48372578285e1bcb8c7685ef66e754ac67aef84a3"
+    },
+    {
+      "id": "crew-exchange-departure-0",
+      "gender": "male",
+      "text": "We are ready to return.",
+      "url": "/story/audio/male/crew/male-crew-exchange-departure-0.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "b3e30ec820bace17596f9b694091b23cb90f9464b4bdb0b485bc348effb3f00b"
+    },
+    {
+      "id": "crew-exchange-departure-1",
+      "gender": "female",
+      "text": "I am ready to meet your ascent cabin.",
+      "url": "/story/audio/crew/crew-exchange-departure-1.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "ed2097100a332eadb54eab475c7f1d18d2f9e926b34d59649264af9e5087d4a8"
+    },
+    {
+      "id": "crew-exchange-departure-1",
+      "gender": "male",
+      "text": "I am ready to meet your ascent cabin.",
+      "url": "/story/audio/male/crew/male-crew-exchange-departure-1.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "7a1f48c19b131ffce777e61c5a02c28c2465f7cae3712d0f7ed80fb434624ffb"
+    },
+    {
+      "id": "surface-arrivalRadio",
+      "gender": "female",
+      "text": "First, a radio check. Tell our orbit pilot we landed safely. Both explorers stay inside for this check.",
+      "url": "/story/audio/surface/surface-arrivalRadio.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "ef6c110fd2899116e44fa1ae2fde69638be999f0eab9cc2f6d000495d8073a80"
+    },
+    {
+      "id": "surface-arrivalRadio",
+      "gender": "male",
+      "text": "First, a radio check. Tell our orbit pilot we landed safely. Both explorers stay inside for this check.",
+      "url": "/story/audio/male/surface/male-surface-arrivalRadio.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "b1ae1ac242fc518ca8e124d1f7a489d28b4e819a48cb9f951d52e0d7c8b6c9b4"
+    },
+    {
+      "id": "surface-arrivalEgress",
+      "gender": "female",
+      "text": "One explorer at a time. Use the ladder to reach the ground.",
+      "url": "/story/audio/surface/surface-arrivalEgress.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "13d63deae1038b4fe52a780266cd0bb346766e7a6c0a25f2fb3e2c43a40500b6"
+    },
+    {
+      "id": "surface-arrivalEgress",
+      "gender": "male",
+      "text": "One explorer at a time. Use the ladder to reach the ground.",
+      "url": "/story/audio/male/surface/male-surface-arrivalEgress.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "5ed336481e92d368a6f72acbf2d55fc782c6ea0490b02bbb8a3b911210f07d6f"
+    },
+    {
+      "id": "surface-arrivalOutside",
+      "gender": "female",
+      "text": "Plant our mission flag beside the lander.",
+      "url": "/story/audio/surface/surface-arrivalOutside.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "85db4647e0a86743b0ee3a9802a54192518bcd4bd9434c70376e1d59a956684d"
+    },
+    {
+      "id": "surface-arrivalOutside",
+      "gender": "male",
+      "text": "Plant our mission flag beside the lander.",
+      "url": "/story/audio/male/surface/male-surface-arrivalOutside.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "41997e2dc3c38daafd8bff0464b90064e2d9167266df77a24a07e6b4018b210b"
+    },
+    {
+      "id": "surface-arrivalPlanting",
+      "gender": "female",
+      "text": "We are planting our mission flag beside the lander.",
+      "url": "/story/audio/surface/surface-arrivalPlanting.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "4c55d42a9327ab161b32df5dc5302bad2c1ad9881d9872630884d5e5bc3b21fd"
+    },
+    {
+      "id": "surface-arrivalPlanting",
+      "gender": "male",
+      "text": "We are planting our mission flag beside the lander.",
+      "url": "/story/audio/male/surface/male-surface-arrivalPlanting.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "e9863e3e0db903d10617afaa25b6364a5f891ff98e05f56a4b719a486a80d47e"
+    },
+    {
+      "id": "surface-arrivalReady",
+      "gender": "female",
+      "text": "Our mission flag is planted. Begin exploring when you are ready.",
+      "url": "/story/audio/surface/surface-arrivalReady.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "f52ca509e7045e000651baec1e432206d7d8ab42d69b9e1f9d6da5643c6b0d80"
+    },
+    {
+      "id": "surface-arrivalReady",
+      "gender": "male",
+      "text": "Our mission flag is planted. Begin exploring when you are ready.",
+      "url": "/story/audio/male/surface/male-surface-arrivalReady.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "5d73b691430f54ffe808a85e710f2b7d5c69cf36ff219db6375588a4c1c3c9e0"
+    },
+    {
+      "id": "journey-pilotTli",
+      "gender": "female",
+      "text": "Align with the marker. Hold Space to fire. Cut the engine at the target delta-v.",
+      "url": "/story/audio/journey/journey-pilotTli.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "7d3c197dc0f844709175b95629afe568663da3a84cf022b234518a56064f7738"
+    },
+    {
+      "id": "journey-pilotTli",
+      "gender": "male",
+      "text": "Align with the marker. Hold Space to fire. Cut the engine at the target delta-v.",
+      "url": "/story/audio/male/journey/male-journey-pilotTli.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "1cfe70d8effc9e7bf7232916f41f41598637f0a572a0d9e1ea22d63512f6470c"
+    },
+    {
+      "id": "journey-pilotLoi",
+      "gender": "female",
+      "text": "Align to 0\u00b0 for retrograde braking. Reduce throttle near the target, then check trajectory.",
+      "url": "/story/audio/journey/journey-pilotLoi.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "6f2f5afd7a384402d3d3cad62768ce7436c432220e11627381bcd740a551d25e"
+    },
+    {
+      "id": "journey-pilotLoi",
+      "gender": "male",
+      "text": "Align to 0\u00b0 for retrograde braking. Reduce throttle near the target, then check trajectory.",
+      "url": "/story/audio/male/journey/male-journey-pilotLoi.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "fa77fd864aa02b71d94c8063e74e259467fb9db3ea1efc755e5126d28d309898"
+    },
+    {
+      "id": "journey-shelter",
+      "gender": "female",
+      "text": "Commander: Prepare the cabin shelter. Keep everyone inside until the all-clear.",
+      "url": "/story/audio/journey/journey-shelter.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "sha256": "74b88f66acf76d312ccd1d26945c9dfd475485ece0a128fe714686f2a995fcd1"
+    },
+    {
+      "id": "journey-shelter",
+      "gender": "male",
+      "text": "Commander: Prepare the cabin shelter. Keep everyone inside until the all-clear.",
+      "url": "/story/audio/male/journey/male-journey-shelter.mp3",
+      "voice": "en-US-AndrewNeural",
+      "sha256": "30b093b294030e805cbf15579db7a82f7c0de21fadf1298fdc7be2c776880877"
+    }
+  ]
+}

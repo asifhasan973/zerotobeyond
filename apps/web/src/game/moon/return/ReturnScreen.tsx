@@ -27,6 +27,7 @@ import {
 } from "./return.ts";
 import type { ReturnAction } from "./return.ts";
 import { nextReturnAction } from "@/game/moon/shared/expedition/moonExpedition";
+import { usePageNarration } from "../narrative/hooks/usePageNarration";
 import { RETURN_LINES } from "./returnCopy.ts";
 import {
   missionCard,
@@ -266,6 +267,18 @@ export function ReturnScreen({
           : ["entry-ready", "entry", "chute-ready", "chutes"].includes(r.stage)
             ? 3
             : 4;
+  const narrationId =
+    r.feedback in RETURN_LINES
+      ? r.feedback
+      : r.stage === "entry"
+        ? "shield"
+        : r.stage;
+  usePageNarration(
+    RETURN_LINES[narrationId as keyof typeof RETURN_LINES] ?? "",
+    `return-${narrationId}`,
+    !!frame.voiceEnabled && !debrief && r.stage !== "ready",
+    !!panel,
+  );
   return (
     <StoryShell
       {...frame}

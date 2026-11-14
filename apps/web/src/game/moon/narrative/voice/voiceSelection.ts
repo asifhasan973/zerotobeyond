@@ -17,6 +17,12 @@ export function selectCharacterVoice(
     );
     if (directorVoice) return directorVoice;
   }
+  if (character === "commander") {
+    const preferred = voices.find((voice) =>
+      (useMale ? /Andrew/i : /Sonia/i).test(voice.name),
+    );
+    if (preferred) return preferred;
+  }
   if (character === "commander" && useMale) {
     const distinctVoice = voices.find((voice) =>
       /Andrew|Ryan|Brian|Daniel|Alex/i.test(voice.name),

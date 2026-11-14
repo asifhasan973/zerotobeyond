@@ -20,6 +20,8 @@ import type {
   WorkshopSession,
 } from "../../workshop/lander/workshopSession";
 import { CREW_EGRESS_FRAMES, CREW_PLANTING_FRAMES } from "./crewOperations";
+import { usePageNarration } from "../../narrative/hooks/usePageNarration";
+import { SURFACE_LINES } from "../surfaceCopy";
 import "../surface.css";
 import "./surfaceArrival.css";
 
@@ -145,6 +147,22 @@ export function SurfaceArrivalScreen({
         : state.stage === "egress"
           ? "Our first steps"
           : "Hello, Moon.";
+  const narrationId =
+    state.stage === "inside"
+      ? "arrivalRadio"
+      : state.stage === "egress"
+        ? "arrivalEgress"
+        : state.stage === "outside"
+          ? "arrivalOutside"
+          : state.stage === "planting"
+            ? "arrivalPlanting"
+            : "arrivalReady";
+  usePageNarration(
+    SURFACE_LINES[narrationId],
+    `surface-${narrationId}`,
+    !!frame.voiceEnabled && !(state.stage === "inside" && state.surfaceCheck),
+    state.paused,
+  );
   const localNavigation = navigation
     ? {
         ...navigation,

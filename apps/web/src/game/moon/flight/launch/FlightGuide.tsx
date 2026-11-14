@@ -38,18 +38,20 @@ export function FlightGuide({
     const timer =
       voiceEnabled && autoplay
         ? setTimeout(() => {
-            if (!document.hidden)
-              controller.speak(text, "commander", flightVoiceId(text), gender);
+            controller.speak(text, "commander", flightVoiceId(text), gender);
           }, 0)
         : undefined;
     const pause = () => controller.pause();
     window.addEventListener("game-help-open", pause);
-    document.addEventListener("visibilitychange", pause);
+    const hide = () => {
+      if (document.hidden) controller.pause(true);
+    };
+    document.addEventListener("visibilitychange", hide);
     return () => {
       clearTimeout(timer);
       controller.stop();
       window.removeEventListener("game-help-open", pause);
-      document.removeEventListener("visibilitychange", pause);
+      document.removeEventListener("visibilitychange", hide);
     };
   }, [controller, phase, text, voiceEnabled, gender, autoplay]);
   return (

@@ -1,4 +1,10 @@
 export const JOURNEY_LINES = {
+  pilotTli:
+    "Align with the marker. Hold Space to fire. Cut the engine at the target delta-v.",
+  pilotLoi:
+    "Align to 0° for retrograde braking. Reduce throttle near the target, then check trajectory.",
+  shelter:
+    "Commander: Prepare the cabin shelter. Keep everyone inside until the all-clear.",
   ready: "Your departure plan is locked. Ready to launch!",
   route: "We’re in Earth orbit! Pick our route to the Moon.",
   tli: "Point forward. Fire the engine to leave Earth orbit.",

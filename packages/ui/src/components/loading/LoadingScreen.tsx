@@ -11,6 +11,7 @@ export const LoadingScreen: React.FC = () => {
   const isLoading = useLoadingStore((s) => s.isLoading);
   const isPaused = useLoadingStore((s) => s.isPaused);
   const backendProgress = useLoadingStore((s) => s.progress);
+  const pendingTaskCount = useLoadingStore((s) => s.pendingTasks.length);
   const slides = useLoadingStore((s) => s.slides);
   const statusMessage = useLoadingStore((s) => s.statusMessage);
   const activeContext = useLoadingStore((s) => s.activeContext);
@@ -26,7 +27,8 @@ export const LoadingScreen: React.FC = () => {
     isLoading &&
     splashFinished &&
     displayedProgress >= 100 &&
-    backendProgress >= 100,
+    backendProgress >= 100 &&
+    pendingTaskCount === 0,
   );
 
   const isPausedRef = useRef(isPaused);
@@ -40,8 +42,12 @@ export const LoadingScreen: React.FC = () => {
   const slideLastStartRef = useRef<number | null>(null);
 
   const prevLoadingRef = useRef(isLoading);
+  const prevContextRef = useRef(activeContext);
   useEffect(() => {
-    if (isLoading && !prevLoadingRef.current) {
+    if (
+      isLoading &&
+      (!prevLoadingRef.current || activeContext !== prevContextRef.current)
+    ) {
       setShowSplash(showIntroSplashStore);
       setSplashFinished(!showIntroSplashStore);
       setDisplayedProgress(0);
@@ -52,6 +58,7 @@ export const LoadingScreen: React.FC = () => {
       slideLastStartRef.current = null;
     }
     prevLoadingRef.current = isLoading;
+    prevContextRef.current = activeContext;
   }, [isLoading, activeContext, showIntroSplashStore]);
 
   useEffect(() => {

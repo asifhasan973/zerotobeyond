@@ -41,3 +41,7 @@ Original source credits and applicable usage terms remain with their publishers.
 ## Software and AI
 
 React, TypeScript, Vite, Three.js, Motion, Zustand, Lucide, Vite PWA and Turborepo provide the application/tooling stack; package manifests and `pnpm-lock.yaml` record dependencies. ChatGPT assisted development and content creation. [Google Gemini API](https://ai.google.dev/gemini-api/docs) powers Orbit; questions, bounded conversation history and current-page context are sent to the provider. It is not a custom-trained NASA model.
+
+### Recorded narration repairs
+
+New Flight Test/Packing, glossary, crew-radio, journey and Moon-arrival recordings were synthesized using Microsoft Edge text-to-speech via `edge-tts` 7.3.1 (Sonia female / Andrew male). Existing audio assets were retained. `apps/web/public/story/audio/voice-repairs.json` records each added clip's text, voice and checksum; see `docs/audio.md` for reproducibility and playback behavior.

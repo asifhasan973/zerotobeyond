@@ -126,7 +126,11 @@ export function CosmicBackground({
     const render = (now: number) => {
       if (isDisposed || document.hidden || isEngineFrozen()) return;
 
-      const delta = Math.min(now - lastFrameTime, 64);
+      if (now - lastFrameTime < (gentle ? 66 : 33)) {
+        animFrame = requestAnimationFrame(render);
+        return;
+      }
+      const delta = Math.min(now - lastFrameTime, 100);
       lastFrameTime = now;
 
       currentPointerX += (targetPointerX - currentPointerX) * 0.06;
@@ -179,10 +183,11 @@ export function CosmicBackground({
 
     window.addEventListener("game-orientation-pause", stopLoop);
     window.addEventListener("game-orientation-resume", startLoop);
-    document.addEventListener("visibilitychange", () => {
+    const visibilityChanged = () => {
       if (document.hidden) stopLoop();
       else startLoop();
-    });
+    };
+    document.addEventListener("visibilitychange", visibilityChanged);
 
     startLoop();
 
@@ -190,6 +195,7 @@ export function CosmicBackground({
       isDisposed = true;
       cancelAnimationFrame(animFrame);
       resizeObserver.disconnect();
+      document.removeEventListener("visibilitychange", visibilityChanged);
       window.removeEventListener("mousemove", handlePointerMove);
       window.removeEventListener("touchmove", handlePointerMove);
       window.removeEventListener("game-orientation-pause", stopLoop);

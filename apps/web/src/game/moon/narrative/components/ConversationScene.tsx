@@ -100,8 +100,7 @@ export function ConversationScene({
     const timer =
       enabled && autoplay
         ? setTimeout(() => {
-            if (!document.hidden)
-              controller.speak(text, line.speaker.character, voiceId, gender);
+            controller.speak(text, line.speaker.character, voiceId, gender);
           }, 0)
         : undefined;
     if (!enabled) controller.stop();
@@ -120,7 +119,7 @@ export function ConversationScene({
   ]);
   useEffect(() => {
     const hide = () => {
-      if (document.hidden) controller.pause();
+      if (document.hidden) controller.pause(true);
     };
     document.addEventListener("visibilitychange", hide);
     const pause = () => controller.pause();

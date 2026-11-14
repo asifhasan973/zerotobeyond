@@ -22,6 +22,8 @@ export function useStoryPersistence(
   setIsSaving?: (saving: boolean) => void,
 ) {
   const isInitial = useRef(true);
+  const pendingSave = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastStep = useRef(mission.progress.stepId);
   const { progress, preparation, readiness, flight, moon } = mission;
 
   const flightCheckpoint = Math.floor(flight.t * 2);
@@ -39,7 +41,7 @@ export function useStoryPersistence(
     incident.roverParked,
     incident.dataArchived,
     incident.crewChecked,
-    incident.log.map((r: any) => `${r.id}:${r.status}:${r.action}`).join(","),
+    incident.log.map((r) => `${r.id}:${r.status}:${r.action}`).join(","),
   ].join("|");
   const returnCheckpoint = [
     moon.returnFlight.stage,
@@ -103,22 +105,29 @@ export function useStoryPersistence(
       setStorageAvailable(saved);
       return;
     }
-    setIsSaving?.(true);
-    const current = latestRef.current;
-    const saved = writeBrowserSelectionSession(
-      current.progress,
-      current.voiceEnabled,
-      current.preparation,
-      current.readiness,
-      current.flight,
-      current.moon,
-      current.repair,
-    );
-    setStorageAvailable(saved);
-    const timer = setTimeout(() => {
+    const persist = () => {
+      pendingSave.current = null;
+      const current = latestRef.current;
+      const saved = writeBrowserSelectionSession(
+        current.progress,
+        current.voiceEnabled,
+        current.preparation,
+        current.readiness,
+        current.flight,
+        current.moon,
+        current.repair,
+      );
+      setStorageAvailable(saved);
       setIsSaving?.(false);
-    }, 700);
-    return () => clearTimeout(timer);
+    };
+    if (lastStep.current !== progress.stepId) {
+      lastStep.current = progress.stepId;
+      if (pendingSave.current !== null) clearTimeout(pendingSave.current);
+      persist();
+    } else if (pendingSave.current === null) {
+      setIsSaving?.(true);
+      pendingSave.current = setTimeout(persist, 750);
+    }
   }, [
     crewCheckpoint,
     roverCheckpoint,
@@ -214,7 +223,17 @@ export function useStoryPersistence(
         current.repair,
       );
     };
+    const visibilityChanged = () => {
+      if (document.hidden) save();
+    };
     window.addEventListener("pagehide", save);
-    return () => window.removeEventListener("pagehide", save);
+    document.addEventListener("visibilitychange", visibilityChanged);
+    return () => {
+      window.removeEventListener("pagehide", save);
+      document.removeEventListener("visibilitychange", visibilityChanged);
+      if (pendingSave.current !== null) clearTimeout(pendingSave.current);
+      pendingSave.current = null;
+      save();
+    };
   }, [latestRef]);
 }

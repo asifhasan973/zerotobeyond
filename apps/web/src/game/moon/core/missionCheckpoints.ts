@@ -392,10 +392,7 @@ function createMissionCheckpointInternal(
       site,
       crew: options?.crew,
     });
-    const s =
-      validStepId === "lunar-surface"
-        ? reduceMission(seeded, { type: "crew-replay" })
-        : seeded;
+    const s = reduceMission(seeded, { type: "crew-replay" });
     return {
       ...s,
       progress: { ...s.progress, stepId: validStepId, lineIndex: 0 },

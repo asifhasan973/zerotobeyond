@@ -151,8 +151,10 @@ export function OrientationGuard({
 
   useEffect(() => {
     // Centrally halt or resume all application states from the lifecycle store
-    useOrientationLifecycleStore.getState().setOrientationBlocked(isBlocked);
-  }, [isBlocked]);
+    const lifecycle = useOrientationLifecycleStore.getState();
+    lifecycle.setOrientationBlocked(isBlocked);
+    lifecycle.setLoadingBlocked(loading);
+  }, [isBlocked, loading]);
 
   useEffect(() => {
     const blockGameKeys = (event: KeyboardEvent) => {

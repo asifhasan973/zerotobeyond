@@ -59,7 +59,7 @@ export const TimelineBubbleCluster: React.FC<TimelineBubbleClusterProps> = ({
           src={imageSrc}
           alt={bubble.title || `NASA event in ${year}`}
           className="bubble-img"
-          loading="eager"
+          loading="lazy"
           decoding="async"
           onError={() => onImageError(bubble.id)}
         />

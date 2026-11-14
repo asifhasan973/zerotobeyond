@@ -48,14 +48,13 @@ export function StoryShell({
   const reviewing = !!navigation?.reviewing && !navigation.card;
   useEffect(() => {
     if (!reviewing) return;
-    const mains = Array.from(shell.current?.querySelectorAll("main") ?? []),
-      previous = mains.map((main) => main.inert);
+    const mains = Array.from(shell.current?.querySelectorAll("main") ?? []);
     mains.forEach((main) => {
       main.inert = true;
     });
     return () =>
-      mains.forEach((main, i) => {
-        main.inert = previous[i];
+      mains.forEach((main) => {
+        main.inert = false;
       });
   }, [reviewing, children]);
   const footer = reviewing ? (

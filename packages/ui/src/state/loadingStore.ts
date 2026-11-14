@@ -60,7 +60,6 @@ export const useLoadingStore = create<LoadingState>((set, get) => ({
         (showSplash
           ? "Synchronizing mission control…"
           : "Loading mission assets…"),
-      pendingTasks: [],
     });
 
     const onProgress = (percent: number, msg: string) => {
@@ -68,7 +67,9 @@ export const useLoadingStore = create<LoadingState>((set, get) => ({
     };
 
     try {
-      if (isLanding) {
+      if (context === "page") {
+        onProgress(80, "Opening exploration…");
+      } else if (isLanding) {
         if (activePreloaderHandlers.preloadEntry) {
           await activePreloaderHandlers.preloadEntry(onProgress);
         } else {
@@ -84,10 +85,12 @@ export const useLoadingStore = create<LoadingState>((set, get) => ({
         }
       }
 
-      const extraTasks = get().pendingTasks;
-      if (extraTasks.length > 0) {
+      while (
+        generation === loadingGeneration &&
+        get().pendingTasks.length > 0
+      ) {
         onProgress(98, "Finalizing mission parameters…");
-        await Promise.allSettled(extraTasks);
+        await Promise.allSettled(get().pendingTasks);
       }
 
       onProgress(100, "All systems nominal · Ready for flight");
@@ -125,9 +128,13 @@ export const useLoadingStore = create<LoadingState>((set, get) => ({
   },
 
   registerLoaderTask: (task: Promise<unknown>) => {
-    set((state) => ({
-      pendingTasks: [...state.pendingTasks, task],
-    }));
+    if (!get().isLoading) return;
+    set((state) => ({ pendingTasks: [...state.pendingTasks, task] }));
+    const settled = () =>
+      set((state) => ({
+        pendingTasks: state.pendingTasks.filter((pending) => pending !== task),
+      }));
+    void task.then(settled, settled);
   },
 
   setIntroSplashShown: () => {

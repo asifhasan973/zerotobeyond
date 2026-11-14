@@ -91,10 +91,10 @@ To customize these settings locally, copy `.env.example` to `.env` or `.env.loca
 ### 4.3 Real Subsystem Preloading Pipeline
 
 - **Entry Preloading** (`preloadEntrySubsystems`):
-  - Preloads `HomeViewport.tsx` 3D Moon sphere and shaders, `SelectionScreens.tsx`, `NasaMissionArchive.tsx` and timeline bubbles, `/story/moon-mission-hero.webp`, and the NASA loading slides (`artemis_launch.jpg`, `orion_earth_view.jpg`, `carina_nebula.webp`, `apollo_bootprint.jpg`, `mars_perseverance.jpg`).
+  - Preloads the `HomeViewport.tsx` and `SelectionScreens.tsx` modules, `/story/moon-mission-hero.webp`, and the NASA loading slides (`artemis_launch.jpg`, `orion_earth_view.jpg`, `carina_nebula.webp`, `apollo_bootprint.jpg`, `mars_perseverance.jpg`).
 - **Mission Preloading** (`preloadMissionSubsystems`):
   - Triggered when starting any mission or demo.
-  - Preloads `WorkshopScreen.tsx`, `WorkshopViewport.tsx`, `FlightScreen.tsx`, `FlightViewport.tsx`, lunar mission viewports (`CrewScreen.tsx`, `RocketAssemblyScreen.tsx`, `JourneyScreen.tsx`, `LandingScreen.tsx`, `SurfaceScreen.tsx`, `ScienceScreen.tsx`, `ReturnScreen.tsx`), celestial flight texture `/story/flight/earth-blue-marble.jpg`, character rig WebP atlases (`chief-body.webp`, `commander-male-atlas.webp`), lunar cabin, and astronaut dossiers (`astrobiologist.webp`, `geologist.webp`, `robotics-specialist.webp`, `systems-engineer.webp`).
+  - Preloads `WorkshopScreen.tsx`, `WorkshopViewport.tsx`, `FlightScreen.tsx`, `FlightViewport.tsx`, lunar mission viewports (`CrewScreen.tsx`, `RocketAssemblyScreen.tsx`, `JourneyScreen.tsx`, `LandingScreen.tsx`, `SurfaceArrivalScreen.tsx`, `RoverScreen.tsx`, `ReturnScreen.tsx`), celestial flight texture `/story/flight/earth-blue-marble.jpg`, character rig WebP atlases (`chief-body.webp`, `commander-male-atlas.webp`), lunar cabin, and astronaut dossiers (`astrobiologist.webp`, `geologist.webp`, `robotics-specialist.webp`, `systems-engineer.webp`).
   - Always concludes by setting progress to 100% in a safe `finally` block. As soon as all tasks finish, the loader dismisses.
 
 ### 4.4 Universal Lifecycle Freeze & Loading Screen Halting
@@ -112,3 +112,9 @@ To customize these settings locally, copy `.env.example` to `.env` or `.env.loca
 - Preloaded images and assets are stored in the browser's native **Cache Storage API** under cache name `'exovisionaries-assets-v1'`.
 - The system records `exovisionaries_cache_last_active_v1` in `localStorage`.
 - On boot, if `Date.now() - lastActive > 7 days` (604,800,000 ms), the cache is purged via `caches.delete('exovisionaries-assets-v1')`, handing storage lifecycle management to the browser.
+
+### Route and runtime loading
+
+Exploration/report routes use a page loading context and do not preload the Moon game, archive timeline or remote archive thumbnails. Home preloads entry modules and local artwork only. Actual Three.js viewports prepare their own render resources; allocating and immediately disposing unused placeholder geometries is unnecessary. Registered tasks are awaited across loading generations and released once settled. Image warmup reuses in-flight requests and bounds both download and decode waits to four seconds.
+
+Mission persistence batches simulation checkpoints at most once per 750 ms, saves step transitions immediately, and flushes the latest session on hide, page exit and unmount. The background particle canvas caps drawing at approximately 30 FPS (15 in gentle mode) independently of simulation timing, and releases visibility listeners on unmount.
