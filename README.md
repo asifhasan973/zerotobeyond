@@ -2,112 +2,89 @@
 
 **Build a mission. Go beyond. Bring everyone home.**
 
-An educational Moon mission game by **ExoVisionaries**, built for the NASA Space Apps **Space Mission Design Game** challenge. Players make engineering choices, assemble spacecraft, fly to the Moon, collect simulated scientific evidence and bring a three-person crew back to Earth.
+Zero To Beyond is a story-driven space mission design game by **ExoVisionaries**, created for the **2026 NASA Space Apps Challenge — Space Mission Design Game**. It helps students, beginners and educators explore how scientific goals shape engineering decisions: what to build, what to carry and how to bring the crew home.
 
-[Play online](https://zerotobeyond.pages.dev/) · [NASA data & credits](docs/SOURCES.md) · [Run locally](#run-locally) · [Technical documentation](#documentation)
+[Play online](https://zerotobeyond.pages.dev/) · [Space Apps project](https://www.spaceappschallenge.org/2026/find-a-team/team-exovisonaries/?tab=project) · [Project video](https://youtu.be/Md5HJVXqhIA) · [NASA data & credits](docs/SOURCES.md)
 
 ![Zero To Beyond mission home](docs/images/home.webp)
 
-## Explore the project
+## The experience
 
-- **Cosmic Explorer:** Explore measured Solar System, spacecraft, star and galaxy catalogue objects with a guided tour, distance comparisons and source notes. Open `/?explore=cosmic`; see [data and limits](docs/cosmic-explorer.md).
+Choose a water-ice or geology objective, plan a lunar expedition, assemble a lander and rover, select instruments and crew, and balance mass, power, fuel, supplies and budget. Complete readiness activities, launch, travel to the Moon, land, explore the surface and return to Earth for a mission debrief.
 
-- **Moon mission:** Choose Ice or Geology, build a lander and rover, select instruments and crew, pack supplies, assemble a rocket, launch, fly the transfer, land, explore and return through splashdown.
-- **Solar radiation challenge:** A two-scene illustrated warning leads into a playable cabin shelter. Position supplies, shelter the crew, monitor an illustrative 3D particle scene, then complete the all-clear checks. Skipping the preceding journey brings the player to the emergency instead of passing over it.
-- **Engineering Lab:** Design a lunar survey spacecraft, balance payload mass, power, storage and downlink, compare designs and export a mission blueprint. A separate Power Study explores rover resources.
-- **Orbit & Signal Lab:** Explore a precomputed lunar communications/navigation reference simulation.
-- **NASA Archive:** Browse spaceflight history, mission references and NASA images.
-- **Learning tools:** Contextual Space keywords show images/videos; Orbit, a Gemini-powered tutor, explains the current page and answers science questions.
-- **Saved progress:** Browser saves, contextual Back/Replay, hints and explicitly assisted Skip/auto-build actions support learning at the player's pace.
+Character-guided explanations, hands-on activities, hints and retries help players experiment with the consequences of their choices. Progress is saved in the current browser; the Game menu offers **Resume** when a save is available and **New Game** with confirmation before replacing progress.
 
-| Storm warning                                                         | Cabin shelter                                                                 |
-| --------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| ![Illustrated crew radiation warning](docs/images/storm-warning.webp) | ![Supplies and crew inside the cabin shelter](docs/images/cabin-shelter.webp) |
+| Explore             | What you can do                                                                                                                            |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Moon mission**    | Build spacecraft, manage resources, fly, land, drive a rover, collect simulated evidence and recover the crew.                             |
+| **Cosmic Explorer** | Explore Solar System bodies and spacecraft with NASA 3D models, compare distances and travel times, and browse the wider object catalogue. |
+| **Engineering Lab** | Design a lunar survey spacecraft, test payload, power, storage and downlink choices, and export a mission blueprint.                       |
+| **Signal Lab**      | Investigate a reference lunar communications scenario, relay visibility and signal delay.                                                  |
+| **Archive**         | Browse spaceflight milestones, NASA imagery and mission references.                                                                        |
+| **Roadmaps**        | Explore space careers and an introduction to university satellite missions, with official sources.                                         |
 
-![NASA-informed Mission Blueprint Studio](docs/images/engineering.webp)
+Contextual space keywords and linked media explain unfamiliar terms. **Orbit**, the optional Gemini-powered tutor, can answer questions about the current page.
 
 ## Play and controls
 
-A **WebGL-capable desktop or laptop browser in landscape** is the primary play target. Compact landscape layouts and tap-based assembly/shelter controls are included; the rover driving chapter requires a keyboard and mouse. This is not a claim of complete touch-only or screen-reader support.
+Use a WebGL-capable browser in **landscape**. A desktop or laptop is the primary play target; the rover chapter needs a keyboard and mouse. Compact landscape and tap-based assembly controls are included, but full touch-only and screen-reader support are not established.
 
-| Activity                 | Controls                                                                                            |
-| ------------------------ | --------------------------------------------------------------------------------------------------- |
-| Assembly and shelter     | Drag, or select an item and then its target; native buttons support keyboard activation             |
-| Departure / arrival burn | On-screen alignment and throttle controls; follow the displayed keyboard hints                      |
-| Rover                    | W/S drive, A/D steer, E interact/charge, M map, P/Escape pause, mouse drag look, C center           |
-| Navigation               | Back visits earlier steps; Replay restarts the current activity and clears dependent later progress |
-
-Progress is stored on the current browser/device, not in an online player account. Orbit conversation history is kept in memory. Install the PWA from the app for a standalone view; online APIs still require a connection.
+- **Assembly and shelter:** drag items, or select an item and then its target.
+- **Flight:** follow the displayed alignment, throttle and keyboard hints.
+- **Rover:** W/S drive, A/D steer, E interact, M map, P/Escape pause, mouse drag to look, C center.
+- **Install App:** use the browser's native install prompt when available, or the platform guide. Online APIs still need a connection.
 
 ## Run locally
 
-Use **Node.js 22.12+** and **pnpm 11**. Run commands from the repository root:
+Use **Node.js 22.12+** and **pnpm 11**. From the repository root:
 
 ```sh
 pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open the URL printed by Vite, normally `http://127.0.0.1:5173/`. If that port is occupied, Vite may select another port.
+Open the URL printed by Vite, normally `http://localhost:5173/`.
 
-### Optional Orbit tutor
-
-Copy `.env.example` to `.env.local` in the repository root and set your own server-side key:
-
-```dotenv
-GEMINI_API_KEY=your_key_here
-GEMINI_MODEL=gemini-3.5-flash-lite
-```
-
-Restart the development server after changing these values. Never prefix the key with `VITE_`, commit it, or include it in screenshots. The game can run without a key; Orbit will report that it is not configured. Model access depends on the provider account.
-
-The Vite development middleware serves `/api/tutor` and `/api/engineering/horizons`. For production, deploy the root `functions/` directory with Cloudflare Pages and configure the Gemini key as a Pages secret. Static-only hosting does not provide these API endpoints. See [deployment setup](docs/ci-cd.md).
-
-## Verify changes
+For Orbit, copy `.env.example` to `.env.local`, set `GEMINI_API_KEY`, and restart the dev server. Keep the key server-side; never prefix it with `VITE_` or commit it. The game runs without a tutor key. Production API routes require Cloudflare Pages Functions; see [deployment](docs/ci-cd.md).
 
 ```sh
-pnpm run build          # TypeScript project checks and production bundles
+pnpm run build          # TypeScript checks and production bundles
 pnpm run lint
 pnpm run format:check
-node scripts/check-journey.mjs  # Transfer, fuel, shelter, skip and save/replay checks
+node scripts/check-journey.mjs
+node scripts/check-solar.mjs
+node scripts/check-pwa.mjs
 ```
 
-The production frontend is generated in `apps/web/dist/`. `pnpm test` currently runs the lint pipeline; it is not a full gameplay test suite. Browser checks and screenshots do not replace physical-device or accessibility testing.
+`pnpm test` runs lint, not a complete gameplay suite. See the [development guide](docs/development.md) for package boundaries, focused checks and asset preparation.
 
-## NASA data and scientific boundaries
+## Data, models and credits
 
-NASA/JPL Horizons supplies celestial geometry; LRO/LOLA, Diviner, GRAIL, SPICE and NASA reference documents support the labs and visualizations. Reference products and their use are listed in [NASA data & credits](docs/SOURCES.md) and the in-app source notes.
+NASA/JPL Horizons, lunar reference products and NASA mission publications support the game's visualizations and labs. [Sources and asset credits](docs/SOURCES.md) explain their use; each lab also exposes its assumptions and references.
 
-Spacecraft trajectories, budgets, costs, instrument outcomes, shelter progression and entry/recovery animations are educational models. A simulated sample reading is not a NASA discovery. The solar event is authored, not a live warning; visible particles explain radiation that is invisible in reality. The shelter illustration is not a flight-qualified design. Historical and bundled reference data retain their stated dates and limitations.
+Trajectories, engineering budgets, science readings and mission hazards are simplified educational models. They are not flight predictions, live space-weather alerts or new scientific discoveries. Reference data has bounded dates and coverage.
 
-ChatGPT assisted development, content and authored visual/audio assets. The Gemini API powers Orbit using questions, recent conversation history and current-page text; no custom model training is claimed. NASA reference imagery and generated story artwork are credited separately. Third-party materials retain their respective rights. This project is not an official NASA product or endorsement.
+ChatGPT assisted development and authored content; Gemini powers Orbit without custom model training. NASA reference imagery, models and generated story artwork are credited separately. Third-party materials retain their respective rights. Zero To Beyond is an independent educational project, not an official NASA product or endorsement.
 
-## Repository structure
+## Team ExoVisionaries
 
-```text
-apps/web/             React application, game screens, public assets and Vite middleware
-  src/game/moon/      Mission state, gameplay, 3D scenes and learning tools
-  src/features/       Engineering, exploration and archive pages
-  server/             Tutor and NASA Horizons API handlers
-functions/api/        Production Cloudflare Pages API entry points
-packages/data/        Mission catalogs, historical records and reference snapshots
-packages/engine/      Physics, engineering calculations and asset utilities
-packages/audio/       Audio synthesis and shared audio state
-packages/ui/          Shared loading, orientation and interface primitives
-packages/tsconfig/    Shared TypeScript configurations
-docs/                 Technical documentation, source notes and screenshots
-scripts/              Focused verification tools
-```
+| Member               | Role                    |
+| -------------------- | ----------------------- |
+| Jannatul Nayem Esmy  | Team lead               |
+| Priya Dev            | Research                |
+| Shaulee Bose         | Research                |
+| Muhammad Asif        | Application development |
+| MD. Habibullah Galib | Solution design         |
+
+Project background and team details are available on the [Space Apps project page](https://www.spaceappschallenge.org/2026/find-a-team/team-exovisonaries/?tab=project).
 
 ## Documentation
 
-- [NASA data, media and references](docs/SOURCES.md)
-- [Engineering Lab and model assumptions](docs/engineering-lab.md)
-- [Orbit & Signal Lab / location references](docs/exploration.md)
-- [Mission report and evidence mapping](docs/moon-mission-report.md)
-- [NASA Archive](docs/mission-archive.md)
-- [Solar radiation gameplay](docs/solar-radiation.md)
-- [Architecture](docs/monorepo-architecture.md) · [Navigation](docs/site-navigation.md)
-- [Loading](docs/loading-screen.md) · [PWA](docs/pwa-integration.md) · [Deployment](docs/ci-cd.md)
+- [Development guide](docs/development.md) · [Cloudflare deployment](docs/ci-cd.md)
+- [NASA data and media credits](docs/SOURCES.md)
+- [Cosmic Explorer](docs/cosmic-explorer.md) · [Engineering Lab](docs/engineering-lab.md)
+- [Moon Atlas, Signal Lab and Archive](docs/exploration.md)
+- [Mission report](docs/moon-mission-report.md) · [Solar radiation activity](docs/solar-radiation.md)
+- [Space keyword media coverage](docs/space-keyword-media.md)
 
-Report a reproducible problem through [GitHub Issues](https://github.com/asifhasan973/zerotobeyond/issues). Include the game step, browser, viewport and reproduction steps; remove keys and personal information from attachments.
+Report reproducible problems through [GitHub Issues](https://github.com/asifhasan973/zerotobeyond/issues), including the game step, browser and reproduction steps. Remove keys and personal information from attachments.

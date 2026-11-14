@@ -35,11 +35,15 @@ Current mission region IDs cannot be mapped to Atlas presets. Reference selectio
 
 ## Verification
 
-- `node scripts/check-mission-report.mjs`: reducer-driven Ice and Geology completion, matching-signature recovery, deduplicated observations/samples, collected versus stowed/returned samples, negative/inconclusive/untransmitted evidence, current rover cargo/deposits, older optional fields and v12 saves, null versus zero resource balances, comparison v1 and read-only derivation. It creates a generated test-save fixture only in `/tmp`, never in a user's browser.
-- `scripts/check-mission-report-ui.mjs`: all six sections at 667×375, 1024×600, 1196×588, 1440×900 and 2560×1080; no document overflow; layer/region/zoom/unit controls; keyboard and focus return; reduced motion and overlapping lifecycle freeze; comparison save; debrief → findings → NASA reference → report; legacy URL/reopening; missing NASA data and Retry; unchanged mission-save bytes. Browser checks use isolated contexts and a reducer-generated test save.
-- Workspace lint, application TypeScript checking, production build and repository formatting checks were run. The machine invokes pnpm through `npx --yes pnpm@11.5.2` because pnpm is not installed on PATH.
+Run `node scripts/check-mission-report.mjs` for receipt validation, legacy saves,
+missing versus zero resource values, read-only derivation and completed report
+reopening. Generated fixtures are written under `/tmp`, not to a player's browser.
 
-The browser evidence uses headless Chromium and software WebGL. It does not certify physical devices, assistive technology or comprehension. Real new-user comprehension testing remains pending. No complete manual flight/landing/rover playthrough was performed; the feature leaves those reducers and mechanics unchanged.
+The optional `scripts/check-mission-report-ui.mjs` exercises report sections,
+reference-map controls, comparison, focus behavior, save preservation and failure
+states using an isolated browser context. It requires a running preview,
+Playwright and the generated save fixture. Automated checks do not certify
+physical-device performance, assistive technology or learner comprehension.
 
 ## Journey save compatibility
 

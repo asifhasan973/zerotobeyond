@@ -36,7 +36,7 @@ The diagram rearranges positions and is explicitly labeled “not to scale”; m
 
 Engineering, location and NASA Methods use independent open states with mutually exclusive surfaces. The NASA Methods native dialog has its own bounded desktop layout and internally scrolling source content. Step changes pause playback and cancel the previous illustration while preserving site, relay and time. “Start over” restores Step 1, Shackleton, Satellite 2, initial time, 600× speed and unpinned defaults. Analysis is keyed to site and relay, and superseded workers are terminated and ignored; pending selections cannot display another site’s totals, and failed analysis provides Retry.
 
-The source is [NASA LCRNS Reference Constellation 3.1](https://ntrs.nasa.gov/citations/20250002698), a non-final design study. Five published Moon-centered ICRF Cartesian states are propagated from 1 March 2027 00:00 UTC through 4 March. These are calculated reference trajectories, not live spacecraft or an operational relay service. `docs/orbit-signal-3d-plan.md` records the approved design; this section describes the implementation.
+The source is [NASA LCRNS Reference Constellation 3.1](https://ntrs.nasa.gov/citations/20250002698), a non-final design study. Five published Moon-centered ICRF Cartesian states are propagated from 1 March 2027 00:00 UTC through 4 March. These are calculated reference trajectories, not live spacecraft or an operational relay service.
 
 ### Scientific pipeline
 
@@ -76,7 +76,7 @@ At Shackleton for this particular reference study, selected SV-2 has about 63.71
 
 The optional browser regression runner is `scripts/check-signal-ui.mjs` (Playwright). Set `SIGNAL_LAB_URL` for a running Vite development server, `SIGNAL_PLAYWRIGHT_MODULE` if Playwright is installed outside the project, and `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` for a custom Chromium executable. `SIGNAL_UI_REPORT` optionally saves JSON evidence; `SIGNAL_UI_SCREENSHOTS` optionally selects an existing screenshot directory. It covers all three editing entry points, live renderer geometry, full-track framing, native picker semantics, four landscape tiers, focus, suspension, repeated openings, rapid selections, analysis failure/retry and fallback.
 
-Browser verification is recorded in `docs/signal-explorer-verification.json`. Earlier rendering and numerical checks are retained as historical evidence; the guided flow has its own dated browser results. Physical-device and hardware-GPU performance, screen readers and unassisted comprehension are not certified. Shared application preloading still emits existing CORS errors for two remote NASA carousel images; the signal data and texture are local.
+Use `node scripts/check-signal.mjs` for numerical regression checks and `scripts/check-signal-ui.mjs` for optional browser checks. Physical-device performance, screen-reader support and unassisted comprehension are not certified. Signal data and textures are local.
 
 ### Unassisted comprehension check
 
@@ -87,3 +87,14 @@ Pending: three people without space-science knowledge each use the page for two 
 `python3 scripts/exploration/prepare.py` requires NumPy, Pillow and SciPy; downloads about 58 MB into `/tmp/exovisionaries-exploration`, then writes ~3 MB of local grids and small WebP previews. Original labels and GeoTIFF metadata are read; no browser upstream API calls are needed. NASA geometry is fetched with curl using system TLS trust. Data script is a build-time maintenance tool, not required at runtime.
 
 The retained legacy-model checker `node scripts/check-exploration.mjs` verifies 27 site/orbit/radio configurations, byte conservation, energy limits, relay capacity, zero-energy/no-contact runs, occultation and deterministic results. Build uses the normal `pnpm run build`. Native temperature values were independently sampled from the downloaded raster at all three preset coordinates. Browser review covers layer switching, rendered preset values, changing radios and baseline comparison, completion, compact landscape controls and return to mission home. Full original mission, physical touch devices and screen readers were not re-certified by this feature work.
+
+## Archive
+
+`/?explore=archive` opens the historical mission timeline. Entries, images and
+source URLs live in `packages/data/src/archive/`. The timeline supports dragging,
+previous/next milestones and a return-to-current-year control. Its educational
+records include reference and future entries; consult the linked source for
+current mission status.
+
+Run `node scripts/check-archive-links.mjs` to audit the archive's external links.
+Historical media links can change independently of the application.

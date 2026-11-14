@@ -34,13 +34,14 @@ dist-ssr
 # Turborepo
 .turbo
 
-# superpowers docs
-docs/superpowers/*
-
-# Local visual review captures and commit preparation
-.impeccable/review/
-temp/COMMIT_MSG.txt
-temp/PR_MSG.txt
+# Local AI assistant tooling and scratch files
+/.agents/
+/.claude/
+/.impeccable/
+/AGENTS.md
+/skills-lock.json
+/docs/superpowers/
+/temp/
 
 # Incremental TypeScript build caches
 *.tsbuildinfo
